@@ -407,7 +407,7 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   width: 100%; min-height: 700px;
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-    url('assets/manifesto-bg.jpg') center/cover no-repeat;
+    url('assets/footer-bg.jpg') center/cover no-repeat;
   padding: 32px 24px 0;
   display: flex; flex-direction: column; gap: 32px;
 }

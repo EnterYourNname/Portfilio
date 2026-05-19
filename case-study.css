@@ -10,7 +10,7 @@ html, body { background: #efece5; }
 /* Top toolbar with back-link */
 .cs-toolbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 16px 24px 64px;
+  padding: 64px 16px 24px 16px;
 }
 .cs-back {
   display: inline-flex; align-items: center; gap: 8px;

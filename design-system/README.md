@@ -290,6 +290,8 @@ Use `.pk-card`, `.pk-tags`, and `.pk-tag`. Media uses a 4 px radius. Tags are pi
 
 Each project card must behave as a link to its project detail or case-study page. Project navigation belongs on the cards, not in the main website navigation.
 
+Project media should live in `design-system/assets/{project-id}` so GitHub Pages can serve it with the site. Use repo-relative paths such as `design-system/assets/beer-box/cr.webp`. Use `cr.*` as the project card cover, `hr.*` as the project page hero, and `g-01.*`, `g-02.*`, etc. as gallery images. If a folder has no `hr.*`, use `cr.*` as both cover and hero.
+
 ### Experience
 
 Use a dark ink section with cream text and orange dividers. Dates are secondary and right-aligned when space allows.
@@ -300,20 +302,35 @@ Use large regular-weight skill labels with small two-digit counters. Rows have i
 
 ### Manifesto Footer
 
-Use `manifesto-bg.jpg`, dark overlays, the manifesto line `Designing with purpose, always.`, email contact, social links, and compact footer navigation.
+Use `footer-bg.jpg`, dark overlays, the manifesto line `Designing with purpose, always.`, email contact, social links, and compact footer navigation.
 
 ## Assets
 
-Primary local assets:
+All website assets must stay inside `design-system/assets/` so the site can be published on GitHub Pages without broken local-drive links.
 
-- `assets/avatar.jpg`
-- `assets/hero-portrait.png`
-- `assets/work-reel.png`
-- `assets/project-kuckoo.png`
-- `assets/manifesto-bg.jpg`
-- `assets/kuckoo-interior-night.jpg`
-- `assets/kuckoo-interior-day.jpg`
-- `assets/kuckoo-exterior.jpg`
+Use paths from the website root when writing HTML, CSS, or project data:
+
+- `design-system/assets/avatar.jpg`
+- `design-system/assets/footer-bg.jpg`
+- `design-system/assets/work-reel.png`
+- `design-system/assets/{project-id}/cr.*`
+- `design-system/assets/{project-id}/hr.*`
+- `design-system/assets/{project-id}/g-01.*`
+
+From files inside the `design-system/` folder, the same assets may be referenced as `assets/...`.
+
+Project media folders should match the project id / slug:
+
+- `beer-box/`
+- `vvs/`
+- `mealmate/`
+- `kuckoo-configurator/`
+- `caccaro-design-concept/`
+- `online-configurator-for-smina-shelws/`
+- `poster-for-smina/`
+- `private-house-interior-concept/`
+
+Inside each project folder, use `cr.*` for the card cover, `hr.*` for the project hero, and `g-01.*`, `g-02.*`, etc. for gallery images. If `hr.*` is missing, use `cr.*` as both cover and hero.
 
 Icons live in `assets/icons/`. Use these before adding new icon files.
 

@@ -127,6 +127,16 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - Users open a project by clicking its project card.
 - Project cards must behave as links to the project detail or case-study page.
 
+## Project Media Rules
+
+- Project media lives in `design-system/assets/{project-id}` so GitHub Pages can serve it with the site.
+- Use repo-relative media paths, for example `design-system/assets/beer-box/cr.webp`.
+- Use `cr.*` as the project card cover image.
+- Use `hr.*` as the project page hero image when it exists.
+- If a project folder has no `hr.*`, use `cr.*` as both cover and hero.
+- Use `g-01.*`, `g-02.*`, and following `g-*` files as gallery images in filename order.
+- Keep project folder names aligned with `PROJECT ID` / `slug` whenever possible.
+
 ## Buttons And Interaction
 
 - Primary buttons must use `.pk-btn`; do not make another primary CTA style.

@@ -1,0 +1,171 @@
+[
+  {
+    "source_file": "Project page text\\275\\content.md",
+    "source_url": "https://andriiborysov.com/beer-box",
+    "slug": "beer-box",
+    "scraped_title": "Beer Box",
+    "page_title": "Online beer shopping",
+    "body": "# Online beer shopping\nBeerBox is an online marketplace for discovering and ordering unique beers with a simple, friendly shopping flow.\n\nTimeline\n2025 Feb\nIndustry\nE-commerce\n\n## Challenge\nCustomers had trouble finding unique beers locally, trusting freshness online, and placing larger orders for events.\n\n## Approach\n- Researched convenience shoppers, rare beer fans, and event planners.\n- Focused the flow on product discovery, freshness signals, bulk ordering, and clear checkout.\n- Built wireframes and prototypes, then refined labels, delivery options, and visual hierarchy through feedback.\n\n## Result\nThe final concept creates a relaxed e-commerce experience that makes beer discovery, bulk ordering, and doorstep delivery feel clear and easy.\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/beer-box",
+      "cover": "design-system/assets/beer-box/cr.webp",
+      "hero": "design-system/assets/beer-box/hr.avif",
+      "hero_fallback": false,
+      "gallery": [
+        "design-system/assets/beer-box/g-01.avif",
+        "design-system/assets/beer-box/g-02.avif",
+        "design-system/assets/beer-box/g-03.webp",
+        "design-system/assets/beer-box/g-04.webp"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "Project page text\\276\\content.md",
+    "source_url": "https://andriiborysov.com/vvs",
+    "slug": "vvs",
+    "scraped_title": "Beer Box",
+    "page_title": "VVS",
+    "body": "# VVS\nVVS is a redesign concept for Stuttgart's regional public transport app, focused on clearer route planning and more reliable trip continuity.\n\nTimeline\n2024 Dec\nIndustry\nTransportation App\n\n## Challenge\nThe existing app had useful real-time transit data, but users struggled with unclear navigation, lost routes, weak hierarchy, and limited map interaction.\n\n## Approach\n- Reviewed app-store feedback and public ratings to identify recurring pain points.\n- Prioritized platform visibility, saved routes, clearer departure and arrival states, and route continuity.\n- Reworked key screens through wireframes, prototypes, and user testing.\n\n## Result\nThe redesign creates a cleaner transit experience with easier route planning, clearer station information, and a stronger foundation for future ticket and account features.\n\n## Next Steps\n- Simplify ticket selection.\n- Add account management.\n- Support buying tickets for another person.\n- Add tappable station and route information on the map.\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/vvs",
+      "cover": "design-system/assets/vvs/cr.webp",
+      "hero": "design-system/assets/vvs/hr.webp",
+      "hero_fallback": false,
+      "gallery": [
+        "design-system/assets/vvs/g-01.webp",
+        "design-system/assets/vvs/g-02.webp",
+        "design-system/assets/vvs/g-03.webp",
+        "design-system/assets/vvs/g-04.webp"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "Project page text\\277\\content.md",
+    "source_url": "https://andriiborysov.com/mealmate",
+    "slug": "mealmate",
+    "scraped_title": "Athos: Free UX Framer Template - Streamlining Ecommerce Navigation",
+    "page_title": "MealMate",
+    "body": "# MealMate\nYour personal online nutrition assistant\nMy Role\nDesigner responsible for UX research, user flows, wireframes, and high-fidelity UI design.\nTeam:\nGuided by two Senior UI/UX designer peers.\n\n## Challenge\n- Finding recipes that match their dietary preferences and restrictions.\n- Understanding and maintaining a balanced diet.\n- Staying motivated to consistently track and improve nutrition habits.\n\n## Solutions\n- Custom Recipe Matching - Filter by diet, ingredients, and time.\n- Personalized Meal Suggestions - AI recommends meals based on diet and preferences.\n- Flexible Progress Tracking - Simple feedback and visual goals keep users motivated.\n\n## Process\n- Research & Analysis: Examined market, competitors, and user pain points to shape core app features.\n- User Interviews: Identified the need for flexible, intuitive meal tracking and planning.\n- Hypothesis: Quick, adaptive, AI-driven meal suggestions can improve user engagement and consistency.\n- User Persona: Targeted busy professionals needing simple meal planning and progress tracking.\n- Wireframing & Prototyping: Developed and refined user flows through low- to mid-fidelity wireframes and testing.\n- Visual Design & Style Guide: Used clean typography, bright accents, and clear icons for readability and vibrancy.\n- Next Steps:Expand task flows based on user feedback.Further usability testing for design refinements.\nNext Steps:\nExpand task flows based on user feedback.\nFurther usability testing for design refinements.\n\n## Conclusion\nMealmate streamlines meal tracking and promotes healthier habits. Our design, shaped by user interviews and competitor insights, focuses on intuitive navigation, quick logging, and engaging visual feedback. Early tests confirmed a clean layout and effective progress cues.\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/mealmate",
+      "cover": "design-system/assets/mealmate/cr.webp",
+      "hero": "design-system/assets/mealmate/cr.webp",
+      "hero_fallback": true,
+      "gallery": [
+        "design-system/assets/mealmate/g-01.webp",
+        "design-system/assets/mealmate/g-02.webp",
+        "design-system/assets/mealmate/g-03.webp",
+        "design-system/assets/mealmate/g-04.webp"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "Project page text\\278\\content.md",
+    "source_url": "https://andriiborysov.com/kuckoo-configurator",
+    "slug": "kuckoo-configurator",
+    "scraped_title": "Beer Box",
+    "page_title": "Kuckoo configurator",
+    "body": "# Kuckoo configurator\n\n## Disclaimer\nCreated in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio\nIndustry\nTravel & Leisure\n\n## My role\nProduced visual content for a camper configurator by translating manufacturer blueprints and CAD models into accurate 3D models and material setups using Blender. Created immersive 360° renders with custom AI-generated HDRI backgrounds that reflect the mood and context of the camper experience.\nDeliverables Included:\n- 360° interior renders\n- Custom HDRI background (AI-generated)\n- 3D modeling and rendering of camper components\n- Material setup and lighting design\nThe final visuals helped convey a realistic, appealing user experience and were approved by both the internal team and the client.\n360° Camper InteriorInteractive renders let users explore layout and material options in real time, reflecting real manufacturing choices for easier customization.\n\n## Tools\n\n### Blender\n\n### Photoshop\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/kuckoo-configurator",
+      "cover": "design-system/assets/kuckoo-configurator/cr.jpg",
+      "hero": "design-system/assets/kuckoo-configurator/hr.jpg",
+      "hero_fallback": false,
+      "gallery": [
+        "design-system/assets/kuckoo-configurator/g-01.jpg",
+        "design-system/assets/kuckoo-configurator/g-02.jpg",
+        "design-system/assets/kuckoo-configurator/g-03.jpg"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "Project page text\\279\\content.md",
+    "source_url": "https://andriiborysov.com/caccaro-design-concept",
+    "slug": "caccaro-design-concept",
+    "scraped_title": "Beer Box",
+    "page_title": "CACCARO design concept",
+    "body": "# CACCAROdesign concept\n\n## Disclaimer\nDesigned a furniture concept for the Italian furniture brand Caccaro. The submission won first place and was selected by the company’s representatives\nIndustry\nInterior Design & Furniture\n\n## My role\nAs one of two designers on the project, I developed the concept and produced all 3D visualizations for Caccaro, using 3ds Max and Photoshop. Beyond the renders, I led the initial research, created mood boards, and selected materials to ensure every detail aligned with Caccaro’s brand aesthetic. The final interior concept provided the factory with fresh stylistic ideas, earning first place and direct approval from the company’s representatives.\n\n## Tools\n3ds Max, Photoshop\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/caccaro-design-concept",
+      "cover": "design-system/assets/caccaro-design-concept/cr.jpg",
+      "hero": "design-system/assets/caccaro-design-concept/cr.jpg",
+      "hero_fallback": true,
+      "gallery": [
+        "design-system/assets/caccaro-design-concept/g-01.jpg",
+        "design-system/assets/caccaro-design-concept/g-02.jpg"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "Project page text\\280\\content.md",
+    "source_url": "https://andriiborysov.com/online-configurator-for-smina-shelws",
+    "slug": "online-configurator-for-smina-shelws",
+    "scraped_title": "Beer Box",
+    "page_title": "Online Configurator for Smina Shelves",
+    "body": "# Online Configurator for Smina Shelves\nA product configurator concept for Smina shelves that brings UI design and CGI together in one interactive shopping experience.\n\nIndustry\nRetail & Healthcare\n\n## Disclaimer\nCreated in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio.\n\n## My Role\nI worked on both the interface and the visual content for the configurator. My role connected UI design, component logic, and CGI assets so the product could be presented clearly and realistically.\n\n## Approach\n- Designed UI screens and adapted the existing component library for the configurator flow.\n- Created low-, mid-, and high-fidelity layouts based on team feedback.\n- Produced CGI renders for shelf modules and product components.\n- Worked with another UX/UI designer and a developer to prepare screens and assets for implementation.\n\n## Result\nThe final concept combined a clear configurator interface with realistic product visuals, helping users understand shelf options, compare modules, and imagine the final setup more easily.\n\n## Tools\nFigma, Blender, Photoshop\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/online-configurator-for-smina-shelws",
+      "cover": "design-system/assets/online-configurator-for-smina-shelws/cr.png",
+      "hero": "design-system/assets/online-configurator-for-smina-shelws/hr.jpg",
+      "hero_fallback": false,
+      "gallery": [
+        "design-system/assets/online-configurator-for-smina-shelws/g-01.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-02.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-03.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-03_1.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-04.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-05.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-06.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-07.jpg",
+        "design-system/assets/online-configurator-for-smina-shelws/g-08.jpg"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "manual entry from local media folder",
+    "source_url": "design-system/assets/poster-for-smina",
+    "slug": "poster-for-smina",
+    "scraped_title": "Poster for Smina",
+    "page_title": "Poster for Smina",
+    "body": "# Poster for Smina\nA small visual campaign for Smina focused on playful postcard-style product renders.\n\nIndustry\nHealthcare & Product Advertising\n\n## Disclaimer\nCreated in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio.\n\n## My Role\nI created the product renders and visual presentation for postcard-style advertising assets.\n\n## Approach\n- Built clean CGI product scenes for Smina mobility products.\n- Created different mood and color variations for the postcard visuals.\n- Focused on making the renders simple, readable, and warm enough for campaign use.\n\n## Result\nThe final postcard renders gave Smina a compact set of friendly product visuals for advertising and communication.\n\n## Tools\nBlender, Photoshop\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/poster-for-smina",
+      "cover": "design-system/assets/poster-for-smina/cr.jpg",
+      "hero": "design-system/assets/poster-for-smina/cr.jpg",
+      "hero_fallback": true,
+      "gallery": [
+        "design-system/assets/poster-for-smina/g-01.jpg",
+        "design-system/assets/poster-for-smina/g-02.jpg"
+      ],
+      "missing_folder": false
+    }
+  },
+  {
+    "source_file": "manual entry from Behance",
+    "source_url": "https://www.behance.net/gallery/136851835/Its-could-be-yours-Its-could-be-yours",
+    "slug": "private-house-interior-concept",
+    "scraped_title": "It's could be yours It's could be yours",
+    "page_title": "Private House Interior Concept",
+    "body": "# Private House Interior Concept\nA private house interior concept focused on creating a warm, clear visual direction for a modern living space.\n\nIndustry\nPrivate Residential Interior\n\n## Challenge\nThe project needed a strong visual concept that could align the client vision, architectural direction, and interior design decisions.\n\n## My Role\nI worked closely with the architect and another interior designer to shape the visual direction, create interior visualizations, and support design decisions through realistic imagery.\n\n## Approach\n- Developed the overall visual mood and atmosphere.\n- Created 3D visualizations to communicate layout, materials, lighting, and spatial feeling.\n- Collaborated with the team to refine ideas and keep the interior concept aligned with the architectural vision.\n\n## Result\nThe final visuals helped the team present a clear design direction for the private house and made the atmosphere, materials, and spatial ideas easier to understand.\n\n## Tools\n3ds Max, Photoshop\n\n## Thank you for Scrolling!",
+    "media": {
+      "folder": "design-system/assets/private-house-interior-concept",
+      "cover": "design-system/assets/private-house-interior-concept/cr.webp",
+      "hero": "design-system/assets/private-house-interior-concept/hr.webp",
+      "hero_fallback": false,
+      "gallery": [
+        "design-system/assets/private-house-interior-concept/g-01.jpg",
+        "design-system/assets/private-house-interior-concept/g-02.jpg",
+        "design-system/assets/private-house-interior-concept/g-03.jpg",
+        "design-system/assets/private-house-interior-concept/g-04.webp",
+        "design-system/assets/private-house-interior-concept/g-05.webp"
+      ],
+      "missing_folder": false
+    }
+  }
+]

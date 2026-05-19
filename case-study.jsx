@@ -305,25 +305,6 @@ function Outro() {
 
 }
 
-function NextProject() {
-  return (
-    <section className="cs-next" data-screen-label="10 Next project">
-      <div className="cs-next-head">
-        <span className="pk-mono">Next project</span>
-        <span className="pk-mono">03 / 12</span>
-      </div>
-      <button className="cs-next-card" onClick={() => alert('Open: CACCARO design concept')}>
-        <div className="img" style={{
-          backgroundImage: "url('design-system/assets/manifesto-bg.jpg')"
-        }} />
-        <div className="meta">
-          <span className="sub">Interior · Product Render</span>
-          <span className="title">CACCARO design concept →</span>
-        </div>
-      </button>
-    </section>);
-
-}
 
 // ──────────────────────────────────────────────────────────────────────────
 // Manifesto + footer — reproduced inline so the page is self-contained
@@ -457,7 +438,6 @@ function CaseStudyApp() {
         <Disclaimer />
         <Tools />
         <Outro />
-        <NextProject />
         <FooterSection onBackTop={scrollTop} />
       </div>
     </div>);
