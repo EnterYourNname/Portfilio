@@ -22,26 +22,7 @@ const SKILLS = [
   "Arch-Vis.",
 ];
 
-const PROJECTS = [
-  {
-    title: "Kuckoo Configurator",
-    tags: "3D & UI/UX · 2024",
-    img: "design-system/assets/project-kuckoo.png",
-    href: "case-study.html",
-  },
-  {
-    title: "CACCARO Design Concept",
-    tags: "Interior · Product Render · 2023",
-    img: "design-system/assets/manifesto-bg.jpg",
-    href: "#",
-  },
-  {
-    title: "Online Beer Shopping",
-    tags: "Web Design · UI/UX · 2022",
-    img: null,
-    href: "#",
-  },
-];
+const PROJECT_FILTERS = ["All", "UI/UX", "3D"];
 
 const TICKER_ITEMS = [
   "Blender", "3D Modeling", "Figma", "UI / UX", "Rendering",
@@ -176,45 +157,72 @@ function HmReel() {
 // Projects
 // ────────────────────────────────────────────────────────────────
 
-function HmProjectCard({ project }) {
-  const isPlaceholder = !project.img;
-  return (
-    <a className="hm-card" href={project.href}>
-      <div className="hm-card-img"
-        style={!isPlaceholder ? { backgroundImage: `url('${project.img}')` } : {}}>
-        {isPlaceholder && (
-          <div className="hm-card-img hm-card-img-placeholder">
-            <span>Coming soon</span>
-          </div>
-        )}
-      </div>
-      <div className="hm-card-body">
-        <span className="hm-card-tags">{project.tags}</span>
-        <span className="hm-card-title">{project.title}</span>
-      </div>
-    </a>
-  );
-}
-
 function HmProjects() {
+  const [activeFilter, setActiveFilter] = React.useState("All");
+  const [showAllProjects, setShowAllProjects] = React.useState(false);
+  const toggleBtnRef = React.useRef(null);
+  const isCollapsing = React.useRef(false);
+  const projects = window.PORTFOLIO_PROJECTS || [];
+
+  React.useEffect(() => {
+    if (!showAllProjects && isCollapsing.current) {
+      isCollapsing.current = false;
+      toggleBtnRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [showAllProjects]);
+  const matchingProjects = activeFilter === "All"
+    ? projects
+    : projects.filter(project => project.tags.includes(activeFilter));
+  const visibleProjects = showAllProjects
+    ? matchingProjects
+    : matchingProjects.slice(0, 3);
+  const count = String(visibleProjects.length).padStart(2, "0");
+  const total = String(matchingProjects.length).padStart(2, "0");
+
   return (
     <section id="work" className="hm-section">
       <div className="hm-section-head">
         <span className="pk-mono">Projects</span>
-        <span className="hm-section-count">03 / 12</span>
+        <span className="hm-section-count">{count} / {total}</span>
       </div>
       <h2 className="hm-section-title">Work.</h2>
       <div className="hm-chips">
-        <button className="hm-chip active">All</button>
-        <button className="hm-chip">Web</button>
-        <button className="hm-chip">3D</button>
+        {PROJECT_FILTERS.map(filter => (
+          <button
+            key={filter}
+            className={`hm-chip${activeFilter === filter ? " active" : ""}`}
+            type="button"
+            aria-pressed={activeFilter === filter}
+            onClick={() => {
+              setActiveFilter(filter);
+              setShowAllProjects(false);
+            }}
+          >
+            {filter}
+          </button>
+        ))}
       </div>
       <div className="hm-projects">
-        {PROJECTS.map(p => <HmProjectCard key={p.title} project={p} />)}
+        {visibleProjects.map(p => <ProjectCard key={p.id} project={p} />)}
       </div>
-      <a className="pk-link" href="#">
-        View all projects <HmArrowRight size={14} />
-      </a>
+      {matchingProjects.length > 3 && (
+        <button
+          ref={toggleBtnRef}
+          className="pk-link"
+          type="button"
+          onClick={() => {
+            if (showAllProjects) {
+              isCollapsing.current = true;
+              setShowAllProjects(false);
+            } else {
+              setShowAllProjects(true);
+            }
+          }}
+          aria-expanded={showAllProjects}
+        >
+          {showAllProjects ? "Show less" : "All projects"} <HmArrowRight size={14} />
+        </button>
+      )}
     </section>
   );
 }

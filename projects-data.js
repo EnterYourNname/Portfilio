@@ -2,12 +2,11 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "beer-box",
     title: "Online beer shopping",
-    year: "2025",
     industry: "E-commerce",
     role: "UI/UX Design",
     tools: "Figma",
     tags: ["Web", "UI/UX"],
-    meta: "Web Design | UI/UX | 2025",
+    meta: "Web Design | UI/UX",
     cover: "design-system/assets/beer-box/cr.webp",
     hero: "design-system/assets/beer-box/hr.avif",
     gallery: [
@@ -19,8 +18,6 @@ const PORTFOLIO_PROJECTS = [
     body: `# Online beer shopping
 BeerBox is an online marketplace for discovering and ordering unique beers with a simple, friendly shopping flow.
 
-Timeline
-2025 Feb
 Industry
 E-commerce
 
@@ -40,12 +37,11 @@ The final concept creates a relaxed e-commerce experience that makes beer discov
   {
     id: "vvs",
     title: "VVS",
-    year: "2024",
     industry: "Transportation App",
     role: "UI/UX Design",
     tools: "Figma",
     tags: ["UI/UX"],
-    meta: "Mobile App | UI/UX | 2024",
+    meta: "Mobile App | UI/UX",
     cover: "design-system/assets/vvs/cr.webp",
     hero: "design-system/assets/vvs/hr.webp",
     gallery: [
@@ -57,8 +53,6 @@ The final concept creates a relaxed e-commerce experience that makes beer discov
     body: `# VVS
 VVS is a redesign concept for Stuttgart's regional public transport app, focused on clearer route planning and more reliable trip continuity.
 
-Timeline
-2024 Dec
 Industry
 Transportation App
 
@@ -84,12 +78,11 @@ The redesign creates a cleaner transit experience with easier route planning, cl
   {
     id: "mealmate",
     title: "MealMate",
-    year: "2024",
     industry: "Nutrition App",
     role: "UI/UX Design",
     tools: "Figma",
     tags: ["Web", "UI/UX"],
-    meta: "Product Design | UI/UX | 2024",
+    meta: "Product Design | UI/UX",
     cover: "design-system/assets/mealmate/cr.webp",
     hero: "design-system/assets/mealmate/cr.webp",
     gallery: [
@@ -122,12 +115,11 @@ Mealmate streamlines meal tracking and promotes healthier habits through intuiti
   {
     id: "kuckoo-configurator",
     title: "Kuckoo configurator",
-    year: "2024",
     industry: "Travel & Leisure",
     role: "3D & UI/UX Design",
     tools: "Blender, Photoshop",
     tags: ["3D", "UI/UX"],
-    meta: "3D | UI/UX | 2024",
+    meta: "3D | UI/UX",
     cover: "design-system/assets/kuckoo-configurator/cr.jpg",
     hero: "design-system/assets/kuckoo-configurator/hr.jpg",
     gallery: [
@@ -157,12 +149,11 @@ Blender, Photoshop
   {
     id: "caccaro-design-concept",
     title: "CACCARO design concept",
-    year: "2023",
     industry: "Interior Design & Furniture",
     role: "3D & Interior Design",
     tools: "3ds Max, Photoshop",
     tags: ["3D", "Interior"],
-    meta: "Interior | 3D | 2023",
+    meta: "Interior | 3D",
     cover: "design-system/assets/caccaro-design-concept/cr.jpg",
     hero: "design-system/assets/caccaro-design-concept/cr.jpg",
     gallery: [
@@ -185,12 +176,11 @@ As one of two designers on the project, I developed the concept and produced all
   {
     id: "online-configurator-for-smina-shelws",
     title: "Online Configurator for Smina Shelves",
-    year: "2024",
     industry: "Retail & Healthcare",
     role: "UI/UX & CGI",
     tools: "Figma, Blender, Photoshop",
     tags: ["Web", "3D", "UI/UX"],
-    meta: "Web | 3D | UI/UX | 2024",
+    meta: "Web | 3D | UI/UX",
     cover: "design-system/assets/online-configurator-for-smina-shelws/cr.png",
     hero: "design-system/assets/online-configurator-for-smina-shelws/hr.jpg",
     gallery: [
@@ -223,12 +213,11 @@ Figma, Blender, Photoshop
   {
     id: "poster-for-smina",
     title: "Poster for Smina",
-    year: "2024",
     industry: "Healthcare & Product Advertising",
     role: "CGI & Graphic Design",
     tools: "Blender, Photoshop",
     tags: ["3D"],
-    meta: "CGI | Product Render | 2024",
+    meta: "CGI | Product Render",
     cover: "design-system/assets/poster-for-smina/cr.jpg",
     hero: "design-system/assets/poster-for-smina/cr.jpg",
     gallery: [
@@ -254,12 +243,11 @@ Blender, Photoshop
   {
     id: "private-house-interior-concept",
     title: "Private House Interior Concept",
-    year: "2022",
     industry: "Private Residential Interior",
     role: "3D & Interior Design",
     tools: "3ds Max, Photoshop",
     tags: ["3D", "Interior"],
-    meta: "Interior | 3D | 2022",
+    meta: "Interior | 3D",
     cover: "design-system/assets/private-house-interior-concept/cr.webp",
     hero: "design-system/assets/private-house-interior-concept/hr.webp",
     gallery: [

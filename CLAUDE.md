@@ -126,6 +126,11 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - Do not add individual project links to the main navigation or footer navigation.
 - Users open a project by clicking its project card.
 - Project cards must behave as links to the project detail or case-study page.
+- Generate project cards from `projects-data.js` and render them with the shared `ProjectCard` component in `components/project-card.jsx`; do not hard-code a second project list or recreate card markup in page components.
+- Project card links use `case-study.html?project={project-id}` so one master project page can render multiple projects.
+- Project filters read the project `tags` array. Home filters are only `All`, `UI/UX`, and `3D`.
+- Show only the first three matching home project cards by default. The `All projects` text button expands the rest and can collapse back to `Show less`.
+- Do not show project year on project cards or in the project page meta block.
 
 ## Project Media Rules
 
@@ -165,11 +170,12 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - Do not hand-draw custom icons when a Lucide icon exists.
 - Use local images first:
   - `avatar.jpg`
-  - `hero-portrait.png`
+  - `footer-bg.jpg`
+  - `hero-bg-motion-blur.mp4`
   - `work-reel.png`
-  - `project-kuckoo.png`
-  - `manifesto-bg.jpg`
-  - `kuckoo-*`
+  - `{project-id}/cr.*`
+  - `{project-id}/hr.*`
+  - `{project-id}/g-*.*`
 - Do not add remote images when a local asset can serve the job.
 
 ## Voice And Copy

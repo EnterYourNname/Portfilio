@@ -290,6 +290,10 @@ Use `.pk-card`, `.pk-tags`, and `.pk-tag`. Media uses a 4 px radius. Tags are pi
 
 Each project card must behave as a link to its project detail or case-study page. Project navigation belongs on the cards, not in the main website navigation.
 
+Project cards should be generated from `projects-data.js` and rendered with the shared `ProjectCard` component in `components/project-card.jsx`. Do not hard-code a separate card list or recreate the card markup in page components. Each project needs an `id`, `title`, `tags`, `meta`, `cover`, `hero`, `gallery`, and `body`. Card links use `case-study.html?project={project-id}` so the same project page template can load different projects. Do not show the project year on cards or in the project page meta block.
+
+Project filters use the project `tags` array. Use only `All`, `UI/UX`, and `3D` on the home page. Selecting a filter shows matching cards and keeps the selected state until another filter is clicked. The home page shows only the first three matching projects by default; the `All projects` text button expands the rest and can collapse back to `Show less`.
+
 Project media should live in `design-system/assets/{project-id}` so GitHub Pages can serve it with the site. Use repo-relative paths such as `design-system/assets/beer-box/cr.webp`. Use `cr.*` as the project card cover, `hr.*` as the project page hero, and `g-01.*`, `g-02.*`, etc. as gallery images. If a folder has no `hr.*`, use `cr.*` as both cover and hero.
 
 ### Experience

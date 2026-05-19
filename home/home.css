@@ -270,57 +270,6 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   flex-direction: column;
   gap: 16px;
 }
-.hm-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-  transition: transform 200ms var(--ease-out);
-}
-.hm-card:hover { transform: translateY(-2px); }
-.hm-card-img {
-  width: 100%;
-  aspect-ratio: 361 / 300;
-  background: center / cover no-repeat;
-  position: relative;
-}
-.hm-card-img-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--cream-deep);
-  color: var(--ink-muted);
-  font-size: var(--type-size-meta);
-  letter-spacing: var(--type-track-meta);
-  text-transform: uppercase;
-}
-.hm-card-body {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 16px 16px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background: rgba(255, 252, 244, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
-.hm-card-tags {
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.hm-card-title {
-  font-size: var(--type-size-card-title);
-  font-weight: var(--fw-demi);
-  line-height: var(--type-line-card-title);
-  letter-spacing: var(--type-track-card-title);
-}
-
 /* "View all projects" now uses shared .pk-link (Text/Link role) */
 
 /* ─── Experience ───────────────────────────────────────────────── */
