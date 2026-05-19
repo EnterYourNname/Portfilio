@@ -1,0 +1,380 @@
+/* ============================================================
+   Andrii B. — Portfolio Design System
+   Tokens: color, type, spacing, radius, shadow, motion
+   ============================================================ */
+
+/* --- Type ---------------------------------------------------- */
+/* BDO Grotesk is the brand display+text face — local fonts in
+   /fonts. Inter is used once for a small footer-nav run.
+   JetBrains Mono is used for tiny meta strings in previews. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-Light.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-Light.otf") format("opentype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-Regular.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-Regular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-Medium.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-Medium.otf") format("opentype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-DemiBold.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-DemiBold.otf") format("opentype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-Bold.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-Bold.otf") format("opentype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-ExtraBold.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-ExtraBold.otf") format("opentype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("./fonts/BDOGrotesk-Black.woff2") format("woff2"),
+       url("./fonts/BDOGrotesk-Black.otf") format("opentype");
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ── Palette ──────────────────────────────────────────────── */
+  /* Figma color variables */
+  --color-orange-500: rgb(255, 138, 54);       /* Color/Orange/500 */
+  --color-orange-700: rgb(255, 107, 74);       /* Color/Orange/700 */
+  --color-white-500:  rgb(255, 255, 255);      /* Color/White/500 */
+  --color-cream-50:   rgb(252, 249, 241);      /* Color/Cream/50 */
+  --color-cream-100:  rgb(255, 245, 232);      /* Color/Cream/100 */
+  --color-cream-200:  rgb(247, 233, 210);      /* Color/Cream/200 */
+  --color-cream-700:  rgb(227, 223, 218);      /* Color/Cream/700 */
+  --color-dark-700:   rgba(38, 37, 36, 0.80);  /* Color/Dark/700 */
+  --color-dark-900:   rgb(27, 24, 20);         /* Color/Dark/900 */
+  --color-gray-100:   rgb(250, 250, 250);      /* Color/Gray/100 */
+  --color-gray-200:   rgb(242, 242, 242);      /* Color/Gray/200 */
+  --color-gray-300:   rgba(27, 24, 20, 0.08);  /* Color/Gray/300 */
+  --color-gray-400:   rgba(27, 24, 20, 0.10);  /* Color/Gray/400 */
+  --color-gray-500:   rgb(188, 188, 188);      /* Color/Gray/500 */
+  --color-gray-800:   rgb(124, 115, 107);      /* Color/Gray/800 */
+
+  /* Base */
+  --ink:           rgb(27, 24, 20);       /* primary fg, dark surface */
+  --ink-soft:      rgb(38, 37, 36);       /* button on light, dim ink */
+  --ink-muted:     rgb(124, 115, 107);    /* secondary text on cream */
+  --paper:         rgb(255, 252, 244);    /* page bg */
+  --cream:         rgb(255, 245, 232);    /* fg on dark, secondary bg */
+  --cream-deep:    rgb(227, 223, 218);    /* button rail track, gray-200 */
+  --gray-300:      rgb(203, 198, 192);    /* tertiary hover-deeper */
+  --gray-400:      rgb(178, 173, 167);    /* tertiary active */
+  --white:         rgb(255, 255, 255);
+
+  /* Accents */
+  --orange:        rgb(255, 138, 54);     /* single brand accent */
+  --orange-warm:   rgb(255, 107, 74);     /* arrow tint ONLY — inside primary CTA */
+
+  /* Lines & subtle */
+  --hair:          rgb(188, 188, 188);    /* divider, icon stroke */
+  --hair-soft:     rgb(230, 230, 230);
+  --tint-ink-02:   rgba(18, 18, 18, 0.02);
+  --tint-ink-08:   rgba(27, 24, 20, 0.08);
+  --tint-white-20: rgba(255, 255, 255, 0.20);
+  --tint-white-70: rgba(255, 255, 255, 0.70);
+  --tint-white-80: rgba(255, 255, 255, 0.80);
+  --tint-orange-20: rgba(255, 138, 54, 0.20);
+  --tint-orange-50: rgba(255, 138, 54, 0.50);
+
+  /* Semantic */
+  --fg:            var(--ink);
+  --fg-on-dark:    var(--cream);
+  --fg-muted:      var(--ink-muted);
+  --bg:            var(--paper);
+  --bg-elev:       var(--white);
+  --bg-dark:       var(--ink);
+  --accent:        var(--orange);
+  --accent-warm:   var(--orange-warm);
+  --rule:          var(--ink);
+  --rule-soft:     var(--hair);
+
+  /* Figma semantic color aliases */
+  --action-bg-menu-dark:         var(--color-dark-700);
+  --action-bg-primary-default:   var(--color-dark-900);
+  --action-bg-primary-hover:     var(--color-dark-900);
+  --action-bg-primary-active:    var(--color-orange-500);
+  --action-bg-primary-disabled:  var(--color-gray-500);
+  --action-bg-secondary-default: var(--color-cream-50);
+  --action-bg-secondary-hover:   var(--color-cream-200);
+  --action-bg-secondary-active:  var(--color-dark-900);
+  --action-bg-tertiary-default:  var(--color-dark-900);
+  --action-bg-tertiary-hover:    var(--color-gray-300);
+  --action-bg-tertiary-active:   var(--color-gray-400);
+  --action-border-ghost-dark:    var(--color-dark-900);
+  --action-border-ghost-light:   var(--color-cream-100);
+  --action-content-icon-brand-default: var(--color-orange-700);
+  --action-content-text-only-default:  var(--color-white-500);
+  --border-color-ghost-dark:     var(--color-dark-900);
+  --border-color-ghost-light:    var(--color-cream-100);
+  --content-text-default-dark:   var(--color-dark-900);
+  --content-text-default-light:  var(--color-cream-100);
+  --content-text-disabled:       var(--color-cream-700);
+  --surface-bg-page-default:     var(--color-gray-100);
+  --surface-bg-page-elevated:    var(--color-white-500);
+  --surface-bg-tab-switcher-default: var(--color-cream-700);
+
+  /* Figma-backed website aliases */
+  --ink:           var(--color-dark-900);
+  --ink-muted:     var(--color-gray-800);
+  --cream:         var(--color-cream-100);
+  --cream-50:      var(--color-cream-50);
+  --cream-soft:    var(--color-cream-200);
+  --cream-deep:    var(--color-cream-700);
+  --gray-100:      var(--color-gray-100);
+  --gray-200:      var(--color-gray-200);
+  --gray-300:      var(--color-gray-300);
+  --gray-400:      var(--color-gray-400);
+  --white:         var(--color-white-500);
+  --orange:        var(--color-orange-500);
+  --orange-warm:   var(--color-orange-700);
+  --hair:          var(--color-gray-500);
+  --hair-soft:     var(--color-gray-200);
+  --fg:            var(--ink);
+  --fg-on-dark:    var(--cream);
+  --fg-muted:      var(--ink-muted);
+  --bg-elev:       var(--white);
+  --bg-dark:       var(--ink);
+  --accent:        var(--orange);
+  --accent-warm:   var(--orange-warm);
+  --rule:          var(--ink);
+  --rule-soft:     var(--hair);
+
+  /* ── Type ─────────────────────────────────────────────────── */
+  --font-sans:     "BDO Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono:     "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-alt:      "Inter", var(--font-sans);
+
+  /* Professional role-based type tokens. Use these before legacy fs/lh/tr aliases. */
+  --type-size-hero:             56px;  --type-line-hero:             1.08; --type-track-hero:             0px;
+  --type-size-statement:        42px;  --type-line-statement:        0.95; --type-track-statement:        -0.32px;
+  --type-size-section-title:    36px;  --type-line-section-title:    1.28; --type-track-section-title:    -0.16px;
+  --type-size-feature-title:    32px;  --type-line-feature-title:    1.28; --type-track-feature-title:    1px;
+  --type-size-card-title:       20px;  --type-line-card-title:       1.28; --type-track-card-title:       0px;
+  --type-size-row-title:        18px;  --type-line-row-title:        1.65; --type-track-row-title:        0px;
+  --type-size-body:             16px;  --type-line-body:             1.60; --type-track-body:             0.16px;
+  --type-size-body-small:       14px;  --type-line-body-small:       1.60; --type-track-body-small:       0.32px;
+  --type-size-meta:             12px;  --type-line-meta:             1.50; --type-track-meta:             0.4px;
+  --type-size-button-primary:   16px;  --type-line-button-primary:   1.60; --type-track-button-primary:   0.16px; --type-weight-button-primary:   600;
+  --type-size-button-secondary: 14px;  --type-line-button-secondary: 1.40; --type-track-button-secondary: 0.16px; --type-weight-button-secondary: 600;
+  --type-size-button-tertiary:  14px;  --type-line-button-tertiary:  1.40; --type-track-button-tertiary:  0.16px; --type-weight-button-tertiary:  400;
+
+  /* Figma: typography/Header/display-mobile\bold + display-mobile\reg */
+  --fs-display:    var(--type-size-hero);          --lh-display:   var(--type-line-hero);          --tr-display:   var(--type-track-hero);
+  /* Figma: typography/Header/h1-mobile */
+  --fs-h1:         var(--type-size-statement);     --lh-h1:        var(--type-line-statement);     --tr-h1:        var(--type-track-statement);
+  /* Figma: typography/Header/h3-mobile */
+  --fs-h2:         var(--type-size-section-title); --lh-h2:        var(--type-line-section-title); --tr-h2:        var(--type-track-section-title);
+  /* Figma: typography/Header/h3-mobile-regular */
+  --fs-h3:         var(--type-size-feature-title); --lh-h3:        var(--type-line-feature-title); --tr-h3:        var(--type-track-feature-title);
+  /* Figma: typography/Header/h5-mobile-bold */
+  --fs-h4:         var(--type-size-card-title);    --lh-h4:        var(--type-line-card-title);
+  /* Figma: typography/body-lg-mobile-bold */
+  --fs-h5:         var(--type-size-row-title);     --lh-h5:        var(--type-line-row-title);
+  /* Figma: typography/body-base-mobile */
+  --fs-body:       var(--type-size-body);          --lh-body:      var(--type-line-body);          --tr-body:       var(--type-track-body);
+  /* Figma: typography/body-sm-mobile */
+  --fs-body-sm:    var(--type-size-body-small);    --lh-body-sm:   var(--type-line-body-small);    --tr-body-sm:    var(--type-track-body-small);
+  /* Figma: typography/small-mobile */
+  --fs-mono:       var(--type-size-meta);          --lh-mono:      var(--type-line-meta);          --tr-mono:       var(--type-track-meta);
+
+  /* Figma: typography/Button/Button-L-mobile */
+  --fs-button-l:   var(--type-size-button-primary);   --lh-button-l:  var(--type-line-button-primary);   --tr-button-l:   var(--type-track-button-primary);
+  --fw-button-l:   var(--type-weight-button-primary); /* DemiBold */
+
+  /* Figma: typography/Button/Button-M-mobile */
+  --fs-button-m:   var(--type-size-button-secondary); --lh-button-m:  var(--type-line-button-secondary); --tr-button-m:   var(--type-track-button-secondary);
+  --fw-button-m:   var(--type-weight-button-secondary); /* DemiBold */
+
+  /* Figma: typography/Button/Button-S-mobile */
+  --fs-button-s:   var(--type-size-button-tertiary);  --lh-button-s:  var(--type-line-button-tertiary);  --tr-button-s:   var(--type-track-button-tertiary);
+  --fw-button-s:   var(--type-weight-button-tertiary); /* Regular */
+
+  --fw-regular:    400;
+  --fw-medium:     500;
+  --fw-demi:       600;
+  --fw-bold:       700;
+
+  /* ── Spacing (4-grid) ─────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  40px;
+  --space-8:  48px;
+  --space-9:  64px;
+  --space-10: 80px;
+  --space-11: 96px;
+
+  /* Layout */
+  --page-pad:     16px;
+  --page-max:     393px;    /* mobile-first canvas */
+
+  /* ── Radius ───────────────────────────────────────────────── */
+  /* Only three radii in the system. */
+  --r-sm:     4px;     /* project card image, video poster */
+  --r-pill:   99px;    /* buttons, chips, tags */
+  --r-circle: 50%;     /* avatar */
+
+  /* ── Borders ──────────────────────────────────────────────── */
+  --bd-hair:  1px solid var(--rule);
+  --bd-soft:  1px solid var(--hair-soft);
+  --bd-cream: 1px solid var(--cream);
+
+  /* ── Shadow ───────────────────────────────────────────────── */
+  /* Quiet, warm. The design uses shadow sparingly. */
+  --shadow-soft:  0 6px 18px rgba(142, 113, 107, 0.18);
+  --shadow-warm:  0 10px 28px rgba(156, 79, 25, 0.22);
+  --shadow-card:  0 2px 8px rgba(142, 142, 142, 0.20),
+                  0 12px 32px rgba(167, 167, 167, 0.25);
+
+  /* ── Motion ───────────────────────────────────────────────── */
+  --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1:        120ms;
+  --dur-2:        200ms;
+  --dur-3:        360ms;
+}
+
+/* ── Semantic CSS ─────────────────────────────────────────── */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--type-size-body);
+  line-height: var(--type-line-body);
+  letter-spacing: var(--type-track-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings */
+.type-hero,
+.t-display {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--type-size-hero);
+  line-height: var(--type-line-hero);
+  letter-spacing: var(--type-track-hero);
+}
+.type-statement,
+.t-h1 {
+  font-weight: var(--fw-bold);
+  font-size: var(--type-size-statement);
+  line-height: var(--type-line-statement);
+  letter-spacing: var(--type-track-statement);
+}
+.type-section-title,
+.t-h2 {
+  font-weight: var(--fw-demi);
+  font-size: var(--type-size-section-title);
+  line-height: var(--type-line-section-title);
+  letter-spacing: var(--type-track-section-title);
+}
+.type-feature-title,
+.t-h3 {
+  font-weight: var(--fw-regular);
+  font-size: var(--type-size-feature-title);
+  line-height: var(--type-line-feature-title);
+  letter-spacing: var(--type-track-feature-title);
+}
+.type-card-title,
+.t-h4 {
+  font-weight: var(--fw-demi);
+  font-size: var(--type-size-card-title);
+  line-height: var(--type-line-card-title);
+  letter-spacing: var(--type-track-card-title);
+}
+.type-row-title,
+.t-h5 {
+  font-weight: var(--fw-demi);
+  font-size: var(--type-size-row-title);
+  line-height: var(--type-line-row-title);
+  letter-spacing: var(--type-track-row-title);
+}
+
+/* Body */
+.type-body,
+.t-body  { font-size: var(--type-size-body); line-height: var(--type-line-body); letter-spacing: var(--type-track-body); }
+.type-body-small,
+.t-body-sm { font-size: var(--type-size-body-small); line-height: var(--type-line-body-small); letter-spacing: var(--type-track-body-small); }
+
+/* Eyebrow / mono label */
+.type-meta,
+.t-mono {
+  font-family: var(--font-sans); /* same family, just uppercased + tracked */
+  font-weight: var(--fw-regular);
+  font-size: var(--type-size-meta);
+  line-height: var(--type-line-meta);
+  letter-spacing: var(--type-track-meta);
+  text-transform: uppercase;
+}
+
+/* Figma: typography/Button/Button-L-mobile */
+.type-button-primary,
+.t-button-l {
+  font-family: var(--font-sans);
+  font-weight: var(--type-weight-button-primary);
+  font-size: var(--type-size-button-primary);
+  line-height: var(--type-line-button-primary);
+  letter-spacing: var(--type-track-button-primary);
+}
+
+/* Figma: typography/Button/Button-M-mobile */
+.type-button-secondary,
+.t-button-m {
+  font-family: var(--font-sans);
+  font-weight: var(--type-weight-button-secondary);
+  font-size: var(--type-size-button-secondary);
+  line-height: var(--type-line-button-secondary);
+  letter-spacing: var(--type-track-button-secondary);
+}
+
+/* Figma: typography/Button/Button-S-mobile */
+.type-button-tertiary,
+.t-button-s {
+  font-family: var(--font-sans);
+  font-weight: var(--type-weight-button-tertiary);
+  font-size: var(--type-size-button-tertiary);
+  line-height: var(--type-line-button-tertiary);
+  letter-spacing: var(--type-track-button-tertiary);
+}
+
+/* Link underline (inline body) */
+.t-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* Utilities */
+.surface-paper { background: var(--paper); color: var(--ink); }
+.surface-cream { background: var(--cream); color: var(--ink); }
+.surface-dark  { background: var(--ink);   color: var(--cream); }
+.rule          { background: var(--rule); height: 1px; width: 100%; }
+.rule-warm     { background: var(--orange); height: 1px; width: 100%; }

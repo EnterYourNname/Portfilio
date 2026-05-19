@@ -1,0 +1,312 @@
+=========================================
+PROJECT ID: beer-box
+PAGE TITLE: Beer Box
+=========================================
+
+# Online beer shopping
+BeerBox is an online beer marketplace with a clean, intuitive design. Discover unique and popular beers, and enjoy effortless doorstep delivery.
+Timeline
+Timeline
+2025 Feb
+Industry
+Industry
+E-commerce
+
+## Challenge
+Clients struggle to find unique beers locally and face difficulties with bulk orders.
+
+## Results
+The final design is a clean, friendly, and easy-to-use e-commerce experience. It simplifies product discovery, supports quick bulk ordering, and builds trust through clear information and a smooth checkout flow. The layout and visuals create a relaxed, modern vibe—making beer shopping feel effortless and enjoyable.
+
+## Process
+Define the Challenge: Users struggled to find rare beers, trust online freshness, and manage bulk orders easily.
+Research & Insights:
+- Conducted user interviews and competitor analysis
+- Identified 3 main user groups: Convenience Shoppers, Rare Beer Enthusiasts, Event Planners
+- Prioritized features like freshness verification, bulk order ease, and tracked delivery
+Conducted user interviews and competitor analysis
+Identified 3 main user groups: Convenience Shoppers, Rare Beer Enthusiasts, Event Planners
+Prioritized features like freshness verification, bulk order ease, and tracked delivery
+Ideation & Structure:
+- Hypothesis-driven approach
+- Created sitemap and user flows
+- Prioritized core features over extras to keep UX lean and clear
+Hypothesis-driven approach
+Created sitemap and user flows
+Prioritized core features over extras to keep UX lean and clear
+Wireframing & Prototyping:
+- Sketched low/mid-fidelity wireframes
+- Built and tested interactive prototypes
+- Incorporated feedback from mentors and senior designers
+Sketched low/mid-fidelity wireframes
+Built and tested interactive prototypes
+Incorporated feedback from mentors and senior designers
+Hi-Fidelity UI Design:
+- Applied a calm, confident visual style using a neutral palette with bold accents
+- Used Manrope font for clarity and consistency
+- Focused on simplicity, trust, and ease of use
+Applied a calm, confident visual style using a neutral palette with bold accents
+Used Manrope font for clarity and consistency
+Focused on simplicity, trust, and ease of use
+Usability Testing & Iteration:
+- Refined field labels, delivery options, and background design
+- Prioritized clarity and engagement across screens
+Refined field labels, delivery options, and background design
+Prioritized clarity and engagement across screens
+
+## Conclusion
+BeerBox is more than just a beer shop—it’s a thoughtfully designed platform that simplifies the online shopping experience. By focusing on clarity, trust, and ease of use, the design meets the needs of modern consumers who value convenience, transparency, and variety. Through user research, clean UI, and strategic UX choices, BeerBox delivers a smooth and enjoyable journey from discovery to doorstep.
+
+
+=========================================
+PROJECT ID: vvs
+PAGE TITLE: Beer Box
+=========================================
+
+(VVS) is a public transport association that coordinates Stuttgart’s entire regional transit network.
+Timeline
+Timeline
+2024 Dec
+Industry
+Industry
+Transportation App
+
+## Challenge
+The existing VVS app, while offering real-time transit updates, failed to meet user expectations in terms of usability, consistency, and reliability.Through user interviews, Google Play Store reviews.
+
+## Results
+The redesigned VVS mobile app addresses these core pain points by introducing a cleaner, more intuitive experience.
+
+## Process
+Define the Challenge: Users struggled to find rare beers, trust online freshness, and manage bulk orders easily.
+Research & Insights:
+- Evaluated VVS Mobil's performance: Over 1 million downloads.
+- Ratings: 1.8/5 on Play Store (6,750 reviews) and 2.2/5 on App Store.
+- Common complaints: Unintuitive navigation, loss of active route, and limited map interaction.
+Evaluated VVS Mobil's performance: Over 1 million downloads.
+Ratings: 1.8/5 on Play Store (6,750 reviews) and 2.2/5 on App Store.
+Common complaints: Unintuitive navigation, loss of active route, and limited map interaction.
+Ideation & Structure:
+- Platform Number Visibility:Long station names obscure platform numbers, causing confusion.
+- Unclear Departure/Arrival Priorities:The departure/arrival menu lacks visual hierarchy, making it hard for users to quickly identify essential information.
+- Limited Map Interaction:Users cannot tap directly on routes in the map, unlike in apps like Google Maps, reducing intuitive navigation.
+- No Saved Routes:The absence of a feature to save frequent routes (e.g., "Home ↔ Work") forces users to re-enter information repeatedly.
+- Lack of Trip Continuity:When switching between functions (e.g., checking tickets), the current route is lost, leading to repeated input and frustration.
+Platform Number Visibility:Long station names obscure platform numbers, causing confusion.
+Unclear Departure/Arrival Priorities:The departure/arrival menu lacks visual hierarchy, making it hard for users to quickly identify essential information.
+Limited Map Interaction:Users cannot tap directly on routes in the map, unlike in apps like Google Maps, reducing intuitive navigation.
+No Saved Routes:The absence of a feature to save frequent routes (e.g., "Home ↔ Work") forces users to re-enter information repeatedly.
+Lack of Trip Continuity:When switching between functions (e.g., checking tickets), the current route is lost, leading to repeated input and frustration.
+Wireframing & Prototyping:
+- Sketched low/mid-fidelity wireframes
+- Built and tested interactive prototypes
+- Incorporated feedback from mentors and senior designers
+Sketched low/mid-fidelity wireframes
+Built and tested interactive prototypes
+Incorporated feedback from mentors and senior designers
+Usability Testing & Iteration
+- Conducted tests with target users to test new features.
+- Refined UI elements, simplified filters, and improved route continuity.
+- Iterated based on feedback, resulting in increased user satisfaction.
+Conducted tests with target users to test new features.
+Refined UI elements, simplified filters, and improved route continuity.
+Iterated based on feedback, resulting in increased user satisfaction.
+
+## Next Steps
+- Account Pages: Design and implement a structured account management system.
+Account Pages: Design and implement a structured account management system.
+- Ticket System Redesign: Simplify the 30+ ticket options into clear, manageable groups.
+- "Buy a Ticket for a Friend": Enable users to purchase and send tickets to non-tech-savvy visitors.
+- Station Info on Map: Allow users to tap on stations to view routes, transfers, and additional details.
+Ticket System Redesign: Simplify the 30+ ticket options into clear, manageable groups.
+"Buy a Ticket for a Friend": Enable users to purchase and send tickets to non-tech-savvy visitors.
+Station Info on Map: Allow users to tap on stations to view routes, transfers, and additional details.
+
+## Conclusion
+This redesign concept improves core usability by streamlining navigation, showing platform numbers clearly, and prioritizing features like saved routes. While map interaction is still a conceptual idea needing more testing, the project lays a solid foundation for a more user-friendly and reliable transit app.
+
+
+=========================================
+PROJECT ID: mealmate
+PAGE TITLE: Athos: Free UX Framer Template - Streamlining Ecommerce Navigation
+=========================================
+
+# MealMate
+Your personal online nutrition assistant
+My Role
+My Role
+Designer responsible for UX research, user flows, wireframes, and high-fidelity UI design.
+Team:
+Team:
+Guided by two Senior UI/UX designer peers.
+
+## Challenge
+- Finding recipes that match their dietary preferences and restrictions.
+- Understanding and maintaining a balanced diet.
+- Staying motivated to consistently track and improve nutrition habits.
+Finding recipes that match their dietary preferences and restrictions.
+Understanding and maintaining a balanced diet.
+Staying motivated to consistently track and improve nutrition habits.
+
+## Solutions
+- Custom Recipe Matching - Filter by diet, ingredients, and time.
+- Personalized Meal Suggestions - AI recommends meals based on diet and preferences.
+- Flexible Progress Tracking - Simple feedback and visual goals keep users motivated.
+Custom Recipe Matching - Filter by diet, ingredients, and time.
+Personalized Meal Suggestions - AI recommends meals based on diet and preferences.
+Flexible Progress Tracking - Simple feedback and visual goals keep users motivated.
+
+## Process
+- Research & Analysis: Examined market, competitors, and user pain points to shape core app features.
+- User Interviews: Identified the need for flexible, intuitive meal tracking and planning.
+- Hypothesis: Quick, adaptive, AI-driven meal suggestions can improve user engagement and consistency.
+- User Persona: Targeted busy professionals needing simple meal planning and progress tracking.
+- Wireframing & Prototyping: Developed and refined user flows through low- to mid-fidelity wireframes and testing.
+- Visual Design & Style Guide: Used clean typography, bright accents, and clear icons for readability and vibrancy.
+- Next Steps:Expand task flows based on user feedback.Further usability testing for design refinements.
+Research & Analysis: Examined market, competitors, and user pain points to shape core app features.
+User Interviews: Identified the need for flexible, intuitive meal tracking and planning.
+Hypothesis: Quick, adaptive, AI-driven meal suggestions can improve user engagement and consistency.
+User Persona: Targeted busy professionals needing simple meal planning and progress tracking.
+Wireframing & Prototyping: Developed and refined user flows through low- to mid-fidelity wireframes and testing.
+Visual Design & Style Guide: Used clean typography, bright accents, and clear icons for readability and vibrancy.
+Next Steps:
+Expand task flows based on user feedback.
+Further usability testing for design refinements.
+
+## Conclusion
+Mealmate streamlines meal tracking and promotes healthier habits. Our design, shaped by user interviews and competitor insights, focuses on intuitive navigation, quick logging, and engaging visual feedback. Early tests confirmed a clean layout and effective progress cues.
+
+
+=========================================
+PROJECT ID: kuckoo-configurator
+PAGE TITLE: Beer Box
+=========================================
+
+# Kuckoo configurator
+
+## Disclaimer
+Created in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio
+Industry
+Industry
+Travel & Leisure
+
+## My role
+Produced visual content for a camper configurator by translating manufacturer blueprints and CAD models into accurate 3D models and material setups using Blender. Created immersive 360° renders with custom AI-generated HDRI backgrounds that reflect the mood and context of the camper experience.
+Deliverables Included:
+- 360° interior renders
+- Custom HDRI background (AI-generated)
+- 3D modeling and rendering of camper components
+- Material setup and lighting design
+360° interior renders
+Custom HDRI background (AI-generated)
+3D modeling and rendering of camper components
+Material setup and lighting design
+The final visuals helped convey a realistic, appealing user experience and were approved by both the internal team and the client.
+360° Camper InteriorInteractive renders let users explore layout and material options in real time, reflecting real manufacturing choices for easier customization.
+360° Camper InteriorInteractive renders let users explore layout and material options in real time, reflecting real manufacturing choices for easier customization.
+
+## Tools
+
+### Blender
+
+### Photoshop
+
+## Thank you for Scrolling!
+[The project was a collaborative effort of UP Designstudio team](https://www.updesignstudio.de/en)
+
+
+=========================================
+PROJECT ID: caccaro-design-concept
+PAGE TITLE: Beer Box
+=========================================
+
+# CACCAROdesign concept
+
+## Disclaimer
+Designed a furniture concept for the Italian furniture brand Caccaro. The submission won first place and was selected by the company’s representatives
+Industry
+Industry
+Interior Design & Furniture
+
+## My role
+As one of two designers on the project, I developed the concept and produced all 3D visualizations for Caccaro, using 3ds Max and Photoshop. Beyond the renders, I led the initial research, created mood boards, and selected materials to ensure every detail aligned with Caccaro’s brand aesthetic. The final interior concept provided the factory with fresh stylistic ideas, earning first place and direct approval from the company’s representatives.
+
+## Thank you for Scrolling!
+
+
+=========================================
+PROJECT ID: online-configurator-for-smina-shelws
+PAGE TITLE: Beer Box
+=========================================
+
+# Online configurator for Smina Shelws
+
+## Disclaimer
+Created in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio
+Industry
+Industry
+Retail & Healthcare
+
+## My Role & Outcome
+I collaborated with another UX/UI designer and a developer to create the Smina shelf configurator. My responsibilities included:
+- Adapting and expanding an existing component library used across the website
+- Creating low-, mid-, and high-fidelity wireframes based on internal feedback and testing
+- Delivering final UI screens ready for development
+- Producing 3D renders and visual assets for all modular components featured in the configurator
+Adapting and expanding an existing component library used across the website
+Creating low-, mid-, and high-fidelity wireframes based on internal feedback and testing
+Delivering final UI screens ready for development
+Producing 3D renders and visual assets for all modular components featured in the configurator
+What went well:The visual design and user flow of the configurator were well-received and functioned effectively across the team.
+What was challenging:We initially underestimated the configurator’s complexity, requiring us to adapt and evolve the scope and design as we progressed.
+
+## Tools
+
+### Figma
+
+### Blender
+
+### Photoshop
+
+## Thank you for Scrolling!
+[The project was a collaborative effort of UP Designstudio team](https://www.updesignstudio.de/en)
+
+
+=========================================
+PROJECT ID: cgi-for-smina
+PAGE TITLE: Beer Box
+=========================================
+
+# CGI for Smina
+
+## Disclaimer
+Created in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio
+Industry
+Industry
+E-commerce, healthcare and medical equipment
+
+## My role
+This project highlights visual and spatial design work for Smina during my time at UP Design Studio, included:
+- Interior design concepts for new shop locations
+- Virtual staging to support the redesign of existing stores
+- 360 virtual walking tours
+- High-quality product renders used in advertising and internal presentations
+Interior design concepts for new shop locations
+Virtual staging to support the redesign of existing stores
+360 virtual walking tours
+High-quality product renders used in advertising and internal presentations
+These materials were developed to strengthen Smina’s brand presence both in physical retail environments and across digital platforms.
+
+## Tools
+
+### Photoshop
+
+### Matterport
+
+### Blender
+
+## Thank you for Scrolling!
+[The project was a collaborative effort of UP Designstudio team](https://www.updesignstudio.de/en)
+
+

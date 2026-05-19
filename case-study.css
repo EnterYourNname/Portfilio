@@ -1,0 +1,338 @@
+/* Project detail page — additive styles to portfolio.css.
+   Mobile-first, 393px canvas. Reuses .pk-* tokens; adds .cs-* for
+   case-study specific sections. */
+
+html, body { background: #efece5; }
+
+/* Case-study phone is shorter than the home phone (4702px) */
+.phone { min-height: 0; }
+
+/* Top toolbar with back-link */
+.cs-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 16px 24px 64px;
+}
+.cs-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: none; padding: 8px 0;
+  font: inherit; cursor: pointer; color: var(--ink);
+  font-size: 14px; letter-spacing: 0.023em;
+}
+.cs-back:hover .cs-back-label { text-decoration: underline; text-underline-offset: 3px; }
+.cs-back svg { width: 16px; height: 16px; }
+.cs-counter {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Hero title block */
+.cs-hero {
+  padding: 0 16px 32px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.cs-eyebrow-row {
+  display: flex; align-items: center; gap: 12px;
+}
+.cs-eyebrow-row .pk-mono { color: var(--ink); }
+.cs-eyebrow-row .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--orange);
+}
+.cs-title {
+  margin: 0;
+  font-size: 56px; font-weight: 700; line-height: 1.02;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.cs-title span { display: block; }
+.cs-hero .pk-tags { gap: 8px; }
+
+/* Hero image — full-bleed, near-square */
+.cs-hero-img {
+  width: 100%;
+  aspect-ratio: 393/440;
+  background-size: cover; background-position: center;
+  background-color: var(--cream);
+  box-shadow: 0 0 0 1px rgba(27,24,20,0.02) inset;
+}
+
+/* Hero video — same footprint as the image. Uses Vimeo "background"
+   embed mode (no controls, autoplay, loop, muted). The iframe is given
+   a 16:9 aspect ratio and sized to overhang the container, so the video
+   crops like background-size: cover regardless of its native ratio. */
+.cs-hero-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 393/440;
+  overflow: hidden;
+  background: var(--cream);
+}
+.cs-hero-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  /* Ensure we always cover, even if the container is wider than 16:9 */
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  pointer-events: none; /* it's a hero, not a player */
+}
+
+/* Meta grid — two rows on mobile, label/value flush left & right */
+.cs-meta {
+  padding: 32px 16px;
+  display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.cs-meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(27,24,20,0.10);
+  gap: 16px;
+}
+.cs-meta-row:last-child { border-bottom: none; }
+.cs-meta-label {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink-muted);
+  flex: 0 0 auto;
+}
+.cs-meta-value {
+  font-size: 16px; line-height: 1.4; letter-spacing: 0.01em;
+  color: var(--ink); text-align: right;
+  font-weight: 500;
+}
+
+/* Generic content section */
+.cs-section {
+  padding: 64px 16px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.cs-section .pk-mono { color: var(--ink); }
+.cs-section h2 {
+  margin: 0;
+  font-size: 36px; font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.005em; color: var(--ink);
+  max-width: 26ch;
+}
+.cs-section p {
+  margin: 0;
+  font-size: 16px; line-height: 1.6; letter-spacing: 0.01em;
+  color: var(--ink);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.cs-section p + p { margin-top: 12px; }
+
+/* Section that sits over the existing dark band style */
+.cs-section.dark {
+  background: var(--ink); color: var(--cream);
+}
+.cs-section.dark .pk-mono,
+.cs-section.dark h2,
+.cs-section.dark p { color: var(--cream); }
+.cs-section.dark .pk-mono { color: var(--orange); }
+
+/* Deliverables — numbered rows reminiscent of the skills list */
+.cs-deliverables {
+  display: flex; flex-direction: column; gap: 0;
+  margin-top: 8px;
+}
+.cs-del-row {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ink);
+}
+.cs-del-row:first-child { border-top: 1px solid var(--ink); }
+.cs-del-num {
+  font-size: 12px; letter-spacing: 0.033em;
+  color: var(--orange);
+  padding-top: 6px;
+}
+.cs-del-text {
+  font-size: 20px; line-height: 1.3;
+  font-weight: 500; letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+/* Gallery — mixed rhythm */
+.cs-gallery { display: flex; flex-direction: column; gap: 0; padding: 0 16px; }
+.cs-gal-item { display: flex; flex-direction: column; gap: 8px; }
+.cs-gallery .cs-gal-item:first-child { margin-bottom: 16px; }
+.cs-gal-figure {
+  width: 100%;
+  background-size: cover; background-position: center;
+  background-color: var(--cream-deep);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.cs-gal-figure.full   { aspect-ratio: 393/460; }
+.cs-gal-figure.tall   { aspect-ratio: 393/520; }
+.cs-gal-figure.wide   { aspect-ratio: 16/9; }
+.cs-gal-figure.square { aspect-ratio: 1/1; }
+.cs-gal-figure.half   { aspect-ratio: 180/220; }
+
+.cs-gal-caption {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0 16px 8px;
+  gap: 16px;
+}
+.cs-gal-caption .num {
+  font-size: 12px; letter-spacing: 0.033em;
+  color: var(--orange); flex: 0 0 auto;
+  visibility: hidden;
+}
+.cs-gal-caption .lbl {
+  font-size: 14px; letter-spacing: 0.023em;
+  color: var(--ink); text-align: right;
+}
+
+/* Pair row */
+.cs-gal-pair {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; padding: 0 16px;
+}
+.cs-gal-pair .cs-gal-figure { height: 100%; }
+
+/* Image placeholder hint (when src is missing) */
+.cs-gal-figure.placeholder {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(27,24,20,0.04) 0px,
+      rgba(27,24,20,0.04) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.cs-gal-figure.placeholder .ph-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-align: center; color: var(--ink-muted);
+}
+.cs-gal-figure.placeholder .ph-inner .ph-mono {
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink); opacity: 0.6;
+}
+.cs-gal-figure.placeholder .ph-inner .ph-note {
+  font-size: 12px; letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  max-width: 22ch; line-height: 1.4;
+}
+
+/* Tools row — small chips */
+.cs-tools {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 4px;
+}
+.cs-tool {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 36px; padding: 0 14px;
+  border: 1px solid var(--ink); border-radius: 99px;
+  background: transparent;
+  font-size: 14px; letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.cs-tool .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--orange);
+}
+.cs-tool-icon {
+  width: 18px; height: 18px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* Disclaimer card */
+.cs-disclaimer {
+  margin: 0 16px;
+  padding: 24px;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--paper);
+}
+.cs-disclaimer .pk-mono { color: var(--ink); }
+.cs-disclaimer p {
+  margin: 0;
+  font-size: 14px; line-height: 1.6; letter-spacing: 0.023em;
+  color: var(--ink);
+}
+
+/* Outro */
+.cs-outro {
+  padding: 64px 16px;
+  display: flex; flex-direction: column; gap: 32px;
+  align-items: stretch;
+  background: var(--paper);
+}
+.cs-outro h2 {
+  margin: 0;
+  font-size: 28px; font-weight: 700; line-height: 1.1;
+  letter-spacing: -0.005em; color: var(--ink);
+  max-width: 18ch;
+}
+.cs-outro .pk-mono { color: var(--ink-muted); }
+.cs-outro .pk-btn:not(.tertiary) { align-self: stretch; }
+
+/* Next project peek — sits on the paper above the manifesto */
+.cs-next {
+  padding: 32px 16px 64px;
+  display: flex; flex-direction: column; gap: 16px;
+  border-top: 1px solid var(--ink);
+}
+.cs-next-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.cs-next-head .pk-mono { color: var(--ink-muted); }
+.cs-next-card {
+  display: flex; gap: 16px; align-items: center;
+  background: none; border: none; padding: 0;
+  cursor: pointer; text-align: left; font: inherit; color: inherit;
+}
+.cs-next-card .img {
+  width: 96px; height: 96px; border-radius: 4px;
+  background-size: cover; background-position: center;
+  background-color: var(--cream-deep);
+  flex: 0 0 auto;
+  transition: transform 360ms var(--ease-out);
+}
+.cs-next-card:hover .img { transform: scale(1.04); }
+.cs-next-card .meta { display: flex; flex-direction: column; gap: 6px; }
+.cs-next-card .title { font-size: 20px; font-weight: 700; letter-spacing: -0.005em; line-height: 1.2; }
+.cs-next-card .sub {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Social links in the footer — the icons are full 32px circular SVGs
+   already, so the link is just a clickable bounding box. */
+.pk-social-link {
+  display: inline-flex;
+  width: 32px; height: 32px;
+  line-height: 0;
+  cursor: pointer;
+  transition: transform 200ms var(--ease-out);
+}
+.pk-social-link:hover { transform: scale(1.08); }
+.pk-social-link img { width: 32px; height: 32px; display: block; }
+
+/* Reading-progress hairline at very top, scrolls with body */
+.cs-progress {
+  position: sticky; top: 0; z-index: 30;
+  height: 2px; width: 100%;
+  background: rgba(27,24,20,0.06);
+}
+.cs-progress .bar {
+  height: 100%; width: 0%;
+  background: var(--orange);
+  transition: width 80ms linear;
+}

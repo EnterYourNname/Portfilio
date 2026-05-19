@@ -1,0 +1,262 @@
+/* Contact page — mobile-first (393px), form-only, centered on the page.
+   Reuses design-system tokens; adds .ct-* classes for contact-specific UI. */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font-sans); color: var(--ink); }
+
+.ct-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+.ct-phone {
+  width: 393px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(27, 24, 20, 0.18);
+  font-family: var(--font-sans);
+  color: var(--ink);
+}
+
+/* ─── Top toolbar (matches case-study + about) ────────────────── */
+.ct-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 16px 16px;
+}
+.ct-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: none; padding: 8px 0;
+  font: inherit; cursor: pointer; color: var(--ink);
+  font-size: 14px; letter-spacing: 0.023em;
+}
+.ct-back:hover .lbl { text-decoration: underline; text-underline-offset: 3px; }
+.ct-back svg { width: 16px; height: 16px; }
+.ct-counter {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ─── Hero block ──────────────────────────────────────────────── */
+.ct-hero {
+  padding: 24px 16px 16px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.ct-hero .pk-mono { color: var(--ink); }
+
+/* "Say [avatar] Hello" — inline avatar between words */
+.ct-hello {
+  margin: 0;
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 56px; line-height: 1;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.ct-hello .ct-star {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px;
+  color: var(--ink);
+  flex: 0 0 auto;
+}
+.ct-hello .ct-star svg { width: 100%; height: 100%; }
+
+.ct-lead {
+  margin: 0;
+  font-size: 16px; line-height: 1.6; letter-spacing: 0.01em;
+  color: var(--ink);
+  max-width: 32ch;
+  text-wrap: pretty;
+}
+
+/* Reply time + status row */
+.ct-status {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid rgba(27,24,20,0.06);
+  border-bottom: 1px solid rgba(27,24,20,0.06);
+}
+.ct-status .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--orange);
+  position: relative;
+}
+.ct-status .pulse::after {
+  content: ""; position: absolute; inset: -4px;
+  border-radius: 50%; border: 1px solid var(--orange);
+  opacity: 0.5;
+  animation: ct-pulse 2.4s ease-out infinite;
+}
+@keyframes ct-pulse {
+  0%   { transform: scale(0.5); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.ct-status .lbl {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* ─── Form ────────────────────────────────────────────────────── */
+.ct-form {
+  padding: 32px 16px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.ct-field { display: flex; flex-direction: column; gap: 6px; }
+.ct-label {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink); padding-left: 4px;
+}
+.ct-label .req { color: var(--orange-warm); margin-left: 4px; }
+
+/* Single-line pill input */
+.ct-input {
+  height: 56px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 99px;
+  padding: 0 24px;
+  font-family: inherit;
+  font-size: 16px; letter-spacing: 0.01em; color: var(--ink);
+  transition: border-color 200ms var(--ease-out),
+              box-shadow   200ms var(--ease-out),
+              background   200ms var(--ease-out);
+  outline: none;
+}
+.ct-input::placeholder { color: var(--ink-muted); }
+.ct-input:hover { background: var(--paper); }
+.ct-input:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px rgba(255, 138, 54, 0.18);
+}
+.ct-input.is-error {
+  border-color: var(--orange-warm);
+  box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.12);
+}
+
+/* Phone with country prefix */
+.ct-phone-row {
+  display: flex; gap: 8px;
+}
+.ct-prefix {
+  flex: 0 0 auto;
+  height: 56px; padding: 0 16px;
+  background: #fff;
+  border-radius: 99px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 16px; color: var(--ink);
+  cursor: default;
+}
+.ct-prefix .flag {
+  width: 24px; height: 18px; border-radius: 2px;
+  background: linear-gradient(to bottom,
+              #000 0%,    #000 33%,
+              #DD0000 33%, #DD0000 66%,
+              #FFCE00 66%, #FFCE00 100%);
+  flex: 0 0 auto;
+}
+.ct-phone-row .ct-input { flex: 1 1 auto; }
+
+/* Multi-line textarea — breaks the pill rhythm intentionally, uses the
+   4px radius from the design system. */
+.ct-textarea {
+  width: 100%;
+  min-height: 140px;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 16px 20px;
+  font-family: inherit;
+  font-size: 16px; letter-spacing: 0.01em; line-height: 1.5; color: var(--ink);
+  resize: vertical;
+  transition: border-color 200ms var(--ease-out),
+              box-shadow   200ms var(--ease-out);
+  outline: none;
+}
+.ct-textarea::placeholder { color: var(--ink-muted); }
+.ct-textarea:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px rgba(255, 138, 54, 0.18);
+}
+.ct-textarea.is-error {
+  border-color: var(--orange-warm);
+  box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.12);
+}
+
+.ct-error {
+  font-size: 12px; letter-spacing: 0.023em;
+  color: var(--orange-warm);
+  padding: 0 4px;
+}
+
+/* Submit row */
+.ct-submit { margin-top: 8px; }
+
+/* ─── Direct contact: email + socials below form ─────────────── */
+.ct-direct {
+  padding: 16px 16px 64px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.ct-direct .pk-mono { color: var(--ink-muted); }
+.ct-email-link {
+  display: inline-flex; align-self: flex-start;
+  font-size: 18px; color: var(--ink);
+  border-bottom: 1px solid var(--ink); padding-bottom: 2px;
+  text-decoration: none;
+}
+.ct-socials {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 4px;
+}
+.ct-social {
+  display: inline-flex;
+  width: 40px; height: 40px;
+  line-height: 0;
+  background: var(--ink);
+  border-radius: 50%;
+  transition: transform 200ms var(--ease-out);
+}
+.ct-social:hover { transform: scale(1.06); }
+.ct-social img { width: 40px; height: 40px; display: block; }
+
+/* ─── Success state ───────────────────────────────────────────── */
+.ct-success {
+  padding: 32px 16px 64px;
+  display: flex; flex-direction: column; gap: 24px;
+  min-height: 420px;
+  animation: ct-fade-in 480ms var(--ease-out);
+}
+@keyframes ct-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ct-success .pk-mono { color: var(--orange); }
+.ct-success h2 {
+  margin: 0;
+  font-size: 36px; font-weight: 700; line-height: 1.1;
+  letter-spacing: -0.005em; color: var(--ink);
+  max-width: 22ch;
+}
+.ct-success p {
+  margin: 0;
+  font-size: 16px; line-height: 1.6; letter-spacing: 0.01em;
+  max-width: 56ch; text-wrap: pretty;
+}
+.ct-success .checkmark {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--orange);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.ct-success .checkmark svg { width: 28px; height: 28px; stroke: var(--ink); }
+.ct-again {
+  display: inline-flex; align-self: flex-start;
+  background: none; border: none; padding: 8px 0;
+  font: inherit; cursor: pointer;
+  font-size: 16px; color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  text-underline-offset: 3px;
+  margin-top: 8px;
+}
