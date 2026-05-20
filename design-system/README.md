@@ -336,6 +336,16 @@ Project media folders should match the project id / slug:
 
 Inside each project folder, use `cr.*` for the card cover, `hr.*` for the project hero, and `g-01.*`, `g-02.*`, etc. for gallery images. If `hr.*` is missing, use `cr.*` as both cover and hero.
 
+For project heroes, the page automatically chooses a standard image frame from the image ratio. If an image is a wide UI mockup or the crop cuts important content, add `heroFit: "contain"` in `projects-data.js`. Use `heroPosition` only when a cover crop needs a manual focal point, for example `"center bottom"` or `"70% center"`.
+
+Project hero and gallery images use three standard responsive ratios:
+
+- `wide` -> `16 / 9`
+- `square` -> `1 / 1`
+- `portrait` -> `4 / 5`
+
+Use these same ratios for new project media layouts unless a specific design frame requires an exception.
+
 Icons live in `assets/icons/`. Use these before adding new icon files.
 
 Approved external icon source: Lucide icons from https://github.com/lucide-icons/lucide.git. New icons should match Lucide's simple stroke style unless the design system intentionally expands.

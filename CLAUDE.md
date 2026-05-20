@@ -141,6 +141,8 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - If a project folder has no `hr.*`, use `cr.*` as both cover and hero.
 - Use `g-01.*`, `g-02.*`, and following `g-*` files as gallery images in filename order.
 - Keep project folder names aligned with `PROJECT ID` / `slug` whenever possible.
+- Project hero frames auto-select from the source image ratio. If a wide UI mockup is badly cropped, set `heroFit: "contain"` in `projects-data.js`. Use `heroPosition` for manual focal points when keeping `cover`.
+- Project hero and gallery responsive ratios are: `wide` -> `16 / 9`, `square` -> `1 / 1`, `portrait` -> `4 / 5`.
 
 ## Buttons And Interaction
 

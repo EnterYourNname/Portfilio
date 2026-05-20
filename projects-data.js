@@ -8,7 +8,9 @@ const PORTFOLIO_PROJECTS = [
     tags: ["Web", "UI/UX"],
     meta: "Web Design | UI/UX",
     cover: "design-system/assets/beer-box/cr.webp",
-    hero: "design-system/assets/beer-box/hr.avif",
+    hero: "design-system/assets/beer-box/hr.avif?v=2",
+    heroFit: "contain",
+    heroPosition: "center center",
     gallery: [
       "design-system/assets/beer-box/g-01.avif",
       "design-system/assets/beer-box/g-02.avif",

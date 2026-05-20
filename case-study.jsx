@@ -134,8 +134,30 @@ function Toolbar({ project }) {
 }
 
 function HeroBlock({ project }) {
+  const [ratioClass, setRatioClass] = React.useState("auto");
+  const [lightboxSrc, setLightboxSrc] = React.useState(null);
+  const heroSrc = project.hero || project.cover;
+
+  React.useEffect(() => {
+    if (!heroSrc) return;
+
+    const image = new Image();
+    image.onload = () => {
+      const ratio = image.naturalWidth / image.naturalHeight;
+      if (ratio >= 1.45) {
+        setRatioClass("wide");
+      } else if (ratio <= 0.82) {
+        setRatioClass("portrait");
+      } else {
+        setRatioClass("square");
+      }
+    };
+    image.src = heroSrc;
+  }, [heroSrc]);
+
   return (
     <>
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
       <div className="cs-hero" data-screen-label="01 Hero">
         <div className="cs-eyebrow-row">
           <span className="pk-mono">{project.tags.join(" | ")}</span>
@@ -145,10 +167,13 @@ function HeroBlock({ project }) {
         </h1>
       </div>
       <div
-        className="cs-hero-img"
-        role="img"
-        aria-label={`${project.title} hero image`}
-        style={{ backgroundImage: `url('${project.hero || project.cover}')` }}
+        className={`cs-hero-img ${ratioClass} cs-zoomable`}
+        role="button"
+        tabIndex={0}
+        aria-label="View full image"
+        style={{ backgroundImage: `url('${heroSrc}')` }}
+        onClick={() => setLightboxSrc(heroSrc)}
+        onKeyDown={e => e.key === "Enter" && setLightboxSrc(heroSrc)}
       />
     </>
   );
@@ -175,10 +200,12 @@ function MetaBlock({ project }) {
 
 function Gallery({ project }) {
   const items = project.gallery || [];
+  const [lightboxSrc, setLightboxSrc] = React.useState(null);
   if (!items.length) return null;
 
   return (
     <section data-screen-label="03 Gallery">
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
       <div className="cs-section" style={{ paddingBottom: 24 }}>
         <div className="cs-gallery-head">
           <span className="pk-mono">Gallery</span>
@@ -187,16 +214,78 @@ function Gallery({ project }) {
       </div>
       <div className="cs-gallery">
         {items.map((src, index) => (
-          <div className="cs-gal-item" key={src}>
-            <div className="cs-gal-figure wide" style={{ backgroundImage: `url('${src}')` }} />
-            <div className="cs-gal-caption">
-              <span className="num">{String(index + 1).padStart(2, "0")}</span>
-              <span className="lbl">{project.title}</span>
-            </div>
-          </div>
+          <GalleryItem
+            key={src}
+            src={src}
+            number={String(index + 1).padStart(2, "0")}
+            label={project.title}
+            onOpen={setLightboxSrc}
+          />
         ))}
       </div>
     </section>
+  );
+}
+
+function GalleryItem({ src, number, label, onOpen }) {
+  const [ratioClass, setRatioClass] = React.useState("auto");
+
+  React.useEffect(() => {
+    const image = new Image();
+    image.onload = () => {
+      const ratio = image.naturalWidth / image.naturalHeight;
+      if (ratio >= 1.45) {
+        setRatioClass("wide");
+      } else if (ratio <= 0.82) {
+        setRatioClass("portrait");
+      } else {
+        setRatioClass("square");
+      }
+    };
+    image.src = src;
+  }, [src]);
+
+  return (
+    <div className="cs-gal-item">
+      <div
+        className={`cs-gal-figure ${ratioClass} cs-zoomable`}
+        style={{ backgroundImage: `url('${src}')` }}
+        role="button"
+        tabIndex={0}
+        aria-label="View full image"
+        onClick={() => onOpen(src)}
+        onKeyDown={e => e.key === "Enter" && onOpen(src)}
+      />
+      <div className="cs-gal-caption">
+        <span className="num">{number}</span>
+        <span className="lbl">{label}</span>
+      </div>
+    </div>
+  );
+}
+
+function Lightbox({ src, onClose }) {
+  React.useEffect(() => {
+    const handler = e => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  return (
+    <div className="cs-lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label="Full image">
+      <button className="cs-lightbox-close" onClick={onClose} aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+        </svg>
+      </button>
+      <img
+        className="cs-lightbox-img"
+        src={src}
+        alt=""
+        onClick={onClose}
+      />
+    </div>
   );
 }
 

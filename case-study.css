@@ -54,6 +54,16 @@ html, body { background: #efece5; }
   background-size: cover; background-position: center;
   background-color: var(--cream);
   box-shadow: 0 0 0 1px rgba(27,24,20,0.02) inset;
+  transition: aspect-ratio 240ms var(--ease-out);
+}
+.cs-hero-img.wide { aspect-ratio: 16 / 9; }
+.cs-hero-img.square { aspect-ratio: 1 / 1; }
+.cs-hero-img.portrait { aspect-ratio: 4 / 5; }
+.cs-hero-img.contain {
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-cream-50);
 }
 
 /* Hero video — same footprint as the image. Uses Vimeo "background"
@@ -192,11 +202,14 @@ html, body { background: #efece5; }
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+  transition: aspect-ratio 240ms var(--ease-out);
 }
 .cs-gal-figure.full   { aspect-ratio: 393/460; }
 .cs-gal-figure.tall   { aspect-ratio: 393/520; }
+.cs-gal-figure.auto   { aspect-ratio: 16/9; }
 .cs-gal-figure.wide   { aspect-ratio: 16/9; }
 .cs-gal-figure.square { aspect-ratio: 1/1; }
+.cs-gal-figure.portrait { aspect-ratio: 4/5; }
 .cs-gal-figure.half   { aspect-ratio: 180/220; }
 
 .cs-gal-caption {
@@ -345,6 +358,52 @@ html, body { background: #efece5; }
 }
 .pk-social-link:hover { transform: scale(1.08); }
 .pk-social-link img { width: 32px; height: 32px; display: block; }
+
+/* Zoomable image hint */
+.cs-zoomable { cursor: zoom-in; }
+
+/* Lightbox overlay */
+.cs-lightbox {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(27, 24, 20, 0.92);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  cursor: zoom-out;
+  animation: lb-fade-in 180ms var(--ease-out) both;
+}
+@keyframes lb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.cs-lightbox-img {
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: zoom-out;
+  box-shadow: 0 24px 64px rgba(27,24,20,0.5);
+  animation: lb-scale-in 200ms var(--ease-out) both;
+}
+@keyframes lb-scale-in {
+  from { transform: scale(0.96); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.cs-lightbox-close {
+  position: fixed; top: 20px; right: 20px;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,245,232,0.12);
+  border: 1px solid rgba(255,245,232,0.25);
+  border-radius: 99px;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background 160ms var(--ease-out), transform 160ms var(--ease-out);
+  z-index: 301;
+}
+.cs-lightbox-close:hover {
+  background: rgba(255,245,232,0.22);
+  transform: scale(1.08);
+}
 
 /* Reading-progress hairline at very top, scrolls with body */
 .cs-progress {
