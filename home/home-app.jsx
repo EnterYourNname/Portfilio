@@ -67,14 +67,22 @@ const PlayIcon = () => (
 // Header
 // ────────────────────────────────────────────────────────────────
 
-function HmHeader({ onMenuClick, menuOpen }) {
+function HmHeader({ onMenuClick, menuOpen, compact }) {
   return (
-    <header className="pk-header">
-      <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
-        <HmMenuIcon />
-      </button>
-    </header>
+    <React.Fragment>
+      <div className="pk-avatar hm-site-avatar" aria-label="Andrii B." />
+      <header className={`pk-header${compact ? " is-compact" : ""}`}>
+        <nav className="hm-desktop-nav" aria-label="Primary navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="index.html#work">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
+          <HmMenuIcon />
+        </button>
+      </header>
+    </React.Fragment>
   );
 }
 
@@ -96,9 +104,8 @@ function HmHero() {
         loop 
         muted 
         playsInline 
-        poster="design-system/assets/hero-bg-motion-blur.jpg.jpg"
-        ref={el => { if (el) el.playbackRate = 0.5; }}>
-        <source src="design-system/assets/hero-bg-motion-blur.mp4?v=2" type="video/mp4" />
+        poster="design-system/assets/hero-bg-motion-blur-Image.jpg">
+        <source src="design-system/assets/hero-bg-motion-blur.mp4?v=4" type="video/mp4" />
       </video>
       <div className="hm-hero-content">
         <FadeCascade>
@@ -188,13 +195,13 @@ function HmProjects() {
   const total = String(matchingProjects.length).padStart(2, "0");
 
   return (
-    <section id="work" className="hm-section">
+    <section id="work" className="hm-section hm-work-section" aria-labelledby="work-title">
       <div className="hm-section-head">
         <span className="pk-mono">Projects</span>
         <span className="hm-section-count">{count} / {total}</span>
       </div>
-      <h2 className="hm-section-title">Work.</h2>
-      <div className="hm-chips">
+      <h2 id="work-title" className="hm-section-title">Work.</h2>
+      <div className="hm-chips" role="group" aria-label="Project filters">
         {PROJECT_FILTERS.map(filter => (
           <button
             key={filter}
@@ -210,7 +217,7 @@ function HmProjects() {
           </button>
         ))}
       </div>
-      <div className="hm-projects">
+      <div className="hm-projects" aria-live="polite">
         {visibleProjects.map(p => <ProjectCard key={p.id} project={p} />)}
       </div>
       {matchingProjects.length > 3 && (
@@ -238,6 +245,64 @@ function HmProjects() {
 // ────────────────────────────────────────────────────────────────
 // Experience
 // ────────────────────────────────────────────────────────────────
+
+function HmFeaturedProject() {
+  const projects = window.PORTFOLIO_PROJECTS || [];
+  const project = projects.find(item => item.id === "mealmate") || projects[0];
+
+  if (!project) return null;
+
+  const featuredImages = [project.hero || project.cover, ...(project.gallery || [])]
+    .filter(Boolean)
+    .slice(0, 4);
+
+  return (
+    <section className="hm-featured-section" aria-labelledby="featured-project-title">
+      <div className="hm-featured-copy">
+        <span className="pk-mono">Featured project</span>
+        <h2 id="featured-project-title" className="hm-featured-title">{project.title}</h2>
+        <div className="hm-featured-tags" aria-label="Project categories">
+          <span>{project.industry}</span>
+          <span>{project.role}</span>
+        </div>
+        <p>
+          A nutrition product concept focused on clear meal tracking, personal goals,
+          and readable health feedback across mobile screens.
+        </p>
+        <a className="pk-link" href={project.href}>
+          View full project <HmArrowRight size={14} />
+        </a>
+      </div>
+
+      <dl className="hm-featured-facts" aria-label={`${project.title} project details`}>
+        <div>
+          <dt>Industry</dt>
+          <dd>{project.industry}</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>{project.role}</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>{project.tools}</dd>
+        </div>
+      </dl>
+
+      <div className="hm-featured-gallery" aria-label={`${project.title} preview images`}>
+        {featuredImages.map((src, index) => (
+          <a
+            key={`${src}-${index}`}
+            className={`hm-featured-img hm-featured-img-${index + 1}`}
+            href={project.href}
+            aria-label={`Open ${project.title} case study`}
+            style={{ backgroundImage: `url('${src}')` }}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function HmExperience() {
   return (
@@ -338,12 +403,28 @@ function HmFooter({ onScrollTop }) {
 
 function HomeApp() {
   const [navOpen, setNavOpen] = React.useState(false);
+  const [navCompact, setNavCompact] = React.useState(false);
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  React.useEffect(() => {
+    const updateNavMode = () => {
+      const scrollY = window.scrollY || 0;
+      setNavCompact(current => {
+        if (!current && scrollY > 120) return true;
+        if (current && scrollY < 64) return false;
+        return current;
+      });
+    };
+
+    updateNavMode();
+    window.addEventListener("scroll", updateNavMode, { passive: true });
+    return () => window.removeEventListener("scroll", updateNavMode);
+  }, []);
 
   return (
     <div className="hm-shell">
       <div className="hm-phone">
-        <HmHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+        <HmHeader menuOpen={navOpen} compact={navCompact} onMenuClick={() => setNavOpen(true)} />
 
         {/* Shared nav overlay — loaded via nav/nav.jsx */}
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
@@ -351,6 +432,7 @@ function HomeApp() {
         <HmTicker />
         <HmReel />
         <HmProjects />
+        <HmFeaturedProject />
         <HmExperience />
         <HmSkills />
         <HmFooter onScrollTop={scrollTop} />
