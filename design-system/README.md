@@ -81,7 +81,7 @@ Use one visible `h1` per page. Major sections use `h2`; project titles and list 
 
 ### Spacing
 
-Use the 4 px grid. Common values are 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, and 96 px.
+Use the 4 px grid. Common values are 4, 8, 12, 16, 24, 32, 40, and 48 px. 64 px is not a valid section margin or padding value.
 
 Mobile pages use 16 px side gutters. Spacing between neighboring sections must be no more than 48 px from each section side, so the combined gap between two sections must never exceed 96 px.
 
@@ -96,6 +96,10 @@ Mobile spacing rules for this portfolio:
 | Section eyebrow to heading | `8px` |
 | Heading to main content | `24px` or `32px` |
 | Related text lines or meta rows | `4px` or `8px` |
+| Case-study chapter label to content | `16px` |
+| Case-study text chapter to next text chapter | `48px` |
+| Case-study image row before/after text | `32px` |
+| Case-study image row internal gap | `16px` |
 | Button/icon gap | `8px` |
 | Button groups/chip rows | `8px` to `12px` |
 | Project card media to title/meta | `16px` |
@@ -345,6 +349,12 @@ Project hero and gallery images use three standard responsive ratios:
 - `portrait` -> `4 / 5`
 
 Use these same ratios for new project media layouts unless a specific design frame requires an exception.
+
+Gallery image captions are hidden by default on project pages. Keep the caption markup available, but only show image numbers and descriptions for a specific project when `showGalleryCaptions: true` is set in `projects-data.js`.
+
+Gallery image stacks use a `16px` vertical gap between image items when captions are hidden. Do not rely on caption height to create image spacing.
+
+When a gallery block is inserted between text sections, use `32px` outside spacing before and after the image row. Text chapter to text chapter uses `48px`, while the chapter label stays close to its own body copy with a `16px` internal gap. This follows the proximity rule: related information sits closer together than separate topics.
 
 Icons live in `assets/icons/`. Use these before adding new icon files.
 

@@ -109,7 +109,16 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
   color: var(--ink); padding-left: 4px;
 }
-.ct-label .req { color: var(--orange-warm); margin-left: 4px; }
+.ct-label .req { color: var(--orange-text); margin-left: 4px; }
+.ct-optional { color: var(--ink-muted); text-transform: none; letter-spacing: 0.01em; }
+.ct-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Single-line pill input */
 .ct-input {
@@ -131,6 +140,11 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-input:focus {
   border-color: var(--ink);
   box-shadow: 0 0 0 4px rgba(255, 138, 54, 0.18);
+}
+.ct-input:disabled,
+.ct-textarea:disabled {
+  cursor: wait;
+  opacity: 0.72;
 }
 .ct-input.is-error {
   border-color: var(--orange-warm);
@@ -188,16 +202,31 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 
 .ct-error {
   font-size: 12px; letter-spacing: 0.023em;
-  color: var(--orange-warm);
+  color: var(--orange-text);
   padding: 0 4px;
+}
+.ct-submit-error {
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--orange-text);
+  border-radius: 4px;
+  background: rgba(255, 107, 74, 0.08);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--ink);
 }
 
 /* Submit row */
 .ct-submit { margin-top: 8px; }
+.ct-submit:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
 
 /* ─── Direct contact: email + socials below form ─────────────── */
 .ct-direct {
-  padding: 16px 16px 64px;
+  padding: 16px 16px 48px;
   display: flex; flex-direction: column; gap: 16px;
 }
 .ct-direct .pk-mono { color: var(--ink-muted); }
@@ -224,8 +253,10 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 
 /* ─── Success state ───────────────────────────────────────────── */
 .ct-success {
-  padding: 32px 16px 64px;
+  padding: 56px 24px 48px;
   display: flex; flex-direction: column; gap: 24px;
+  align-items: center;
+  text-align: center;
   min-height: 420px;
   animation: ct-fade-in 480ms var(--ease-out);
 }
@@ -233,7 +264,12 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.ct-success .pk-mono { color: var(--orange); }
+.ct-success .pk-mono {
+  color: var(--orange-text);
+  font-size: var(--type-size-row-title);
+  line-height: var(--type-line-row-title);
+  letter-spacing: 0.01em;
+}
 .ct-success h2 {
   margin: 0;
   font-size: 36px; font-weight: 700; line-height: 1.1;
@@ -243,7 +279,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-success p {
   margin: 0;
   font-size: 16px; line-height: 1.6; letter-spacing: 0.01em;
-  max-width: 56ch; text-wrap: pretty;
+  max-width: 34ch; text-wrap: pretty;
 }
 .ct-success .checkmark {
   width: 56px; height: 56px; border-radius: 50%;
@@ -252,11 +288,19 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 }
 .ct-success .checkmark svg { width: 28px; height: 28px; stroke: var(--ink); }
 .ct-again {
-  display: inline-flex; align-self: flex-start;
+  display: inline-flex; align-self: center;
   background: none; border: none; padding: 8px 0;
   font: inherit; cursor: pointer;
   font-size: 16px; color: var(--ink);
   border-bottom: 1px solid var(--ink);
   text-underline-offset: 3px;
   margin-top: 8px;
+}
+.ct-again:focus-visible,
+.ct-back:focus-visible,
+.ct-submit:focus-visible,
+.ct-email-link:focus-visible,
+.ct-social:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
 }

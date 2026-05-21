@@ -3,24 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About me — Andrii B.</title>
-  <link rel="stylesheet" href="design-system/colors_and_type.css" />
-  <link rel="stylesheet" href="design-system/portfolio.css?v=7" />
-  <link rel="stylesheet" href="nav/nav.css" />
-  <link rel="stylesheet" href="about/about.css" />
+  <title>About Andrii Borysov | UI/UX & 3D Designer Stuttgart</title>
+  <meta name="description" content="Learn about Andrii Borysov, a UI/UX Designer and 3D Designer based in Stuttgart, Germany, working remotely across web, product, brand, and 3D design." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://andriiborysov.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Andrii Borysov Portfolio" />
+  <meta property="og:title" content="About Andrii Borysov | UI/UX & 3D Designer Stuttgart" />
+  <meta property="og:description" content="Stuttgart-based UI/UX Designer and 3D Designer with experience across web, product, brand, interiors, and 3D visualization." />
+  <meta property="og:url" content="https://andriiborysov.com/about.html" />
+  <meta property="og:image" content="https://andriiborysov.com/design-system/assets/portrait-andrew.jpg" />
+  <meta property="og:image:width" content="960" />
+  <meta property="og:image:height" content="1280" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Andrii Borysov | UI/UX & 3D Designer Stuttgart" />
+  <meta name="twitter:description" content="UI/UX Designer and 3D Designer based in Stuttgart, Germany, available for remote collaboration." />
+  <meta name="twitter:image" content="https://andriiborysov.com/design-system/assets/portrait-andrew.jpg" />
+  <link rel="icon" type="image/png" href="design-system/assets/site-icon.png" />
+  <link rel="apple-touch-icon" href="design-system/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="dns-prefetch" href="//unpkg.com" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": "https://andriiborysov.com/about.html#about",
+      "url": "https://andriiborysov.com/about.html",
+      "name": "About Andrii Borysov",
+      "description": "About Andrii Borysov, a UI/UX Designer and 3D Designer based in Stuttgart, Germany.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://andriiborysov.com/#person"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="design-system/colors_and_type.css?v=3" />
+  <link rel="stylesheet" href="design-system/portfolio.css?v=8" />
+  <link rel="stylesheet" href="nav/nav.css?v=5" />
+  <link rel="stylesheet" href="about/about.css?v=4" />
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="root"></div>
 
   <!-- 1. Shared nav overlay -->
-  <script type="text/babel" src="nav/nav.jsx"></script>
+  <script type="text/babel" src="nav/nav.jsx?v=3"></script>
 
   <!-- 2. About page app -->
-  <script type="text/babel" src="about/about-app.jsx"></script>
+  <script type="text/babel" src="components/animations.jsx?v=1"></script>
+  <script type="text/babel" src="about/about-app.jsx?v=8"></script>
 
   <script type="text/babel" data-presets="env,react">
     const root = ReactDOM.createRoot(document.getElementById("root"));

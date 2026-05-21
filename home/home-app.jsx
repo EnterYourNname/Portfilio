@@ -9,8 +9,8 @@ const EMAIL = "andrii.b.design@gmail.com";
 const EXPERIENCE = [
   { role: "Visual Designer",               place: "Neuffer GmbH & Co. KG", dates: "05.26 – present" },
   { role: "Freelance 3D & UI/UX Designer", place: "Freelance",             dates: "03.25 – 04.26" },
-  { role: "Communication designer",        place: "UP Designstudio",       dates: "Mar 2023 – Sep 2024" },
-  { role: "3D, Interior designer",         place: "Spotless Agency",       dates: "Dec 2018 – Mar 2023" },
+  { role: "Communication Designer",        place: "UP Designstudio",       dates: "Mar 2023 – Sep 2024" },
+  { role: "3D & Interior Designer",        place: "Spotless Agency",       dates: "Dec 2018 – Mar 2023" },
   { role: "Product Designer",              place: "Merx",                  dates: "Dec 2018 – Nov 2019" },
 ];
 
@@ -67,11 +67,11 @@ const PlayIcon = () => (
 // Header
 // ────────────────────────────────────────────────────────────────
 
-function HmHeader({ onMenuClick }) {
+function HmHeader({ onMenuClick, menuOpen }) {
   return (
     <header className="pk-header">
       <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" aria-label="Open menu" onClick={onMenuClick}>
+      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
         <HmMenuIcon />
       </button>
     </header>
@@ -96,21 +96,24 @@ function HmHero() {
         loop 
         muted 
         playsInline 
-        poster="design-system/assets/hero-bg-motion-blur.jpg.jpg">
-        <source src="design-system/assets/hero-bg-motion-blur.mp4" type="video/mp4" />
+        poster="design-system/assets/hero-bg-motion-blur.jpg.jpg"
+        ref={el => { if (el) el.playbackRate = 0.5; }}>
+        <source src="design-system/assets/hero-bg-motion-blur.mp4?v=2" type="video/mp4" />
       </video>
       <div className="hm-hero-content">
-        <span className="hm-eyebrow">Hi, I&rsquo;m Andrew</span>
-        <h1 className="hm-headline">
-          Digital Experience<br />Designer
-        </h1>
-        <p className="hm-lead">
-          Designer with <strong>7 years</strong> across UI/UX, 3D &amp; brand. Stuttgart, DE. 🚀
-        </p>
-        <a className="pk-btn hm-hero-cta" href="contact.html">
-          Contact me
-          <HmArrowRight />
-        </a>
+        <FadeCascade>
+          <span className="hm-eyebrow">Hi, I&rsquo;m Andrii</span>
+          <h1 className="hm-headline">
+            Digital Experience<br />Designer
+          </h1>
+          <p className="hm-lead">
+            Designer with <strong>7 years</strong> across UI/UX, 3D &amp; brand. Stuttgart, DE. 🚀
+          </p>
+          <a className="pk-btn hm-hero-cta" href="contact.html">
+            Contact me
+            <HmArrowRight />
+          </a>
+        </FadeCascade>
       </div>
     </section>
   );
@@ -140,10 +143,15 @@ function HmTicker() {
 
 function HmReel() {
   const open = () => window.open("https://vimeo.com/1082557519", "_blank");
+  const openFromKeyboard = (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault();
+    open();
+  };
   return (
     <div className="hm-reel" role="button" tabIndex={0}
       aria-label="Play work reel" onClick={open}
-      onKeyDown={e => e.key === "Enter" && open()}>
+      onKeyDown={openFromKeyboard}>
       <div className="hm-reel-img" />
       <div className="hm-reel-overlay">
         <div className="hm-reel-play"><PlayIcon /></div>
@@ -301,15 +309,15 @@ function HmFooter({ onScrollTop }) {
         </div>
       </div>
       <div className="pk-footer-black">
-        <button className="pk-btn tertiary on-dark" onClick={onScrollTop}>
+        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={onScrollTop}>
           Back to top <HmArrowUp />
         </button>
         <div className="pk-contact-row">
           <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="https://behance.net" aria-label="Behance" target="_blank" rel="noopener">
+          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/behance.svg"  alt="" width="32" height="32" />
           </a>
-          <a className="pk-social-link" href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
           </a>
         </div>
@@ -335,7 +343,7 @@ function HomeApp() {
   return (
     <div className="hm-shell">
       <div className="hm-phone">
-        <HmHeader onMenuClick={() => setNavOpen(true)} />
+        <HmHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
 
         {/* Shared nav overlay — loaded via nav/nav.jsx */}
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />

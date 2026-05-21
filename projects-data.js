@@ -34,7 +34,7 @@ Customers had trouble finding unique beers locally, trusting freshness online, a
 ## Result
 The final concept creates a relaxed e-commerce experience that makes beer discovery, bulk ordering, and doorstep delivery feel clear and easy.
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "vvs",
@@ -75,7 +75,7 @@ The redesign creates a cleaner transit experience with easier route planning, cl
 - Support buying tickets for another person.
 - Add tappable station and route information on the map.
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "mealmate",
@@ -110,13 +110,13 @@ Designer responsible for UX research, user flows, wireframes, and high-fidelity 
 - Flexible Progress Tracking - Simple feedback and visual goals keep users motivated.
 
 ## Conclusion
-Mealmate streamlines meal tracking and promotes healthier habits through intuitive navigation, quick logging, and engaging visual feedback.
+MealMate streamlines meal tracking and promotes healthier habits through intuitive navigation, quick logging, and engaging visual feedback.
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "kuckoo-configurator",
-    title: "Kuckoo configurator",
+    title: "Kuckoo Configurator",
     industry: "Travel & Leisure",
     role: "3D & UI/UX Design",
     tools: "Blender, Photoshop",
@@ -129,16 +129,16 @@ Mealmate streamlines meal tracking and promotes healthier habits through intuiti
       "design-system/assets/kuckoo-configurator/g-02.jpg",
       "design-system/assets/kuckoo-configurator/g-03.jpg",
     ],
-    body: `# Kuckoo configurator
+    body: `# Kuckoo Configurator
 
 ## Disclaimer
 Created in collaboration with the UP Design Studio team during my time there. All rights belong to UP Designstudio.
 
-## My role
+## My Role
 Produced visual content for a camper configurator by translating manufacturer blueprints and CAD models into accurate 3D models and material setups using Blender.
 
 ## Deliverables
-- 360 degree interior renders.
+- 360-degree interior renders.
 - Custom AI-generated HDRI background.
 - 3D modeling and rendering of camper components.
 - Material setup and lighting design.
@@ -146,11 +146,11 @@ Produced visual content for a camper configurator by translating manufacturer bl
 ## Tools
 Blender, Photoshop
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "caccaro-design-concept",
-    title: "CACCARO design concept",
+    title: "CACCARO Design Concept",
     industry: "Interior Design & Furniture",
     role: "3D & Interior Design",
     tools: "3ds Max, Photoshop",
@@ -162,18 +162,18 @@ Blender, Photoshop
       "design-system/assets/caccaro-design-concept/g-01.jpg",
       "design-system/assets/caccaro-design-concept/g-02.jpg",
     ],
-    body: `# CACCARO design concept
+    body: `# CACCARO Design Concept
 
 ## Disclaimer
 Designed a furniture concept for the Italian furniture brand Caccaro. The submission won first place and was selected by the company representatives.
 
-## My role
+## My Role
 As one of two designers on the project, I developed the concept and produced all 3D visualizations using 3ds Max and Photoshop.
 
 ## Tools
 3ds Max, Photoshop
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "online-configurator-for-smina-shelws",
@@ -210,7 +210,7 @@ I worked on both the interface and the visual content for the configurator. My r
 ## Tools
 Figma, Blender, Photoshop
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "poster-for-smina",
@@ -240,7 +240,7 @@ I created the product renders and visual presentation for postcard-style adverti
 ## Tools
 Blender, Photoshop
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
   {
     id: "private-house-interior-concept",
@@ -271,7 +271,7 @@ I worked closely with the architect and another interior designer to shape the v
 ## Tools
 3ds Max, Photoshop
 
-## Thank you for Scrolling!`,
+## Thank you for scrolling.`,
   },
 ];
 

@@ -10,7 +10,7 @@ html, body { background: #efece5; }
 /* Top toolbar with back-link */
 .cs-toolbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 64px 16px 24px 16px;
+  padding: 48px 16px 24px 16px;
 }
 .cs-back {
   display: inline-flex; align-items: center; gap: 8px;
@@ -54,7 +54,6 @@ html, body { background: #efece5; }
   background-size: cover; background-position: center;
   background-color: var(--cream);
   box-shadow: 0 0 0 1px rgba(27,24,20,0.02) inset;
-  transition: aspect-ratio 240ms var(--ease-out);
 }
 .cs-hero-img.wide { aspect-ratio: 16 / 9; }
 .cs-hero-img.square { aspect-ratio: 1 / 1; }
@@ -118,9 +117,16 @@ html, body { background: #efece5; }
 
 /* Generic content section */
 .cs-section {
-  padding: 64px 16px;
-  display: flex; flex-direction: column; gap: 24px;
+  margin: 0;
+  padding: 0 16px;
+  display: flex; flex-direction: column; gap: 16px;
 }
+/* Vertical rhythm belongs between modules, not inside the section box. */
+.cs-meta + .cs-section { margin-top: 48px; }
+.cs-section + .cs-section { margin-top: 48px; }
+.cs-section + .cs-gallery-early,
+.cs-gallery-early + .cs-section { margin-top: 32px; }
+.cs-section + .cs-gallery-section { margin-top: 48px; }
 .cs-section .pk-mono { color: var(--ink); }
 .cs-section h2 {
   margin: 0;
@@ -176,7 +182,7 @@ html, body { background: #efece5; }
 .cs-del-row:first-child { border-top: 1px solid var(--ink); }
 .cs-del-num {
   font-size: 12px; letter-spacing: 0.033em;
-  color: var(--orange);
+  color: var(--orange-text);
   padding-top: 6px;
 }
 .cs-del-text {
@@ -186,7 +192,15 @@ html, body { background: #efece5; }
 }
 
 /* Gallery — mixed rhythm */
-.cs-gallery { display: flex; flex-direction: column; gap: 0; padding: 0 16px; }
+.cs-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0 16px;
+}
+.cs-gallery-section .cs-section { margin-top: 0; }
+.cs-gallery-section .cs-gallery { margin-top: 16px; padding-bottom: 32px; }
 .cs-gallery-head {
   display: flex;
   justify-content: space-between;
@@ -194,7 +208,6 @@ html, body { background: #efece5; }
   gap: 16px;
 }
 .cs-gal-item { display: flex; flex-direction: column; gap: 8px; }
-.cs-gallery .cs-gal-item:first-child { margin-bottom: 16px; }
 .cs-gal-figure {
   width: 100%;
   background-size: cover; background-position: center;
@@ -202,7 +215,6 @@ html, body { background: #efece5; }
   border-radius: 4px;
   position: relative;
   overflow: hidden;
-  transition: aspect-ratio 240ms var(--ease-out);
 }
 .cs-gal-figure.full   { aspect-ratio: 393/460; }
 .cs-gal-figure.tall   { aspect-ratio: 393/520; }
@@ -213,13 +225,14 @@ html, body { background: #efece5; }
 .cs-gal-figure.half   { aspect-ratio: 180/220; }
 
 .cs-gal-caption {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: none; justify-content: space-between; align-items: baseline;
   padding: 0 16px 8px;
   gap: 16px;
 }
+.cs-gal-caption.is-visible { display: flex; }
 .cs-gal-caption .num {
   font-size: 12px; letter-spacing: 0.033em;
-  color: var(--orange); flex: 0 0 auto;
+  color: var(--orange-text); flex: 0 0 auto;
 }
 .cs-gal-caption .lbl {
   font-size: 14px; letter-spacing: 0.023em;
@@ -302,7 +315,7 @@ html, body { background: #efece5; }
 
 /* Outro */
 .cs-outro {
-  padding: 64px 16px;
+  padding: 48px 16px;
   display: flex; flex-direction: column; gap: 32px;
   align-items: stretch;
   background: var(--paper);
@@ -318,7 +331,7 @@ html, body { background: #efece5; }
 
 /* Next project peek — sits on the paper above the manifesto */
 .cs-next {
-  padding: 32px 16px 64px;
+  padding: 32px 16px;
   display: flex; flex-direction: column; gap: 16px;
   border-top: 1px solid var(--ink);
 }

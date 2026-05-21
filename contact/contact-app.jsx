@@ -3,6 +3,7 @@
 
 const AVATAR = "design-system/assets/avatar.jpg";
 const EMAIL = "andrii.b.design@gmail.com";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbdbgonk";
 
 // ────────────────────────────────────────────────────────────────
 // Icons
@@ -55,19 +56,28 @@ const StarIcon = ({ size = 56 }) =>
 // Header
 // ────────────────────────────────────────────────────────────────
 
-function CtHeader({ onMenuClick }) {
+function CtHeader({ onMenuClick, menuOpen }) {
   return (
     <header className="pk-header" style={{ position: "static" }}>
       <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" aria-label="Open menu" onClick={onMenuClick}><CtMenuIcon /></button>
+      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}><CtMenuIcon /></button>
     </header>);
 
 }
 
 function CtToolbar() {
+  const goBack = () => {
+    const currentDir = window.location.href.split("/").slice(0, -1).join("/");
+    if (document.referrer && document.referrer.startsWith(currentDir)) {
+      history.back();
+      return;
+    }
+    location.href = "index.html";
+  };
+
   return (
     <div className="ct-toolbar">
-      <button className="ct-back" onClick={() => history.back()}>
+      <button className="ct-back" type="button" onClick={goBack}>
         <CtArrowLeft />
         <span className="lbl">Back</span>
       </button>
@@ -83,52 +93,128 @@ function CtToolbar() {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function ContactForm({ onSent }) {
+  const nameRef = React.useRef(null);
+  const emailRef = React.useRef(null);
+  const messageRef = React.useRef(null);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [website, setWebsite] = React.useState("");
   const [errors, setErrors] = React.useState({});
+  const [submitError, setSubmitError] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const validate = () => {
     const e = {};
     if (!name.trim()) e.name = "Please add your name.";
-    if (!email.trim()) e.email = "Email is required.";else
-    if (!EMAIL_RE.test(email)) e.email = "That doesn't look like a valid email.";
+    if (!email.trim()) {
+      e.email = "Email is required.";
+    } else if (!EMAIL_RE.test(email)) {
+      e.email = "That doesn't look like a valid email.";
+    }
     if (!message.trim()) e.message = "A short note helps me reply faster.";
     return e;
   };
 
-  const onSubmit = (ev) => {
+  const focusFirstError = (e) => {
+    const refs = { name: nameRef, email: emailRef, message: messageRef };
+    const firstKey = ["name", "email", "message"].find((key) => e[key]);
+    if (firstKey) refs[firstKey].current?.focus();
+  };
+
+  const formatPhone = (value) => {
+    const trimmed = value.trim();
+    if (!trimmed) return "";
+    return trimmed.startsWith("+") ? trimmed : `+49 ${trimmed}`;
+  };
+
+  const onSubmit = async (ev) => {
     ev.preventDefault();
+    setSubmitError("");
+
     const e = validate();
     setErrors(e);
-    if (Object.keys(e).length === 0) {
-      onSent({ name, email, phone, message });
+
+    if (Object.keys(e).length > 0) {
+      focusFirstError(e);
+      return;
+    }
+
+    if (website.trim()) return;
+
+    const formData = new FormData();
+    formData.append("name", name.trim());
+    formData.append("email", email.trim());
+    formData.append("phone", formatPhone(phone));
+    formData.append("message", message.trim());
+    formData.append("_replyto", email.trim());
+    formData.append("_subject", `Portfolio contact from ${name.trim()}`);
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree did not accept the message.");
+      }
+
+      onSent({
+        name: name.trim(),
+        email: email.trim(),
+        phone: formatPhone(phone),
+        message: message.trim(),
+      });
+    } catch (error) {
+      setSubmitError(`Something went wrong. Please email me directly at ${EMAIL}.`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   // Clear an individual field's error as the user types
   const clearError = (key) => {
+    if (submitError) setSubmitError("");
     if (errors[key]) setErrors((prev) => {
       const next = { ...prev };delete next[key];return next;
     });
   };
 
   return (
-    <form className="ct-form" onSubmit={onSubmit} noValidate style={{ padding: "32px 16px" }}>
-      {/* Full name */}
+    <form className="ct-form" onSubmit={onSubmit} noValidate>
+      <input
+        className="ct-honeypot"
+        type="text"
+        name="_gotcha"
+        tabIndex="-1"
+        autoComplete="off"
+        aria-hidden="true"
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+      />
+
+      {/* Name */}
       <div className="ct-field">
         <label className="ct-label" htmlFor="ct-name">
-          Full name<span className="req">*</span>
+          Name<span className="req">*</span>
         </label>
         <input
-          id="ct-name" type="text" autoComplete="name"
+          ref={nameRef}
+          id="ct-name" name="name" type="text" autoComplete="name" required
+          maxLength="80"
+          aria-invalid={errors.name ? "true" : "false"}
+          aria-describedby={errors.name ? "ct-name-error" : undefined}
           className={"ct-input" + (errors.name ? " is-error" : "")}
-          placeholder="Andrii Borysov"
+          placeholder="Alex Morgan"
           value={name}
+          disabled={isSubmitting}
           onChange={(e) => {setName(e.target.value);clearError("name");}} />
         
-        {errors.name && <span className="ct-error">{errors.name}</span>}
+        {errors.name && <span className="ct-error" id="ct-name-error">{errors.name}</span>}
       </div>
 
       {/* Email */}
@@ -137,29 +223,36 @@ function ContactForm({ onSent }) {
           Email<span className="req">*</span>
         </label>
         <input
-          id="ct-email" type="email" autoComplete="email" inputMode="email"
+          ref={emailRef}
+          id="ct-email" name="email" type="email" autoComplete="email" inputMode="email" required
+          maxLength="120"
+          aria-invalid={errors.email ? "true" : "false"}
+          aria-describedby={errors.email ? "ct-email-error" : undefined}
           className={"ct-input" + (errors.email ? " is-error" : "")}
           placeholder="name@example.com"
           value={email}
+          disabled={isSubmitting}
           onChange={(e) => {setEmail(e.target.value);clearError("email");}} />
         
-        {errors.email && <span className="ct-error">{errors.email}</span>}
+        {errors.email && <span className="ct-error" id="ct-email-error">{errors.email}</span>}
       </div>
 
       {/* Phone (optional) */}
       <div className="ct-field">
-        <label className="ct-label" htmlFor="ct-phone">Phone number</label>
+        <label className="ct-label" htmlFor="ct-phone">Phone number <span className="ct-optional">(optional)</span></label>
         <div className="ct-phone-row">
           <div className="ct-prefix" aria-label="Country code: Germany">
             <span className="flag" aria-hidden="true" />
             <span>+49</span>
           </div>
           <input
-            id="ct-phone" type="tel" autoComplete="tel" inputMode="tel"
+            id="ct-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel"
+            maxLength="30"
             className="ct-input"
             placeholder="151 234 5678"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)} />
+            disabled={isSubmitting}
+            onChange={(e) => {setPhone(e.target.value);if (submitError) setSubmitError("");}} />
           
         </div>
       </div>
@@ -170,19 +263,26 @@ function ContactForm({ onSent }) {
           Message<span className="req">*</span>
         </label>
         <textarea
-          id="ct-message" rows={5}
+          ref={messageRef}
+          id="ct-message" name="message" rows={5} required
+          maxLength="2000"
+          aria-invalid={errors.message ? "true" : "false"}
+          aria-describedby={errors.message ? "ct-message-error" : undefined}
           className={"ct-textarea" + (errors.message ? " is-error" : "")}
           placeholder="Tell me a bit about what you have in mind."
           value={message}
+          disabled={isSubmitting}
           onChange={(e) => {setMessage(e.target.value);clearError("message");}} />
         
-        {errors.message && <span className="ct-error">{errors.message}</span>}
+        {errors.message && <span className="ct-error" id="ct-message-error">{errors.message}</span>}
       </div>
 
       {/* Submit */}
-      <button type="submit" className="pk-btn ct-submit">
+      {submitError && <p className="ct-submit-error" role="alert" aria-live="polite">{submitError}</p>}
+
+      <button type="submit" className="pk-btn ct-submit" disabled={isSubmitting}>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-          Send
+          {isSubmitting ? "Sending" : "Send"}
           <CtArrowRight />
         </span>
       </button>
@@ -195,16 +295,17 @@ function ContactForm({ onSent }) {
 // ────────────────────────────────────────────────────────────────
 
 function SuccessState({ name, onAgain }) {
+  const firstName = name.trim().split(/\s+/)[0];
   return (
-    <section className="ct-success" data-screen-label="04 Sent">
+    <section className="ct-success" data-screen-label="04 Sent" role="status" aria-live="polite">
       <span className="checkmark" aria-hidden="true"><CtCheck /></span>
       <span className="pk-mono">Sent</span>
-      <h2>{name ? `Thanks, ${name.split(" ")[0]}.` : "Thanks for reaching out."}</h2>
+      <h2>{firstName ? `Thanks, ${firstName}.` : "Thanks for reaching out."}</h2>
       <p>
         Your note is on its way. I&rsquo;ll get back to you within 24&ndash;48 hours,
         usually sooner. Meanwhile, feel free to dig around the rest of the work.
       </p>
-      <button className="ct-again" onClick={onAgain}>Send another message</button>
+      <button className="ct-again" type="button" onClick={onAgain}>Send another message</button>
     </section>);
 
 }
@@ -219,10 +320,10 @@ function DirectContact() {
       <span className="pk-mono">Or skip the form</span>
       <a className="ct-email-link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
       <div className="ct-socials">
-        <a className="ct-social" href="#behance" aria-label="Behance">
+        <a className="ct-social" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
           <img src="design-system/assets/icons/behance.svg" alt="" width="40" height="40" />
         </a>
-        <a className="ct-social" href="#linkedin" aria-label="LinkedIn">
+        <a className="ct-social" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
           <img src="design-system/assets/icons/linkedin.svg" alt="" width="40" height="40" />
         </a>
       </div>
@@ -249,13 +350,13 @@ function CtManifestoFooter() {
         </div>
       </div>
       <div className="pk-footer-black">
-        <button className="pk-btn tertiary on-dark" onClick={scrollTop}>Back to top <CtArrowUp /></button>
+        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={scrollTop}>Back to top <CtArrowUp /></button>
         <div className="pk-contact-row">
           <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="#behance" aria-label="Behance">
+          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
           </a>
-          <a className="pk-social-link" href="#linkedin" aria-label="LinkedIn">
+          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
           </a>
         </div>
@@ -302,19 +403,23 @@ function ContactApp() {
     <div className="ct-shell">
       <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
       <div className="ct-phone" data-screen-label="Contact">
-        <CtHeader onMenuClick={() => setNavOpen(true)} />
+        <CtHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <CtToolbar />
 
-        <section className="ct-hero" data-screen-label="01 Hero">
-          <span className="pk-mono">Contact</span>
-          <h1 className="ct-hello">
-            <span className="ct-star" aria-hidden="true"><StarIcon /></span>
-            <span>Let&rsquo;s Talk!</span>
-          </h1>
-          <p className="ct-lead">
-            Feel free to contact me for collaboration, questions, or just to say hi!
-          </p>
-        </section>
+        {!sent && (
+          <section className="ct-hero" data-screen-label="01 Hero">
+            <FadeCascade>
+              <span className="pk-mono">Contact</span>
+              <h1 className="ct-hello">
+                <span className="ct-star" aria-hidden="true"><StarIcon /></span>
+                <span>Let&rsquo;s Talk!</span>
+              </h1>
+              <p className="ct-lead">
+                Feel free to contact me for collaboration, questions, or just to say hi!
+              </p>
+            </FadeCascade>
+          </section>
+        )}
 
         {sent ?
         <SuccessState name={sentBy} onAgain={handleAgain} /> :

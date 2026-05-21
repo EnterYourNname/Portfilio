@@ -7,10 +7,10 @@
 // ────────────────────────────────────────────────────────────────
 
 const ABOUT = {
-  name: "Andrew",
+  name: "Andrii",
   location: "Stuttgart, DE",
   yearsXp: "7 years",
-  nowRole: "Visual designer",
+  nowRole: "Visual Designer",
   nowPlace: "Neuffer",
   langs: "English · Ukrainian · German",
   available: "Open to freelance",
@@ -30,9 +30,10 @@ const ABOUT = {
 
 
   experience: [
-  { role: "Freelance 3D & UI/UX Designer", place: "Freelance", dates: "03.25 - 01.26" },
-  { role: "Communication designer", place: "UP Designstudio", dates: "Mar 2023 - Sep 2024" },
-  { role: "3D, Interior designer", place: "Spotless Agency", dates: "Dec 2018 - Mar 2023" },
+  { role: "Visual Designer", place: "Neuffer GmbH & Co. KG", dates: "05.26 - present" },
+  { role: "Freelance 3D & UI/UX Designer", place: "Freelance", dates: "03.25 - 04.26" },
+  { role: "Communication Designer", place: "UP Designstudio", dates: "Mar 2023 - Sep 2024" },
+  { role: "3D & Interior Designer", place: "Spotless Agency", dates: "Dec 2018 - Mar 2023" },
   { role: "Product Designer", place: "Merx", dates: "Dec 2018 - Nov 2019" }],
 
 
@@ -77,11 +78,11 @@ stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="ro
 // Shared sub-components
 // ────────────────────────────────────────────────────────────────
 
-function AmHeader({ onMenuClick }) {
+function AmHeader({ onMenuClick, menuOpen }) {
   return (
     <header className="am-header">
       <div className="am-avatar" aria-label="Andrii B." />
-      <button className="am-menu-btn" aria-label="Open menu" onClick={onMenuClick}><AmMenuIcon /></button>
+      <button className="am-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}><AmMenuIcon /></button>
     </header>);
 
 }
@@ -139,13 +140,13 @@ function AmManifestoFooter() {
         </div>
       </div>
       <div className="pk-footer-black">
-        <button className="pk-btn tertiary on-dark" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to top <AmArrowUp /></button>
+        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to top <AmArrowUp /></button>
         <div className="pk-contact-row">
           <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="#behance" aria-label="Behance">
+          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
           </a>
-          <a className="pk-social-link" href="#linkedin" aria-label="LinkedIn">
+          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
             <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
           </a>
         </div>
@@ -169,32 +170,32 @@ function AboutPage() {
   return (
     <div className="am-shell">
       <div className="am-phone" data-screen-label="About me">
-        <AmHeader onMenuClick={() => setNavOpen(true)} />
+        <AmHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
 
-        <section className="am-intro" style={{ paddingBottom: 16 }} data-screen-label="01 Intro">
-          <span className="pk-mono">About me</span>
-          <h1 className="am-display" style={{ fontSize: 42 }}>Hi, I&rsquo;m Andrew</h1>
-        </section>
+        <FadeCascade>
+          <section className="am-intro" style={{ paddingBottom: 16 }} data-screen-label="01 Intro">
+            <span className="pk-mono">About me</span>
+            <h1 className="am-display" style={{ fontSize: 42 }}>Hi, I&rsquo;m Andrii</h1>
+          </section>
 
-        <div className="am-portrait square inset"
-        style={{ backgroundImage: `url('${PORTRAIT}')` }}
-        aria-label="Portrait of Andrew" />
+          <div className="am-portrait square inset"
+          style={{ backgroundImage: `url('${PORTRAIT}')` }}
+          aria-label="Portrait of Andrii" />
 
-        <section className="am-section" style={{ paddingTop: 32, paddingBottom: 8 }} data-screen-label="02 Lead">
-          <p className="am-lead">Visual storyteller from Stuttgart. Seven years across UI/UX, 3D, and Interior design - with one eye on what AI does to craft.
+          <section className="am-section" style={{ paddingTop: 32, paddingBottom: 8 }} data-screen-label="02 Lead">
+            <p className="am-lead">Visual storyteller from Stuttgart. Seven years across UI/UX, 3D, and interior design - with one eye on what AI does to craft.
+            </p>
+          </section>
 
-
-          </p>
-        </section>
-
-        <div className="am-meta" data-screen-label="03 Meta">
-          <div className="am-meta-row"><span className="lbl">Location</span><span className="val">{ABOUT.location}</span></div>
-          <div className="am-meta-row"><span className="lbl">Now</span><span className="val">{ABOUT.nowRole} · {ABOUT.nowPlace}</span></div>
-          <div className="am-meta-row"><span className="lbl">Experience</span><span className="val">{ABOUT.yearsXp}</span></div>
-          <div className="am-meta-row"><span className="lbl">Languages</span><span className="val">{ABOUT.langs}</span></div>
-          <div className="am-meta-row"><span className="lbl">Available</span><span className="val">{ABOUT.available}</span></div>
-        </div>
+          <div className="am-meta" data-screen-label="03 Meta">
+            <div className="am-meta-row"><span className="lbl">Location</span><span className="val">{ABOUT.location}</span></div>
+            <div className="am-meta-row"><span className="lbl">Now</span><span className="val">{ABOUT.nowRole} · {ABOUT.nowPlace}</span></div>
+            <div className="am-meta-row"><span className="lbl">Experience</span><span className="val">{ABOUT.yearsXp}</span></div>
+            <div className="am-meta-row"><span className="lbl">Languages</span><span className="val">{ABOUT.langs}</span></div>
+            <div className="am-meta-row"><span className="lbl">Available</span><span className="val">{ABOUT.available}</span></div>
+          </div>
+        </FadeCascade>
 
         <section className="am-section" data-screen-label="04 Skills">
           <span className="pk-mono">Skills</span>

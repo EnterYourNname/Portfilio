@@ -143,7 +143,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   background: var(--paper);
   display: flex; flex-direction: column; gap: 8px;
 }
-.am-now .pk-mono { color: var(--orange); }
+.am-now .pk-mono { color: var(--orange-text); }
 .am-now .role {
   font-size: 22px; font-weight: 700; letter-spacing: -0.005em; line-height: 1.25;
 }
@@ -193,7 +193,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   font-size: 22px; font-weight: 400; letter-spacing: 0.01em;
 }
 .am-beyond-row .num {
-  font-size: 12px; letter-spacing: 0.033em; color: var(--orange);
+  font-size: 12px; letter-spacing: 0.033em; color: var(--orange-text);
 }
 
 /* ─── Skills list (compact) ───────────────────────────────────── */
@@ -204,7 +204,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   border-bottom: 1px solid var(--ink);
 }
 .am-skill .name { font-size: 28px; line-height: 1.2; letter-spacing: 0.01em; }
-.am-skill .num { font-size: 12px; letter-spacing: 0.033em; color: var(--orange); padding-top: 6px; }
+.am-skill .num { font-size: 12px; letter-spacing: 0.033em; color: var(--orange-text); padding-top: 6px; }
 
 /* Variation B compact skills: tertiary buttons (per design-system spec) */
 .am-skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }

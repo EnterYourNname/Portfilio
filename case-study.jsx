@@ -42,6 +42,18 @@ function projectIndex(project) {
   return Math.max(0, PROJECTS.findIndex(item => item.id === project.id));
 }
 
+// Split gallery into early (before text) and late (after text) groups.
+// ≤3 images  → no split, all go at the end.
+// 4–8 images → last 3 always at end; rest go early.
+// >8 images  → equal halves (ceiling in early, floor in late).
+function galleryGroups(images) {
+  const total = images.length;
+  if (total <= 3) return { early: [], late: images };
+  if (total <= 8) return { early: images.slice(0, total - 3), late: images.slice(total - 3) };
+  const mid = Math.ceil(total / 2);
+  return { early: images.slice(0, mid), late: images.slice(mid) };
+}
+
 function splitTitle(title) {
   const words = title.split(" ");
   if (words.length < 3) return [title];
@@ -108,11 +120,11 @@ function MarkdownSection({ section }) {
   );
 }
 
-function CsHeader({ onMenuClick }) {
+function CsHeader({ onMenuClick, menuOpen }) {
   return (
     <header className="pk-header">
       <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" aria-label="Open menu" onClick={onMenuClick}>
+      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
         <MenuIcon />
       </button>
     </header>
@@ -133,47 +145,46 @@ function Toolbar({ project }) {
   );
 }
 
-function HeroBlock({ project }) {
+function HeroBlock({ project, onOpen }) {
   const [ratioClass, setRatioClass] = React.useState("auto");
-  const [lightboxSrc, setLightboxSrc] = React.useState(null);
   const heroSrc = project.hero || project.cover;
 
   React.useEffect(() => {
     if (!heroSrc) return;
-
     const image = new Image();
     image.onload = () => {
       const ratio = image.naturalWidth / image.naturalHeight;
-      if (ratio >= 1.45) {
-        setRatioClass("wide");
-      } else if (ratio <= 0.82) {
-        setRatioClass("portrait");
-      } else {
-        setRatioClass("square");
-      }
+      if (ratio >= 1.45) setRatioClass("wide");
+      else if (ratio <= 0.82) setRatioClass("portrait");
+      else setRatioClass("square");
     };
     image.src = heroSrc;
   }, [heroSrc]);
 
   return (
     <>
-      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
       <div className="cs-hero" data-screen-label="01 Hero">
-        <div className="cs-eyebrow-row">
-          <span className="pk-mono">{project.tags.join(" | ")}</span>
-        </div>
-        <h1 className="cs-title">
-          {splitTitle(project.title).map(line => <span key={line}>{line}</span>)}
-        </h1>
+        <FadeCascade>
+          <div className="cs-eyebrow-row">
+            <span className="pk-mono">{project.tags.join(" | ")}</span>
+          </div>
+          <h1 className="cs-title">
+            {splitTitle(project.title).map(line => <span key={line}>{line}</span>)}
+          </h1>
+        </FadeCascade>
       </div>
       <div
         className={`cs-hero-img ${ratioClass} cs-zoomable`}
         role="button"
         tabIndex={0}
-        aria-label="View full image"
+        aria-label={`View ${project.title} hero image full size`}
         style={{ backgroundImage: `url('${heroSrc}')` }}
-        onClick={() => setLightboxSrc(heroSrc)}
-        onKeyDown={e => e.key === "Enter" && setLightboxSrc(heroSrc)}
+        onClick={() => onOpen(heroSrc)}
+        onKeyDown={e => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          e.preventDefault();
+          onOpen(heroSrc);
+        }}
       />
     </>
   );
@@ -198,28 +209,48 @@ function MetaBlock({ project }) {
   );
 }
 
-function Gallery({ project }) {
-  const items = project.gallery || [];
-  const [lightboxSrc, setLightboxSrc] = React.useState(null);
+// Early images block — no header, sits between Meta and body text.
+function GalleryEarly({ items, startIndex, project, onOpen }) {
   if (!items.length) return null;
-
+  const showCaptions = project.showGalleryCaptions === true;
   return (
-    <section data-screen-label="03 Gallery">
-      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
-      <div className="cs-section" style={{ paddingBottom: 24 }}>
+    <div className="cs-gallery cs-gallery-early">
+      {items.map((src, i) => (
+        <GalleryItem
+          key={src}
+          src={src}
+          number={String(startIndex + i + 1).padStart(2, "0")}
+          label={`${project.title} image ${startIndex + i + 1}`}
+          onOpen={onOpen}
+          showCaption={showCaptions}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Main gallery block — shows header with total image count.
+function Gallery({ project, items, totalCount, startIndex, onOpen }) {
+  if (!items || !items.length) return null;
+  const total = totalCount || items.length;
+  const showCaptions = project.showGalleryCaptions === true;
+  return (
+    <section className="cs-gallery-section" data-screen-label="03 Gallery">
+      <div className="cs-section">
         <div className="cs-gallery-head">
           <span className="pk-mono">Gallery</span>
-          <span className="pk-mono">{String(items.length).padStart(2, "0")} images</span>
+          <span className="pk-mono">{String(total).padStart(2, "0")} images</span>
         </div>
       </div>
       <div className="cs-gallery">
-        {items.map((src, index) => (
+        {items.map((src, i) => (
           <GalleryItem
             key={src}
             src={src}
-            number={String(index + 1).padStart(2, "0")}
-            label={project.title}
-            onOpen={setLightboxSrc}
+            number={String((startIndex || 0) + i + 1).padStart(2, "0")}
+            label={`${project.title} image ${(startIndex || 0) + i + 1}`}
+            onOpen={onOpen}
+            showCaption={showCaptions}
           />
         ))}
       </div>
@@ -227,7 +258,7 @@ function Gallery({ project }) {
   );
 }
 
-function GalleryItem({ src, number, label, onOpen }) {
+function GalleryItem({ src, number, label, onOpen, showCaption }) {
   const [ratioClass, setRatioClass] = React.useState("auto");
 
   React.useEffect(() => {
@@ -252,11 +283,15 @@ function GalleryItem({ src, number, label, onOpen }) {
         style={{ backgroundImage: `url('${src}')` }}
         role="button"
         tabIndex={0}
-        aria-label="View full image"
+        aria-label={`View ${label} full size`}
         onClick={() => onOpen(src)}
-        onKeyDown={e => e.key === "Enter" && onOpen(src)}
+        onKeyDown={e => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          e.preventDefault();
+          onOpen(src);
+        }}
       />
-      <div className="cs-gal-caption">
+      <div className={`cs-gal-caption${showCaption ? " is-visible" : ""}`}>
         <span className="num">{number}</span>
         <span className="lbl">{label}</span>
       </div>
@@ -337,16 +372,16 @@ function ContactBlock() {
 function FooterBlack({ onBackTop }) {
   return (
     <div className="pk-footer-black">
-      <button className="pk-btn tertiary on-dark" onClick={onBackTop}>
+      <button className="pk-link" style={{ color: "var(--cream)" }} onClick={onBackTop}>
         Back to top
         <ArrowUp />
       </button>
       <div className="pk-contact-row">
         <span className="lbl">Get in contact</span>
-        <a className="pk-social-link" href="https://behance.net" aria-label="Behance" target="_blank" rel="noopener">
+        <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
           <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
         </a>
-        <a className="pk-social-link" href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
           <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
         </a>
       </div>
@@ -403,11 +438,12 @@ function Progress() {
 
 function CaseStudyApp() {
   const [navOpen, setNavOpen] = React.useState(false);
+  const [lightboxSrc, setLightboxSrc] = React.useState(null);
   const project = currentProject();
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   React.useEffect(() => {
-    if (project) document.title = `${project.title} | Andrii B.`;
+    if (project) document.title = `${project.title} | Andrii Borysov`;
   }, [project]);
 
   if (!project) {
@@ -423,19 +459,40 @@ function CaseStudyApp() {
     );
   }
 
+  const allImages = project.gallery || [];
+  const { early, late } = galleryGroups(allImages);
+  const sections = parseMarkdown(project.body);
+  const [firstSection, ...restSections] = sections;
+
   return (
     <div className="app-shell">
       <div className="phone" data-screen-label={`Project | ${project.title}`}>
         <Progress />
-        <CsHeader onMenuClick={() => setNavOpen(true)} />
+        {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
+        <CsHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
         <Toolbar project={project} />
-        <HeroBlock project={project} />
+        <HeroBlock project={project} onOpen={setLightboxSrc} />
         <MetaBlock project={project} />
-        {parseMarkdown(project.body).map(section => (
+        {firstSection && <MarkdownSection key={firstSection.title} section={firstSection} />}
+        {early.length > 0 && (
+          <GalleryEarly
+            items={early}
+            startIndex={0}
+            project={project}
+            onOpen={setLightboxSrc}
+          />
+        )}
+        {restSections.map(section => (
           <MarkdownSection key={section.title} section={section} />
         ))}
-        <Gallery project={project} />
+        <Gallery
+          project={project}
+          items={late}
+          totalCount={allImages.length}
+          startIndex={early.length}
+          onOpen={setLightboxSrc}
+        />
         <NextProject project={project} />
         <FooterSection onBackTop={scrollTop} />
       </div>

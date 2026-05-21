@@ -16,6 +16,12 @@ This folder contains the portfolio website and its local design system. The desi
 - `nav/` - shared navigation overlay
 - `design-system/` - tokens, shared component styles, fonts, icons, and image assets
 
+## Spacing Rule
+
+Maximum section padding is **48 px per side**. Never use 64 px as a section margin or padding — 48 px is the ceiling. The combined gap between two neighboring sections must never exceed 96 px. Internal gaps between related items (text, list rows, meta cells) follow the 4 px grid and are always smaller than the section edge padding.
+
+Project case-study pages use proximity to make content groups clear: a chapter label stays close to its own content with a **16 px** internal gap, text chapter to text chapter uses a **48 px** gap, and image rows sit between text sections with **32 px** outside spacing. Inside image rows, gallery images use a **16 px** gap.
+
 ## Build Rule
 
 All new website work should start from the local design system:

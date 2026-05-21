@@ -1,4 +1,4 @@
-# Claude Website Design System Rules
+# Codex Website Design System Rules
 
 Use this file as the working contract for building and editing the website in this folder.
 
