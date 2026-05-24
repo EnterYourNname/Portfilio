@@ -37,43 +37,29 @@ The final concept creates a relaxed e-commerce experience that makes beer discov
 ## Thank you for scrolling.`,
   },
   {
-    id: "vvs",
-    title: "VVS",
-    industry: "Transportation App",
-    role: "UI/UX Design",
-    tools: "Figma",
-    tags: ["UI/UX"],
-    meta: "Mobile App | UI/UX",
-    cover: "design-system/assets/vvs/cr.webp",
-    hero: "design-system/assets/vvs/hr.webp",
+    id: "caccaro-design-concept",
+    title: "CACCARO Design Concept",
+    industry: "Interior Design & Furniture",
+    role: "3D & Interior Design",
+    tools: "3ds Max, Photoshop",
+    tags: ["3D", "Interior"],
+    meta: "Interior | 3D",
+    cover: "design-system/assets/caccaro-design-concept/cr.jpg",
+    hero: "design-system/assets/caccaro-design-concept/cr.jpg",
     gallery: [
-      "design-system/assets/vvs/g-01.webp",
-      "design-system/assets/vvs/g-02.webp",
-      "design-system/assets/vvs/g-03.webp",
-      "design-system/assets/vvs/g-04.webp",
+      "design-system/assets/caccaro-design-concept/g-01.jpg",
+      "design-system/assets/caccaro-design-concept/g-02.jpg",
     ],
-    body: `# VVS
-VVS is a redesign concept for Stuttgart's regional public transport app, focused on clearer route planning and more reliable trip continuity.
+    body: `# CACCARO Design Concept
 
-Industry
-Transportation App
+## Disclaimer
+Designed a furniture concept for the Italian furniture brand Caccaro. The submission won first place and was selected by the company representatives.
 
-## Challenge
-The existing app had useful real-time transit data, but users struggled with unclear navigation, lost routes, weak hierarchy, and limited map interaction.
+## My Role
+As one of two designers on the project, I developed the concept and produced all 3D visualizations using 3ds Max and Photoshop.
 
-## Approach
-- Reviewed app-store feedback and public ratings to identify recurring pain points.
-- Prioritized platform visibility, saved routes, clearer departure and arrival states, and route continuity.
-- Reworked key screens through wireframes, prototypes, and user testing.
-
-## Result
-The redesign creates a cleaner transit experience with easier route planning, clearer station information, and a stronger foundation for future ticket and account features.
-
-## Next Steps
-- Simplify ticket selection.
-- Add account management.
-- Support buying tickets for another person.
-- Add tappable station and route information on the map.
+## Tools
+3ds Max, Photoshop
 
 ## Thank you for scrolling.`,
   },
@@ -149,29 +135,43 @@ Blender, Photoshop
 ## Thank you for scrolling.`,
   },
   {
-    id: "caccaro-design-concept",
-    title: "CACCARO Design Concept",
-    industry: "Interior Design & Furniture",
-    role: "3D & Interior Design",
-    tools: "3ds Max, Photoshop",
-    tags: ["3D", "Interior"],
-    meta: "Interior | 3D",
-    cover: "design-system/assets/caccaro-design-concept/cr.jpg",
-    hero: "design-system/assets/caccaro-design-concept/cr.jpg",
+    id: "vvs",
+    title: "VVS",
+    industry: "Transportation App",
+    role: "UI/UX Design",
+    tools: "Figma",
+    tags: ["UI/UX"],
+    meta: "Mobile App | UI/UX",
+    cover: "design-system/assets/vvs/cr.webp",
+    hero: "design-system/assets/vvs/hr.webp",
     gallery: [
-      "design-system/assets/caccaro-design-concept/g-01.jpg",
-      "design-system/assets/caccaro-design-concept/g-02.jpg",
+      "design-system/assets/vvs/g-01.webp",
+      "design-system/assets/vvs/g-02.webp",
+      "design-system/assets/vvs/g-03.webp",
+      "design-system/assets/vvs/g-04.webp",
     ],
-    body: `# CACCARO Design Concept
+    body: `# VVS
+VVS is a redesign concept for Stuttgart's regional public transport app, focused on clearer route planning and more reliable trip continuity.
 
-## Disclaimer
-Designed a furniture concept for the Italian furniture brand Caccaro. The submission won first place and was selected by the company representatives.
+Industry
+Transportation App
 
-## My Role
-As one of two designers on the project, I developed the concept and produced all 3D visualizations using 3ds Max and Photoshop.
+## Challenge
+The existing app had useful real-time transit data, but users struggled with unclear navigation, lost routes, weak hierarchy, and limited map interaction.
 
-## Tools
-3ds Max, Photoshop
+## Approach
+- Reviewed app-store feedback and public ratings to identify recurring pain points.
+- Prioritized platform visibility, saved routes, clearer departure and arrival states, and route continuity.
+- Reworked key screens through wireframes, prototypes, and user testing.
+
+## Result
+The redesign creates a cleaner transit experience with easier route planning, clearer station information, and a stronger foundation for future ticket and account features.
+
+## Next Steps
+- Simplify ticket selection.
+- Add account management.
+- Support buying tickets for another person.
+- Add tappable station and route information on the map.
 
 ## Thank you for scrolling.`,
   },

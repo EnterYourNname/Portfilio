@@ -52,12 +52,7 @@ const PORTRAIT = "design-system/assets/portrait-andrew.jpg";
 // Tiny inline icons
 // ────────────────────────────────────────────────────────────────
 
-const AmMenuIcon = ({ size = 18 }) =>
-<svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-stroke="#FFF5E8" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <line x1="4" y1="7" x2="20" y2="7" />
-    <line x1="4" y1="17" x2="20" y2="17" />
-  </svg>;
+
 
 const AmArrowRight = ({ size = 18 }) =>
 <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -78,14 +73,7 @@ stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="ro
 // Shared sub-components
 // ────────────────────────────────────────────────────────────────
 
-function AmHeader({ onMenuClick, menuOpen }) {
-  return (
-    <header className="am-header">
-      <div className="am-avatar" aria-label="Andrii B." />
-      <button className="am-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}><AmMenuIcon /></button>
-    </header>);
 
-}
 
 function AmSkillChips() {
   return (
@@ -118,49 +106,6 @@ function AmBeyondChips() {
 
 }
 
-function AmManifestoFooter() {
-  return (
-    <footer className="pk-footer-bg" style={{ marginTop: 0 }}>
-      <div className="pk-manifesto">
-        <span className="pk-mono">Manifesto</span>
-        <h2>{"Designing with\npurpose, always."}</h2>
-      </div>
-      <div className="pk-contact">
-        <div className="pk-contact-cta-shell">
-          <button className="pk-btn">
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-              Contact me
-              <AmArrowRight />
-            </span>
-          </button>
-        </div>
-        <div className="pk-email">
-          <span className="lbl">or send me an email</span>
-          <span className="addr">andrii.b.design@gmail.com</span>
-        </div>
-      </div>
-      <div className="pk-footer-black">
-        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to top <AmArrowUp /></button>
-        <div className="pk-contact-row">
-          <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
-          </a>
-          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
-          </a>
-        </div>
-        <nav className="pk-footer-nav">
-          <a href="index.html" style={{ color: "inherit", textDecoration: "none" }}>Home</a>
-          <a href="index.html#work" style={{ color: "inherit", textDecoration: "none" }}>Work</a>
-          <a href="about.html" style={{ color: "inherit", textDecoration: "none" }}>About</a>
-          <a href="contact.html" style={{ color: "inherit", textDecoration: "none" }}>Contact</a>
-        </nav>
-      </div>
-    </footer>);
-
-}
-
 // ────────────────────────────────────────────────────────────────
 // Page
 // ────────────────────────────────────────────────────────────────
@@ -170,39 +115,41 @@ function AboutPage() {
   return (
     <div className="am-shell">
       <div className="am-phone" data-screen-label="About me">
-        <AmHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+        <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
 
-        <FadeCascade>
-          <section className="am-intro" style={{ paddingBottom: 16 }} data-screen-label="01 Intro">
-            <span className="pk-mono">About me</span>
-            <h1 className="am-display" style={{ fontSize: 42 }}>Hi, I&rsquo;m Andrii</h1>
-          </section>
+        <div className="am-fade-grid">
+          <FadeCascade>
+            <section className="am-intro" style={{ paddingBottom: 16 }} data-screen-label="01 Intro">
+              <span className="pk-mono">About me</span>
+              <h1 className="am-display" style={{ fontSize: 42 }}>Hi, I&rsquo;m Andrii</h1>
+            </section>
 
-          <div className="am-portrait square inset"
-          style={{ backgroundImage: `url('${PORTRAIT}')` }}
-          aria-label="Portrait of Andrii" />
+            <div className="am-portrait square inset"
+            style={{ backgroundImage: `url('${PORTRAIT}')` }}
+            aria-label="Portrait of Andrii" />
 
-          <section className="am-section" style={{ paddingTop: 32, paddingBottom: 8 }} data-screen-label="02 Lead">
-            <p className="am-lead">Visual storyteller from Stuttgart. Seven years across UI/UX, 3D, and interior design - with one eye on what AI does to craft.
-            </p>
-          </section>
+            <section className="am-section am-lead-section" style={{ paddingTop: 32, paddingBottom: 8 }} data-screen-label="02 Lead">
+              <p className="am-lead">Visual storyteller from Stuttgart. Seven years across UI/UX, 3D, and interior design - with one eye on what AI does to craft.
+              </p>
+            </section>
 
-          <div className="am-meta" data-screen-label="03 Meta">
-            <div className="am-meta-row"><span className="lbl">Location</span><span className="val">{ABOUT.location}</span></div>
-            <div className="am-meta-row"><span className="lbl">Now</span><span className="val">{ABOUT.nowRole} · {ABOUT.nowPlace}</span></div>
-            <div className="am-meta-row"><span className="lbl">Experience</span><span className="val">{ABOUT.yearsXp}</span></div>
-            <div className="am-meta-row"><span className="lbl">Languages</span><span className="val">{ABOUT.langs}</span></div>
-            <div className="am-meta-row"><span className="lbl">Available</span><span className="val">{ABOUT.available}</span></div>
-          </div>
-        </FadeCascade>
+            <div className="am-meta" data-screen-label="03 Meta">
+              <div className="am-meta-row"><span className="lbl">Location</span><span className="val">{ABOUT.location}</span></div>
+              <div className="am-meta-row"><span className="lbl">Now</span><span className="val">{ABOUT.nowRole} · {ABOUT.nowPlace}</span></div>
+              <div className="am-meta-row"><span className="lbl">Experience</span><span className="val">{ABOUT.yearsXp}</span></div>
+              <div className="am-meta-row"><span className="lbl">Languages</span><span className="val">{ABOUT.langs}</span></div>
+              <div className="am-meta-row"><span className="lbl">Available</span><span className="val">{ABOUT.available}</span></div>
+            </div>
+          </FadeCascade>
+        </div>
 
         <section className="am-section" data-screen-label="04 Skills">
           <span className="pk-mono">Skills</span>
           <AmSkillChips />
         </section>
 
-        <AmManifestoFooter />
+        <SharedFooter onScrollTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
       </div>
     </div>);
 

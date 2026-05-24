@@ -4,7 +4,6 @@ Use this file as the working contract for building and editing the website in th
 
 ## Source Of Truth
 
-- Figma source: https://www.figma.com/design/as1HwwRAJ9aksu6yWCLvFl/FigmaMCP?node-id=166-1382
 - Primary frame: `166:1382` (`V02`, mobile 393 px wide; height must fit the live content)
 - Local tokens: `design-system/colors_and_type.css`
 - Shared UI patterns: `design-system/portfolio.css`
@@ -151,8 +150,8 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 ## Buttons And Interaction
 
 - Primary buttons must use `.pk-btn`; do not make another primary CTA style.
-- Default primary state: full-width or container-width `48px` high pill, `--ink` background, cream label, orange arrow.
-- Hover state: keep the dark pill, expand a centered `--orange` lozenge to 60% button width, switch label and arrow to ink, and add a small pop with `translateY(-2px) scale(1.012)` plus a soft shadow.
+- Default primary state: full-width or container-width `48px` high pill, no borders. Adapts to container: `--ink` fill on light backgrounds, `--cream` fill on dark backgrounds.
+- Hover state: keeps the default dark or light background, expands a centered `--orange` lozenge to 60% button width, switches label and arrow to ink, and adds a small pop with `translateY(-2px) scale(1.012)` plus a soft shadow.
 - Active state: full `--orange` pill, ink label and arrow, `scale(0.985)`, warm shadow.
 - Disabled state: `--hair` background, cream label at 60% opacity, hidden hover lozenge, no pop.
 - Only Primary may use the centered orange expansion/lozenge animation. Secondary and Tertiary buttons must not use an orange pseudo-element expanding from the center.

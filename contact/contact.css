@@ -9,14 +9,16 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 32px 0;
+  align-items: flex-start;
+  padding: 0;
 }
 .ct-phone {
-  width: 393px;
+  width: 100%;
+  min-width: 360px;
   background: var(--paper);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(27, 24, 20, 0.18);
+  box-shadow: none;
   font-family: var(--font-sans);
   color: var(--ink);
 }
@@ -24,7 +26,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 /* ─── Top toolbar (matches case-study + about) ────────────────── */
 .ct-toolbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 16px 16px;
+  padding: 80px 16px 16px;
 }
 .ct-back {
   display: inline-flex; align-items: center; gap: 8px;
@@ -303,4 +305,43 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-social:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 4px;
+}
+
+/* ─── Desktop override ────────────────────────────────────────── */
+@media (min-width: 900px) {
+  .ct-shell { padding: 0; display: block; }
+  .ct-phone {
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    --ct-grid-max: 640px;
+    --ct-grid-gutter: 48px;
+  }
+  .ct-toolbar, .ct-hero, .ct-form, .ct-direct, .ct-success {
+    max-width: var(--ct-grid-max);
+    margin: 0 auto;
+    padding-left: var(--ct-grid-gutter);
+    padding-right: var(--ct-grid-gutter);
+  }
+  .ct-status {
+    width: 100%;
+    max-width: none;
+    padding-left: calc((100% - min(100%, var(--ct-grid-max))) / 2 + var(--ct-grid-gutter));
+    padding-right: calc((100% - min(100%, var(--ct-grid-max))) / 2 + var(--ct-grid-gutter));
+  }
+  .ct-hello { font-size: 80px; }
+  .ct-hero { padding-top: 80px; }
+  .ct-form { padding-top: 48px; padding-bottom: 48px; }
+  .ct-success { min-height: 540px; justify-content: center; }
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .ct-toolbar, .ct-hero, .ct-form, .ct-success {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+.ct-phone .pk-contact-cta-shell {
+  display: none;
 }

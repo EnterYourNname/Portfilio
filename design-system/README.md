@@ -4,9 +4,9 @@ This design system translates the Figma `V02` mobile portfolio width into reusab
 
 ## Source
 
-- Figma file: https://www.figma.com/design/as1HwwRAJ9aksu6yWCLvFl/FigmaMCP?node-id=166-1382
 - Primary node: `166:1382`
 - Canvas width: 393 px mobile reference; height must fit the live content, not a fixed Figma frame number
+- Minimum frame: 360 px width. The design must be fully responsive and adapt gracefully down to 360 px without horizontal scrolling, overlap, or text overflow.
 - Main flow: header, hero, highlight strip, work reel, projects, experience, skills, manifesto, footer
 
 ## Files
@@ -79,9 +79,27 @@ Use one visible `h1` per page. Major sections use `h2`; project titles and list 
 
 **Button typography is also the hyperlink typography.** The `--type-size-button-*` / `--type-weight-button-*` tokens (Button-L, Button-M, Button-S in Figma) are reserved for button labels **and** inline hyperlinks — text-only buttons (`.pk-link`) share this scale. Do not use these tokens for paragraphs, eyebrows, captions, or other inline text.
 
+#### Responsive Typography Scaling
+
+Typography scales up significantly on larger screens to fill the expanded canvas, governed primarily via media queries.
+
+| Role | Small Mobile (<392px) | Standard Mobile (Default) | Desktop (≥900px) | Large Desktop (≥1180px) |
+|---|---|---|---|---|
+| **Hero display** | `48px` - `50px` | `56px` | `96px` | `104px` |
+| **Statement** | `42px` | `42px` | `56px` | `56px` |
+| **Section heading** | `36px` | `36px` | `48px` | `48px` |
+| **Feature list item**| `32px` | `32px` | `40px` | `40px` |
+| **Mobile Menu overlay**| `44px` | `44px` | *(Replaced by desktop nav)* | *(Replaced by desktop nav)* |
+| **Card title** | `20px` | `20px` | `24px` | `24px` |
+| **Row title** | `18px` | `18px` | `20px` | `20px` |
+| **Body text** | `16px` | `16px` | `18px` | `18px` |
+| **Primary Buttons**| `16px` | `16px` | `16px` (Fixed) | `16px` (Fixed) |
+| **Meta / Desktop Nav**| `12px` | `12px` | `16px` | `16px` |
+| **Secondary/Link Buttons**| `14px`| `14px`| `14px` (Fixed) | `14px` (Fixed) |
+
 ### Spacing
 
-Use the 4 px grid. Common values are 4, 8, 12, 16, 24, 32, 40, and 48 px. 64 px is not a valid section margin or padding value.
+Use the 4 px grid. Common values are 4, 8, 12, 16, 24, 32, 40, 48, and 64 px.
 
 Mobile pages use 16 px side gutters. Spacing between neighboring sections must be no more than 48 px from each section side, so the combined gap between two sections must never exceed 96 px.
 
@@ -109,6 +127,27 @@ Mobile spacing rules for this portfolio:
 | Adjacent touch targets | At least `8px` visual separation where possible |
 
 Spacing should feel editorial and compact, not like a generic marketing landing page. Avoid oversized `120px+` vertical gaps on mobile.
+
+### Responsive Layout Structure
+
+To maintain readability and proportion across devices, structural information must adapt to the viewport width:
+
+- **Mobile (360px - 767px):**
+  - Use a single-column layout.
+  - Page gutters are `16px`.
+  - Elements and text blocks should span full width minus gutters.
+  - Keep headers, paragraphs, and lists left-aligned.
+
+- **Tablet (768px - 1023px):**
+  - Page gutters expand (e.g., `32px` or `48px`).
+  - Text lines should not exceed comfortable reading lengths; apply a `max-width` of around `65ch` or `680px` to main text blocks.
+  - Cards, project lists, and image galleries may transition to a 2-column grid.
+
+- **Desktop (1024px and wider):**
+  - Introduce larger side margins to center the page content.
+  - A maximum container width (e.g., `1200px` or `1440px`) should wrap the main sections.
+  - Project lists or feature grids can expand to 3 or 4 columns.
+  - Preserve the `max-width` on long reading text (like case-study body copy) to prevent exhausting eye travel. Let images and media break wider than text columns when appropriate.
 
 ### Radius
 
@@ -140,7 +179,7 @@ Website navigation contains only Home, Work, About, and Contact. Do not place in
 
 ### Primary Button
 
-Use `.pk-btn` for the main CTA. Label copy should usually be `Let's create`. The arrow should use a local Lucide-style arrow icon or the existing inline arrow pattern.
+Use `.pk-btn` for the main CTA. Label copy can be dynamic (e.g. `Let's create` or `Contact me`). The arrow should use a local Lucide-style arrow icon or the existing inline arrow pattern.
 
 Figma source: `Button` component set, node `169:2128`, `Property 1=Primary`.
 
@@ -164,11 +203,16 @@ Primary button states:
 
 | State | Background / fill | Text/icon | Motion |
 |---|---|---|---|
-| Default | `#1B1814` / `--ink` | Cream label `#FFF6E8`, orange arrow `#FF6B4A` | Flat pill |
-| Hover | `#1B1814` with centered orange/yellow layer from Figma (`#FFCB3C`) | Ink label and arrow | Center expansion from the button middle; may add `translateY(-2px) scale(1.012)` plus soft pop shadow |
-| Active | Full orange `#FF8A36` with layered Figma fills | Ink label and arrow | Pressed scale around `0.985`; Figma inner frame is about `335.35px x 45.6px` |
+| Default | Adapts to container: `--ink` on light backgrounds, `--cream` on dark backgrounds. No borders. | Adapts to container: `--cream` on light backgrounds, `--ink` on dark backgrounds. Orange arrow. | Flat pill |
+| Hover | Stays the same as default background, with centered orange lozenge expansion. | Ink label and arrow | Center expansion from the button middle; may add `translateY(-2px) scale(1.012)` plus soft pop shadow |
+| Active | Full orange `#FF8A36` | Ink label and arrow | Pressed scale around `0.985` |
 | Focus | Same as current state | Same as current state | 2 px orange outline, 3 px offset |
 | Disabled | `#BCBCBC` / `--color-gray-500` | Disabled cream label `#E3DFDA`, arrow muted or hidden | No motion or shadow |
+
+**Dark vs. Light Containers:**
+- **Light Contexts (e.g., Paper background):** Primary buttons use an `--ink` fill with a `--cream` label.
+- **Dark Contexts (e.g., Experience section, Footer):** Primary buttons adapt by flipping to a `--cream` fill with an `--ink` label to maintain contrast.
+- The orange hover expansion effect and the active state (`#FF8A36` background) remain identical across both contexts.
 
 Do not create a second primary style. If a page needs the main CTA, use `.pk-btn` and inherit this state model.
 
@@ -207,7 +251,7 @@ Secondary button states:
 
 Selected is a persistent toggle state: clicking a secondary button selects it, and clicking the same selected button again returns it to default. Do not use active press scaling for the selected resting state.
 
-The secondary style is currently being previewed in `secondary-button-preview.html`; do not promote it into shared CSS until a final option is chosen.
+The secondary style is available in shared CSS (`portfolio.css`) as `.pk-btn.dark-on-light`.
 
 ### Tertiary Button
 
@@ -284,13 +328,13 @@ Rules:
 - Never give text links a permanent solid border-bottom; the animated reveal is the role.
 - The role borrows the Button-M typography tokens (`--type-size-button-secondary`, `--type-weight-button-secondary`). This is the single typography style used for hyperlinks across the site.
 
-### Segmented Control
+### Segmented Control / Filters
 
-Use `.pk-seg` for project filters. The track is cream-gray, inactive options are white pills, and the active option is ink with cream text.
+Use `.hm-chips` with `.hm-chip` buttons for project filters. Inactive options are transparent with hover states, and the active option is ink with cream text.
 
 ### Project Card
 
-Use `.pk-card`, `.pk-tags`, and `.pk-tag`. Media uses a 4 px radius. Tags are pill outlines. Titles are direct and sentence case.
+Use `.pk-project-card` for the main card link container. The image container uses `.pk-project-card-img` with a 4 px radius. The transparent rectangle overlay with blur (where the title and tags sit over the image) is called `.pk-project-card-body`. Inside the body, use `.pk-project-card-tags` for the small uppercase meta labels and `.pk-project-card-title` for the sentence-case title.
 
 Each project card must behave as a link to its project detail or case-study page. Project navigation belongs on the cards, not in the main website navigation.
 
@@ -370,3 +414,19 @@ Every page should load:
 ```
 
 Then add only page-specific CSS after those imports.
+
+## Recent System Updates
+To ensure all future generations remain consistent, please note the following recent architectural and design updates:
+
+1. **Component & Data Architecture:** Project cards (`components/project-card.jsx`) are now shared components strictly generated from `projects-data.js`. Card links utilize URL parameters (`case-study.html?project={id}`) for dynamic rendering.
+2. **Typography & Hierarchy:** Removed "year" values from project cards and metadata blocks to maintain a timeless layout.
+3. **Layout & Spacing Rules:** 
+    - Capped section spacing to `48px` max per side (max `96px` combined), but `64px` is permitted for specific internal element spacing (like the hero CTA).
+    - Standardized case-study rhythms: `48px` between text chapters, `32px` outside spacing for image rows, `16px` internal gap for galleries, and `16px` between chapter labels and body content.
+4. **Media Handling:** 
+    - Implemented three strict responsive ratios: `wide (16/9)`, `square (1/1)`, and `portrait (4/5)`. 
+    - Added `heroFit: "contain"` and `heroPosition` configuration options in `projects-data.js` to handle wide mockups and manual focal points.
+    - Gallery captions are hidden by default and toggleable via `showGalleryCaptions: true`.
+5. **Navigation & Interactivity:** 
+    - Home page filters are restricted to `All`, `UI/UX`, and `3D`. Display is limited to 3 cards by default with an "All projects / Show less" toggle.
+    - Formalized the `.pk-link` (Text/Link) button role with its animated underline reveal, explicitly banning permanent solid bottom borders.

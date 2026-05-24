@@ -16,13 +16,7 @@ const ArrowRight = ({ size = 18 }) => (
   </svg>
 );
 
-const MenuIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-    stroke="#FFF5E8" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <line x1="4" y1="7" x2="20" y2="7" />
-    <line x1="4" y1="17" x2="20" y2="17" />
-  </svg>
-);
+
 
 const ArrowUp = ({ size = 14 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -120,16 +114,7 @@ function MarkdownSection({ section }) {
   );
 }
 
-function CsHeader({ onMenuClick, menuOpen }) {
-  return (
-    <header className="pk-header">
-      <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
-        <MenuIcon />
-      </button>
-    </header>
-  );
-}
+
 
 function Toolbar({ project }) {
   const index = projectIndex(project) + 1;
@@ -343,67 +328,7 @@ function NextProject({ project }) {
   );
 }
 
-function Manifesto() {
-  return (
-    <div className="pk-manifesto">
-      <span className="pk-mono">Manifesto</span>
-      <h2>{"Designing with\npurpose, always."}</h2>
-    </div>
-  );
-}
 
-function ContactBlock() {
-  return (
-    <div className="pk-contact">
-      <div className="pk-contact-cta-shell">
-        <a className="pk-btn" href="contact.html">
-          Contact me
-          <ArrowRight />
-        </a>
-      </div>
-      <div className="pk-email">
-        <span className="lbl">or send me an email</span>
-        <span className="addr">andrii.b.design@gmail.com</span>
-      </div>
-    </div>
-  );
-}
-
-function FooterBlack({ onBackTop }) {
-  return (
-    <div className="pk-footer-black">
-      <button className="pk-link" style={{ color: "var(--cream)" }} onClick={onBackTop}>
-        Back to top
-        <ArrowUp />
-      </button>
-      <div className="pk-contact-row">
-        <span className="lbl">Get in contact</span>
-        <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
-          <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
-        </a>
-        <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
-        </a>
-      </div>
-      <nav className="pk-footer-nav">
-        <a href="index.html" style={{ color: "inherit", textDecoration: "none" }}>Home</a>
-        <a href="index.html#work" style={{ color: "inherit", textDecoration: "none" }}>Work</a>
-        <a href="about.html" style={{ color: "inherit", textDecoration: "none" }}>About</a>
-        <a href="contact.html" style={{ color: "inherit", textDecoration: "none" }}>Contact</a>
-      </nav>
-    </div>
-  );
-}
-
-function FooterSection({ onBackTop }) {
-  return (
-    <footer className="pk-footer-bg">
-      <Manifesto />
-      <ContactBlock />
-      <FooterBlack onBackTop={onBackTop} />
-    </footer>
-  );
-}
 
 function useReadingProgress() {
   const [progress, setProgress] = React.useState(0);
@@ -469,7 +394,7 @@ function CaseStudyApp() {
       <div className="phone" data-screen-label={`Project | ${project.title}`}>
         <Progress />
         {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
-        <CsHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+        <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
         <Toolbar project={project} />
         <HeroBlock project={project} onOpen={setLightboxSrc} />
@@ -494,7 +419,7 @@ function CaseStudyApp() {
           onOpen={setLightboxSrc}
         />
         <NextProject project={project} />
-        <FooterSection onBackTop={scrollTop} />
+        <SharedFooter onScrollTop={scrollTop} />
       </div>
     </div>
   );

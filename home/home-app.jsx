@@ -7,39 +7,55 @@ const EMAIL = "andrii.b.design@gmail.com";
 // ────────────────────────────────────────────────────────────────
 
 const EXPERIENCE = [
-  { role: "Visual Designer",               place: "Neuffer GmbH & Co. KG", dates: "05.26 – present" },
-  { role: "Freelance 3D & UI/UX Designer", place: "Freelance",             dates: "03.25 – 04.26" },
-  { role: "Communication Designer",        place: "UP Designstudio",       dates: "Mar 2023 – Sep 2024" },
-  { role: "3D & Interior Designer",        place: "Spotless Agency",       dates: "Dec 2018 – Mar 2023" },
-  { role: "Product Designer",              place: "Merx",                  dates: "Dec 2018 – Nov 2019" },
+  { role: "Visual Designer",               place: "Neuffer GmbH & Co. KG", datesShort: "05.26 - present", datesFull: "May 2026 - present" },
+  { role: "Freelance 3D & UI/UX Designer", place: "Freelance",             datesShort: "03.25 - 04.26",   datesFull: "Mar 2025 - Apr 2026" },
+  { role: "Communication Designer",        place: "UP Designstudio",       datesShort: "03.23 - 09.24",   datesFull: "Mar 2023 - Sep 2024" },
+  { role: "3D & Interior Designer",        place: "Spotless Agency",       datesShort: "12.18 - 03.23",   datesFull: "Dec 2018 - Mar 2023" },
+  { role: "Product Designer",              place: "Merx",                  datesShort: "12.18 - 11.19",   datesFull: "Dec 2018 - Nov 2019" },
 ];
 
 const SKILLS = [
-  "UI/UX Design",
-  "3D Design",
-  "Graphic Design",
-  "Website Design",
-  "Arch-Vis.",
+  {
+    title: "Product & UI/UX Design",
+    detail: "User flows, wireframes, responsive interfaces, and clickable prototypes for clear digital journeys.",
+    tools: "Figma, prototyping, design systems",
+  },
+  {
+    title: "3D Visualization",
+    detail: "Interior concepts, product scenes, spatial storytelling, and polished renderings.",
+    tools: "Blender, rendering, arch-vis",
+  },
+  {
+    title: "Brand & Visual Systems",
+    detail: "Visual direction, identity assets, graphic layouts, and reusable rules for consistent communication.",
+    tools: "Photoshop, brand systems, layout",
+  },
+  {
+    title: "Web Experience Design",
+    detail: "Portfolio pages, landing concepts, responsive structure, and conversion-focused content hierarchy.",
+    tools: "UI/UX, web design, responsive design",
+  },
+  {
+    title: "Spatial Capture & Presentation",
+    detail: "Matterport tours and presentation-ready visuals for interiors, spaces, and real estate concepts.",
+    tools: "Matterport, interior visualization",
+  },
 ];
 
 const PROJECT_FILTERS = ["All", "UI/UX", "3D"];
 
 const TICKER_ITEMS = [
-  "Blender", "3D Modeling", "Figma", "UI / UX", "Rendering",
-  "Photoshop", "Matterport", "Arch-Vis", "Brand Systems",
+  "UI/UX Design", "Design Systems", "Figma", "Prototyping",
+  "3D Visualization", "Blender", "3D Modeling", "Rendering",
+  "Interior Visualization", "Matterport", "Brand Identity",
+  "Photoshop", "Web Experiences", "Arch-Vis", "Product Rendering",
 ];
 
 // ────────────────────────────────────────────────────────────────
 // Icons
 // ────────────────────────────────────────────────────────────────
 
-const HmMenuIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-    stroke="#FFF5E8" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <line x1="4" y1="7"  x2="20" y2="7"  />
-    <line x1="4" y1="17" x2="20" y2="17" />
-  </svg>
-);
+
 
 const HmArrowRight = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -67,24 +83,6 @@ const PlayIcon = () => (
 // Header
 // ────────────────────────────────────────────────────────────────
 
-function HmHeader({ onMenuClick, menuOpen, compact }) {
-  return (
-    <React.Fragment>
-      <div className="pk-avatar hm-site-avatar" aria-label="Andrii B." />
-      <header className={`pk-header${compact ? " is-compact" : ""}`}>
-        <nav className="hm-desktop-nav" aria-label="Primary navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="index.html#work">Work</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
-          <HmMenuIcon />
-        </button>
-      </header>
-    </React.Fragment>
-  );
-}
 
 // ────────────────────────────────────────────────────────────────
 // Hero — full-bleed portrait with overlaid intro
@@ -111,7 +109,7 @@ function HmHero() {
         <FadeCascade>
           <span className="hm-eyebrow">Hi, I&rsquo;m Andrii</span>
           <h1 className="hm-headline">
-            Digital Experience<br />Designer
+            Digital<br /><span>Experience</span><br />Designer
           </h1>
           <p className="hm-lead">
             Designer with <strong>7 years</strong> across UI/UX, 3D &amp; brand. Stuttgart, DE. 🚀
@@ -122,6 +120,7 @@ function HmHero() {
           </a>
         </FadeCascade>
       </div>
+      <span className="hm-scroll-cue" aria-hidden="true">(SCROLL)</span>
     </section>
   );
 }
@@ -131,8 +130,8 @@ function HmHero() {
 // ────────────────────────────────────────────────────────────────
 
 function HmTicker() {
-  // Duplicate so the seamless loop works
-  const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
+  // Triple the row so wide screens keep a filled, seamless loop.
+  const items = [...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS];
   return (
     <div className="hm-ticker" aria-hidden="true">
       <div className="hm-ticker-track">
@@ -248,7 +247,7 @@ function HmProjects() {
 
 function HmFeaturedProject() {
   const projects = window.PORTFOLIO_PROJECTS || [];
-  const project = projects.find(item => item.id === "mealmate") || projects[0];
+  const project = projects.find(item => item.id === "beer-box") || projects[0];
 
   if (!project) return null;
 
@@ -291,11 +290,11 @@ function HmFeaturedProject() {
 
       <div className="hm-featured-gallery" aria-label={`${project.title} preview images`}>
         {featuredImages.map((src, index) => (
-          <a
+          <div
             key={`${src}-${index}`}
             className={`hm-featured-img hm-featured-img-${index + 1}`}
-            href={project.href}
-            aria-label={`Open ${project.title} case study`}
+            role="img"
+            aria-label={`${project.title} preview image ${index + 1}`}
             style={{ backgroundImage: `url('${src}')` }}
           />
         ))}
@@ -318,7 +317,8 @@ function HmExperience() {
             <span className="hm-xp-role">{x.role}</span>
             <div className="hm-xp-meta">
               <span className="hm-xp-place">{x.place}</span>
-              <span className="hm-xp-dates">{x.dates}</span>
+              <span className="hm-xp-dates hm-xp-dates-short">{x.datesShort}</span>
+              <span className="hm-xp-dates hm-xp-dates-full">{x.datesFull}</span>
             </div>
           </div>
         ))}
@@ -333,16 +333,18 @@ function HmExperience() {
 
 function HmSkills() {
   return (
-    <section className="hm-section" style={{ paddingBottom: 64 }}>
+    <section className="hm-section hm-skills-section">
       <div className="hm-section-head">
         <span className="pk-mono">Skills</span>
       </div>
-      <h2 className="hm-section-title">What I do.</h2>
+      <h2 className="hm-section-title">What I bring.</h2>
       <div className="hm-skills-list">
         {SKILLS.map((s, i) => (
-          <div className="hm-skill-row" key={s}>
-            <span className="hm-skill-name">{s}</span>
+          <div className="hm-skill-row" key={s.title}>
             <span className="hm-skill-num">0{i + 1}</span>
+            <span className="hm-skill-name">{s.title}</span>
+            <span className="hm-skill-detail">{s.detail}</span>
+            <span className="hm-skill-tools">{s.tools}</span>
           </div>
         ))}
       </div>
@@ -354,48 +356,7 @@ function HmSkills() {
 // Manifesto + Footer
 // ────────────────────────────────────────────────────────────────
 
-function HmFooter({ onScrollTop }) {
-  return (
-    <footer className="pk-footer-bg">
-      <div className="pk-manifesto">
-        <span className="pk-mono">Manifesto</span>
-        <h2>{"Designing with\npurpose, always."}</h2>
-      </div>
-      <div className="pk-contact">
-        <div className="pk-contact-cta-shell">
-          <a className="pk-btn" href="contact.html" style={{ display:"inline-flex", alignItems:"center", gap:10, textDecoration:"none" }}>
-            Contact me
-            <HmArrowRight />
-          </a>
-        </div>
-        <div className="pk-email">
-          <span className="lbl">or send me an email</span>
-          <span className="addr">{EMAIL}</span>
-        </div>
-      </div>
-      <div className="pk-footer-black">
-        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={onScrollTop}>
-          Back to top <HmArrowUp />
-        </button>
-        <div className="pk-contact-row">
-          <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/behance.svg"  alt="" width="32" height="32" />
-          </a>
-          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
-          </a>
-        </div>
-        <nav className="pk-footer-nav">
-          <a href="index.html"       style={{ color:"inherit", textDecoration:"none" }}>Home</a>
-          <a href="index.html#work"  style={{ color:"inherit", textDecoration:"none" }}>Work</a>
-          <a href="about.html"       style={{ color:"inherit", textDecoration:"none" }}>About</a>
-          <a href="contact.html"     style={{ color:"inherit", textDecoration:"none" }}>Contact</a>
-        </nav>
-      </div>
-    </footer>
-  );
-}
+
 
 // ────────────────────────────────────────────────────────────────
 // Page root
@@ -403,17 +364,11 @@ function HmFooter({ onScrollTop }) {
 
 function HomeApp() {
   const [navOpen, setNavOpen] = React.useState(false);
-  const [navCompact, setNavCompact] = React.useState(false);
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   React.useEffect(() => {
     const updateNavMode = () => {
-      const scrollY = window.scrollY || 0;
-      setNavCompact(current => {
-        if (!current && scrollY > 120) return true;
-        if (current && scrollY < 64) return false;
-        return current;
-      });
+      // Logic for layout updates
     };
 
     updateNavMode();
@@ -424,7 +379,10 @@ function HomeApp() {
   return (
     <div className="hm-shell">
       <div className="hm-phone">
-        <HmHeader menuOpen={navOpen} compact={navCompact} onMenuClick={() => setNavOpen(true)} />
+        <SharedHeader 
+          menuOpen={navOpen} 
+          onMenuClick={() => setNavOpen(true)} 
+        />
 
         {/* Shared nav overlay — loaded via nav/nav.jsx */}
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
@@ -435,7 +393,7 @@ function HomeApp() {
         <HmFeaturedProject />
         <HmExperience />
         <HmSkills />
-        <HmFooter onScrollTop={scrollTop} />
+        <SharedFooter onScrollTop={scrollTop} />
       </div>
     </div>
   );

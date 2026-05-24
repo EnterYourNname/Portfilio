@@ -4,7 +4,6 @@ Use this file as the working contract for building and editing the website in th
 
 ## Source Of Truth
 
-- Figma source: https://www.figma.com/design/as1HwwRAJ9aksu6yWCLvFl/FigmaMCP?node-id=166-1382
 - Primary frame: `166:1382` (`V02`, mobile 393 px wide; height must fit the live content)
 - Local tokens: `design-system/colors_and_type.css`
 - Shared UI patterns: `design-system/portfolio.css`

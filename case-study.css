@@ -47,9 +47,11 @@ html, body { background: #efece5; }
 .cs-title span { display: block; }
 .cs-hero .pk-tags { gap: 8px; }
 
-/* Hero image — full-bleed, near-square */
+/* Hero image — matches gallery grid */
 .cs-hero-img {
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  border-radius: 4px;
   aspect-ratio: 393/440;
   background-size: cover; background-position: center;
   background-color: var(--cream);
@@ -428,4 +430,23 @@ html, body { background: #efece5; }
   height: 100%; width: 0%;
   background: var(--orange);
   transition: width 80ms linear;
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .cs-toolbar, .cs-hero, .cs-meta, .cs-section, .cs-next, .cs-image-row {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .cs-image {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .cs-hero-img {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+    width: calc(100% - 48px) !important;
+  }
 }

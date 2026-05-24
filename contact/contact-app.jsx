@@ -52,18 +52,7 @@ const StarIcon = ({ size = 56 }) =>
   </svg>;
 
 
-// ────────────────────────────────────────────────────────────────
-// Header
-// ────────────────────────────────────────────────────────────────
 
-function CtHeader({ onMenuClick, menuOpen }) {
-  return (
-    <header className="pk-header" style={{ position: "static" }}>
-      <div className="pk-avatar" aria-label="Andrii B." />
-      <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}><CtMenuIcon /></button>
-    </header>);
-
-}
 
 function CtToolbar() {
   const goBack = () => {
@@ -335,41 +324,6 @@ function DirectContact() {
 // Manifesto + footer (reused)
 // ────────────────────────────────────────────────────────────────
 
-function CtManifestoFooter() {
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  return (
-    <footer className="pk-footer-bg" data-screen-label="05 Manifesto + Footer">
-      <div className="pk-manifesto">
-        <span className="pk-mono">Manifesto</span>
-        <h2>{"Designing with\npurpose, always."}</h2>
-      </div>
-      <div className="pk-contact">
-        <div className="pk-email">
-          <span className="lbl">or send me an email</span>
-          <span className="addr">{EMAIL}</span>
-        </div>
-      </div>
-      <div className="pk-footer-black">
-        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={scrollTop}>Back to top <CtArrowUp /></button>
-        <div className="pk-contact-row">
-          <span className="lbl">Get in contact</span>
-          <a className="pk-social-link" href="https://www.behance.net/artandrewkim" aria-label="Behance" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/behance.svg" alt="" width="32" height="32" />
-          </a>
-          <a className="pk-social-link" href="https://www.linkedin.com/in/andrii-b-ui-ux/" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img src="design-system/assets/icons/linkedin.svg" alt="" width="32" height="32" />
-          </a>
-        </div>
-        <nav className="pk-footer-nav">
-          <a href="index.html" style={{ color: "inherit", textDecoration: "none" }}>Home</a>
-          <a href="index.html#work" style={{ color: "inherit", textDecoration: "none" }}>Work</a>
-          <a href="about.html" style={{ color: "inherit", textDecoration: "none" }}>About</a>
-          <a href="contact.html" style={{ color: "inherit", textDecoration: "none" }}>Contact</a>
-        </nav>
-      </div>
-    </footer>);
-
-}
 
 // Social link inline styles (same shape used on other pages)
 const __ctSocialStyle = document.createElement('style');
@@ -403,7 +357,7 @@ function ContactApp() {
     <div className="ct-shell">
       <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
       <div className="ct-phone" data-screen-label="Contact">
-        <CtHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+        <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <CtToolbar />
 
         {!sent && (
@@ -427,7 +381,7 @@ function ContactApp() {
         <ContactForm onSent={handleSent} />
         }
 
-        <CtManifestoFooter />
+        <SharedFooter onScrollTop={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
       </div>
     </div>);
 

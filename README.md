@@ -2,7 +2,6 @@
 
 This folder contains the portfolio website and its local design system. The design source is the Figma file below, with the mobile `V02` frame width as the primary reference; page height should fit the content.
 
-- Figma: https://www.figma.com/design/as1HwwRAJ9aksu6yWCLvFl/FigmaMCP?node-id=166-1382
 - Reference node: `166:1382`
 - Local design system: [design-system/README.md](design-system/README.md)
 - Claude working rules: [CLAUDE.md](CLAUDE.md)
@@ -21,6 +20,15 @@ This folder contains the portfolio website and its local design system. The desi
 Maximum section padding is **48 px per side**. Never use 64 px as a section margin or padding — 48 px is the ceiling. The combined gap between two neighboring sections must never exceed 96 px. Internal gaps between related items (text, list rows, meta cells) follow the 4 px grid and are always smaller than the section edge padding.
 
 Project case-study pages use proximity to make content groups clear: a chapter label stays close to its own content with a **16 px** internal gap, text chapter to text chapter uses a **48 px** gap, and image rows sit between text sections with **32 px** outside spacing. Inside image rows, gallery images use a **16 px** gap.
+
+## Responsive Rules
+
+All main layout wrappers (e.g., `.phone`, `.hm-phone`, `.ct-phone`, `.am-phone`) must use a fluid width bounded by minimum and maximum constraints to ensure content gracefully fits all mobile device sizes without breaking or overflowing the grid:
+- `width: 100%;`
+- `max-width: 393px;` (Matches the primary Figma mobile reference)
+- `min-width: 360px;` (Ensures safe display down to narrow mobile screens)
+
+Never hardcode strict pixel widths (`width: 393px`) on these structural containers.
 
 ## Build Rule
 
