@@ -148,15 +148,31 @@ function HmTicker() {
 // ────────────────────────────────────────────────────────────────
 
 function HmReel() {
-  const open = () => window.open("https://vimeo.com/1082557519", "_blank");
+  const [isPlaying, setIsPlaying] = React.useState(false);
+
   const openFromKeyboard = (e) => {
     if (e.key !== "Enter" && e.key !== " ") return;
     e.preventDefault();
-    open();
+    setIsPlaying(true);
   };
+
+  if (isPlaying) {
+    return (
+      <div className="hm-reel" style={{ padding: 0, backgroundColor: "#000", border: "none" }}>
+        <iframe 
+          src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0" 
+          style={{ width: "100%", height: "100%", border: "none" }} 
+          allow="fullscreen; picture-in-picture" 
+          allowFullScreen
+          title="Work Reel"
+        ></iframe>
+      </div>
+    );
+  }
+
   return (
     <div className="hm-reel" role="button" tabIndex={0}
-      aria-label="Play work reel" onClick={open}
+      aria-label="Play work reel" onClick={() => setIsPlaying(true)}
       onKeyDown={openFromKeyboard}>
       <div className="hm-reel-img" />
       <div className="hm-reel-overlay">
