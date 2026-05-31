@@ -160,7 +160,7 @@ function HmReel() {
     return (
       <div className="hm-reel" style={{ padding: 0, backgroundColor: "#000", border: "none" }}>
         <iframe 
-          src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0" 
+          src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0&autoplay=1" 
           style={{ width: "100%", height: "100%", border: "none" }} 
           allow="fullscreen; picture-in-picture" 
           allowFullScreen

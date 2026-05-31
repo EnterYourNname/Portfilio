@@ -138,27 +138,42 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   outline-offset: 3px;
 }
 
-/* Touch devices: replicate the hover→click sequence as a fast single tap animation */
+/* Touch button animation — JS in animations.jsx drives these classes:
+   touchstart → .pk-btn--touching (lozenge expands)
+   touchend   → .pk-btn--tapped   (orange fill, 320ms then auto-reset) */
 @media (hover: none) and (pointer: coarse) {
-  .pk-btn::before {
-    transition: transform 120ms var(--ease-out);
-  }
-  .pk-btn:active {
-    background: var(--theme-btn-bg, var(--ink));
-    color: var(--ink);
-    transform: translateY(-2px) scale(1.012);
-    box-shadow: 0 12px 24px rgba(27, 24, 20, 0.18);
+  .pk-btn--touching {
+    background: var(--theme-btn-bg, var(--ink)) !important;
+    color: var(--ink) !important;
+    transform: translateY(-2px) scale(1.012) !important;
+    box-shadow: 0 12px 24px rgba(27, 24, 20, 0.18) !important;
     transition:
-      background 100ms var(--ease-out),
+      transform 100ms var(--ease-out),
       box-shadow 100ms var(--ease-out),
-      color 100ms var(--ease-out),
-      transform 100ms var(--ease-out);
+      color 100ms var(--ease-out) !important;
   }
-  .pk-btn:active::before {
-    transform: translate(-50%, -50%) scaleX(1);
-    transition: transform 100ms var(--ease-out);
+  .pk-btn--touching::before {
+    transform: translate(-50%, -50%) scaleX(1) !important;
+    transition: transform 100ms var(--ease-out) !important;
   }
-  .pk-btn:active .arrow path { stroke: var(--ink); }
+  .pk-btn--touching .arrow path { stroke: var(--ink) !important; }
+
+  .pk-btn--tapped {
+    background: var(--orange) !important;
+    color: var(--ink) !important;
+    transform: scale(0.985) !important;
+    box-shadow: 0 10px 28px rgba(156, 79, 25, 0.22) !important;
+    transition:
+      background 80ms var(--ease-out),
+      transform 80ms var(--ease-out),
+      box-shadow 80ms var(--ease-out),
+      color 80ms var(--ease-out) !important;
+  }
+  .pk-btn--tapped::before {
+    transform: translate(-50%, -50%) scaleX(0) !important;
+    transition: none !important;
+  }
+  .pk-btn--tapped .arrow path { stroke: var(--ink) !important; }
 }
 
 .pk-btn:disabled, .pk-btn[disabled] {
