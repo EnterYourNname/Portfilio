@@ -8,7 +8,16 @@ function FadeCascade({ children }) {
   });
 }
 
-Object.assign(window, { FadeCascade });
+// Shared arrow icon used by all primary CTA buttons and link buttons site-wide.
+const PkArrowRight = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+    strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" className="arrow">
+    <path d="M5 12h14" stroke="currentColor" />
+    <path d="m12 5 7 7-7 7" stroke="currentColor" />
+  </svg>
+);
+
+Object.assign(window, { FadeCascade, PkArrowRight });
 
 // Primary button touch animation: touchstart → lozenge → touchend → orange → reset
 (function () {

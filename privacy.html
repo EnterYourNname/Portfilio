@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Andrii Borysov</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="design-system/assets/site-icon.png" />
+  <link rel="apple-touch-icon" href="design-system/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="dns-prefetch" href="//unpkg.com" />
+  <link rel="stylesheet" href="design-system/colors_and_type.css?v=3" />
+  <link rel="stylesheet" href="design-system/portfolio.css?v=16" />
+  <link rel="stylesheet" href="nav/nav.css?v=5" />
+  <link rel="stylesheet" href="legal.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components/animations.jsx?v=2"></script>
+  <script type="text/babel" src="nav/nav.jsx?v=3"></script>
+  <script type="text/babel" src="components/header.jsx"></script>
+  <script type="text/babel" src="components/footer.jsx?v=5"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    function PrivacyPage() {
+      const [navOpen, setNavOpen] = React.useState(false);
+      const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+      return (
+        <div className="app-shell">
+          <div className="phone legal-phone">
+            <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+            <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
+            <main className="legal-main">
+              <p className="pk-mono legal-eyebrow">Legal</p>
+              <h1 className="legal-heading">Privacy Policy</h1>
+              <p className="legal-intro">Last updated: May 2026</p>
+
+              <section className="legal-section">
+                <h2 className="legal-label">1. Controller</h2>
+                <p>Andrii Borysov<br />Autenstraße 22, 71254 Ditzingen, Germany<br />
+                <a href="mailto:andrii.b.design@gmail.com" className="legal-link">andrii.b.design@gmail.com</a></p>
+                <p>This is a private portfolio website with no commercial activity.</p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">2. What data we process</h2>
+                <p>This site does not use analytics, advertising networks, or tracking cookies. The only third-party services that may process data are listed below.</p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">3. Hosting — GitHub Pages</h2>
+                <p>This site is hosted by GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). GitHub may automatically collect server log data including IP addresses, browser type, referring pages, and request timestamps when you visit this site.</p>
+                <p>Legal basis: Art. 6(1)(f) GDPR — legitimate interest in operating the website.<br />
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener" className="legal-link">GitHub Privacy Statement →</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">4. Embedded video — Vimeo</h2>
+                <p>This site embeds a video hosted by Vimeo LLC (555 West 18th Street, New York, NY 10011, USA). The Vimeo player only loads when you explicitly click play and have accepted cookies via the consent banner. Until then, no data is transferred to Vimeo.</p>
+                <p>When the player loads, Vimeo may set cookies and collect data such as your IP address, browser type, and viewing behaviour in accordance with their privacy policy.</p>
+                <p>Legal basis: Art. 6(1)(a) GDPR — your consent.<br />
+                <a href="https://vimeo.com/privacy" target="_blank" rel="noopener" className="legal-link">Vimeo Privacy Policy →</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">5. Contact form — Formspree</h2>
+                <p>The contact form is powered by Formspree, Inc. (2021 Fillmore St #1006, San Francisco, CA 94115, USA). When you submit the form, your name, email, phone number, and message are transmitted to and stored on Formspree's servers so the message can be forwarded to us.</p>
+                <p>This data is used solely to respond to your inquiry. It is not shared with third parties for marketing and is deleted once no longer needed.</p>
+                <p>Legal basis: Art. 6(1)(b) GDPR — processing necessary for responding to your request.<br />
+                <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" className="legal-link">Formspree Privacy Policy →</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">6. JavaScript libraries — unpkg CDN</h2>
+                <p>This site loads open-source libraries (React, Babel) from unpkg.com, a CDN operated by Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA). Cloudflare may process your IP address to serve these files.</p>
+                <p>Legal basis: Art. 6(1)(f) GDPR — legitimate interest in delivering the website.<br />
+                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener" className="legal-link">Cloudflare Privacy Policy →</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">7. Cookie consent storage</h2>
+                <p>Your cookie preference (accept or decline) is stored in your browser's localStorage. This is technically necessary to remember your choice and does not transmit any data to external servers.</p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">8. Your rights under GDPR</h2>
+                <p>You have the right to request access to, rectification of, or erasure of your personal data. You also have the right to restrict or object to processing, and the right to data portability. To exercise any of these rights, contact: <a href="mailto:andrii.b.design@gmail.com" className="legal-link">andrii.b.design@gmail.com</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">9. Right to lodge a complaint</h2>
+                <p>You have the right to lodge a complaint with the data protection supervisory authority in Baden-Württemberg:</p>
+                <p>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br />
+                Königstraße 10a, 70173 Stuttgart<br />
+                <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener" className="legal-link">baden-wuerttemberg.datenschutz.de →</a></p>
+              </section>
+
+              <div className="legal-back">
+                <a href="index.html" className="pk-link">← Back to portfolio</a>
+              </div>
+            </main>
+            <SharedFooter onScrollTop={scrollTop} />
+          </div>
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<PrivacyPage />);
+  </script>
+
+  <div id="ck-root"></div>
+  <script type="text/babel" src="components/cookie-banner.jsx?v=4"></script>
+  <script type="text/babel" data-presets="env,react">
+    ReactDOM.createRoot(document.getElementById("ck-root")).render(<CookieBanner />);
+  </script>
+</body>
+</html>

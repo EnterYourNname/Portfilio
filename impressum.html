@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum — Andrii Borysov</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="design-system/assets/site-icon.png" />
+  <link rel="apple-touch-icon" href="design-system/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="dns-prefetch" href="//unpkg.com" />
+  <link rel="stylesheet" href="design-system/colors_and_type.css?v=3" />
+  <link rel="stylesheet" href="design-system/portfolio.css?v=16" />
+  <link rel="stylesheet" href="nav/nav.css?v=5" />
+  <link rel="stylesheet" href="legal.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components/animations.jsx?v=2"></script>
+  <script type="text/babel" src="nav/nav.jsx?v=3"></script>
+  <script type="text/babel" src="components/header.jsx"></script>
+  <script type="text/babel" src="components/footer.jsx?v=5"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    function ImpressumPage() {
+      const [navOpen, setNavOpen] = React.useState(false);
+      const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+      return (
+        <div className="app-shell">
+          <div className="phone legal-phone">
+            <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+            <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
+            <main className="legal-main">
+              <p className="pk-mono legal-eyebrow">Rechtliches</p>
+              <h1 className="legal-heading">Impressum</h1>
+
+              <section className="legal-section">
+                <h2 className="legal-label">Angaben gemäß § 5 TMG</h2>
+                <p>Andrii Borysov<br />Autenstraße 22<br />71254 Ditzingen<br />Deutschland</p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">Kontakt</h2>
+                <p>Telefon: <a href="tel:+4916093453550" className="legal-link">+49 160 93453550</a><br />
+                E-Mail: <a href="mailto:andrii.b.design@gmail.com" className="legal-link">andrii.b.design@gmail.com</a></p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">Hinweis</h2>
+                <p>Diese Website ist ein privates Portfolio ohne gewerbliche Tätigkeit. Es besteht keine Umsatzsteuerpflicht.</p>
+              </section>
+
+              <section className="legal-section">
+                <h2 className="legal-label">EU-Streitschlichtung</h2>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br />
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" className="legal-link">ec.europa.eu/consumers/odr</a></p>
+                <p>Wir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil und sind hierzu auch nicht verpflichtet.</p>
+              </section>
+
+              <div className="legal-back">
+                <a href="index.html" className="pk-link">← Back to portfolio</a>
+              </div>
+            </main>
+            <SharedFooter onScrollTop={scrollTop} />
+          </div>
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<ImpressumPage />);
+  </script>
+
+  <div id="ck-root"></div>
+  <script type="text/babel" src="components/cookie-banner.jsx?v=4"></script>
+  <script type="text/babel" data-presets="env,react">
+    ReactDOM.createRoot(document.getElementById("ck-root")).render(<CookieBanner />);
+  </script>
+</body>
+</html>

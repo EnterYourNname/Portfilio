@@ -1,5 +1,5 @@
-const FooterArrowRight = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+const FooterArrowRight = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
     strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" className="arrow">
     <path d="M5 12h14" stroke="currentColor" />
     <path d="m12 5 7 7-7 7" stroke="currentColor" />
@@ -24,7 +24,7 @@ function SharedFooter({ onScrollTop }) {
       </div>
       <div className="pk-contact">
         <div className="pk-contact-cta-shell">
-          <a className="pk-btn" href="contact.html" style={{ display:"inline-flex", alignItems:"center", gap:10, textDecoration:"none" }}>
+          <a className="pk-btn" href="contact.html">
             Contact me
             <FooterArrowRight />
           </a>
@@ -52,6 +52,19 @@ function SharedFooter({ onScrollTop }) {
           <a href="index.html#work"  style={{ color:"inherit", textDecoration:"none" }}>Work</a>
           <a href="about.html"       style={{ color:"inherit", textDecoration:"none" }}>About</a>
           <a href="contact.html"     style={{ color:"inherit", textDecoration:"none" }}>Contact</a>
+        </nav>
+        <nav className="pk-footer-legal">
+          <a href="impressum.html"   style={{ color:"inherit", textDecoration:"none" }}>Impressum</a>
+          <a href="privacy.html"     style={{ color:"inherit", textDecoration:"none" }}>Privacy policy</a>
+          <button
+            className="pk-footer-cookie-btn"
+            onClick={() => {
+              localStorage.removeItem('cookie-consent');
+              window.dispatchEvent(new Event('cookie-consent-change'));
+            }}
+          >
+            Cookie settings
+          </button>
         </nav>
       </div>
     </footer>

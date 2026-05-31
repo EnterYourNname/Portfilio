@@ -54,12 +54,6 @@ const PORTRAIT = "design-system/assets/portrait-andrew.jpg";
 
 
 
-const AmArrowRight = ({ size = 18 }) =>
-<svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" className="arrow">
-    <path d="M5 12h14" stroke="currentColor" />
-    <path d="m12 5 7 7-7 7" stroke="currentColor" />
-  </svg>;
 
 const AmArrowUp = ({ size = 14 }) =>
 <svg width={size} height={size} viewBox="0 0 24 24" fill="none"

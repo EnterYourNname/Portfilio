@@ -79,14 +79,20 @@
   <script type="text/babel" src="components/project-card.jsx"></script>
 
   <!-- 4. Home page app -->
-  <script type="text/babel" src="components/animations.jsx?v=1"></script>
+  <script type="text/babel" src="components/animations.jsx?v=2"></script>
   <script type="text/babel" src="components/header.jsx"></script>
-  <script type="text/babel" src="components/footer.jsx"></script>
+  <script type="text/babel" src="components/footer.jsx?v=5"></script>
   <script type="text/babel" src="home/home-app.jsx?v=21"></script>
 
   <script type="text/babel" data-presets="env,react">
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<HomeApp />);
+  </script>
+
+  <div id="ck-root"></div>
+  <script type="text/babel" src="components/cookie-banner.jsx?v=4"></script>
+  <script type="text/babel" data-presets="env,react">
+    ReactDOM.createRoot(document.getElementById("ck-root")).render(<CookieBanner />);
   </script>
 </body>
 </html>

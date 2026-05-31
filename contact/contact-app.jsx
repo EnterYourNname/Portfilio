@@ -23,12 +23,6 @@ stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="ro
     <path d="m12 19-7-7 7-7" />
   </svg>;
 
-const CtArrowRight = ({ size = 18 }) =>
-<svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" className="arrow">
-    <path d="M5 12h14" stroke="currentColor" />
-    <path d="m12 5 7 7-7 7" stroke="currentColor" />
-  </svg>;
 
 const CtArrowUp = ({ size = 14 }) =>
 <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -272,7 +266,7 @@ function ContactForm({ onSent }) {
       <button type="submit" className="pk-btn ct-submit" disabled={isSubmitting}>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
           {isSubmitting ? "Sending" : "Send"}
-          <CtArrowRight />
+          <PkArrowRight />
         </span>
       </button>
     </form>);

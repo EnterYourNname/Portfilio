@@ -57,13 +57,6 @@ const TICKER_ITEMS = [
 
 
 
-const HmArrowRight = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-    strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" className="arrow">
-    <path d="M5 12h14" stroke="currentColor" />
-    <path d="m12 5 7 7-7 7" stroke="currentColor" />
-  </svg>
-);
 
 const HmArrowUp = ({ size = 14 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -116,7 +109,7 @@ function HmHero() {
           </p>
           <a className="pk-btn hm-hero-cta" href="contact.html">
             Contact me
-            <HmArrowRight />
+            <PkArrowRight />
           </a>
         </FadeCascade>
       </div>
@@ -149,6 +142,17 @@ function HmTicker() {
 
 function HmReel() {
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [consent, setConsent] = React.useState(() => localStorage.getItem('cookie-consent'));
+
+  React.useEffect(() => {
+    const handler = () => {
+      const val = localStorage.getItem('cookie-consent');
+      setConsent(val);
+      if (val === null) setIsPlaying(false);
+    };
+    window.addEventListener('cookie-consent-change', handler);
+    return () => window.removeEventListener('cookie-consent-change', handler);
+  }, []);
 
   const openFromKeyboard = (e) => {
     if (e.key !== "Enter" && e.key !== " ") return;
@@ -156,13 +160,29 @@ function HmReel() {
     setIsPlaying(true);
   };
 
+  const resetConsent = () => {
+    localStorage.removeItem('cookie-consent');
+    window.dispatchEvent(new Event('cookie-consent-change'));
+  };
+
+  if (consent === 'declined') {
+    return (
+      <div className="hm-reel hm-reel--blocked">
+        <p>Video unavailable — cookies declined.</p>
+        <button className="hm-reel--blocked-btn" onClick={resetConsent}>
+          Change cookie settings
+        </button>
+      </div>
+    );
+  }
+
   if (isPlaying) {
     return (
       <div className="hm-reel" style={{ padding: 0, backgroundColor: "#000", border: "none" }}>
-        <iframe 
-          src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0&autoplay=1" 
-          style={{ width: "100%", height: "100%", border: "none" }} 
-          allow="fullscreen; picture-in-picture" 
+        <iframe
+          src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0&autoplay=1"
+          style={{ width: "100%", height: "100%", border: "none" }}
+          allow="fullscreen; picture-in-picture"
           allowFullScreen
           title="Work Reel"
         ></iframe>
@@ -250,7 +270,7 @@ function HmProjects() {
           }}
           aria-expanded={showAllProjects}
         >
-          {showAllProjects ? "Show less" : "All projects"} <HmArrowRight size={14} />
+          {showAllProjects ? "Show less" : "All projects"} <PkArrowRight size={14} />
         </button>
       )}
     </section>
@@ -285,7 +305,7 @@ function HmFeaturedProject() {
           and readable health feedback across mobile screens.
         </p>
         <a className="pk-link" href={project.href}>
-          View full project <HmArrowRight size={14} />
+          View full project <PkArrowRight size={14} />
         </a>
       </div>
 
