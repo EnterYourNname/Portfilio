@@ -63,7 +63,9 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   border: 1px solid rgba(255, 245, 232, 0.16); cursor: pointer;
   transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
 }
-.pk-menu-btn:hover { background: rgba(38,37,36,0.88); }
+@media (hover: hover) {
+  .pk-menu-btn:hover { background: rgba(38,37,36,0.88); }
+}
 .pk-menu-btn:active { transform: scale(0.985); }
 .pk-menu-btn svg { width: 18px; height: 18px; stroke: #FFF5E8; }
 
@@ -118,14 +120,16 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   transition: transform 320ms var(--ease-out);
   z-index: -1;
 }
-.pk-btn:hover::before { transform: translate(-50%, -50%) scaleX(1); }
-.pk-btn:hover {
-  background: var(--theme-btn-bg, var(--ink));
-  color: var(--ink);
-  transform: translateY(-2px) scale(1.012);
-  box-shadow: 0 12px 24px rgba(27, 24, 20, 0.18);
+@media (hover: hover) {
+  .pk-btn:hover::before { transform: translate(-50%, -50%) scaleX(1); }
+  .pk-btn:hover {
+    background: var(--theme-btn-bg, var(--ink));
+    color: var(--ink);
+    transform: translateY(-2px) scale(1.012);
+    box-shadow: 0 12px 24px rgba(27, 24, 20, 0.18);
+  }
+  .pk-btn:hover .arrow path { stroke: var(--ink); }
 }
-.pk-btn:hover .arrow path { stroke: var(--ink); }
 .pk-btn:active {
   background: var(--orange); color: var(--ink);
   transform: translateY(0) scale(0.985);
@@ -212,11 +216,13 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   letter-spacing: var(--type-track-button-secondary);
 }
 .pk-btn.dark-on-light::before { display: none; }
-.pk-btn.dark-on-light:hover {
-  background: var(--cream-soft);
-  color: var(--ink);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(27, 24, 20, 0.10);
+@media (hover: hover) {
+  .pk-btn.dark-on-light:hover {
+    background: var(--cream-soft);
+    color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(27, 24, 20, 0.10);
+  }
 }
 .pk-btn.dark-on-light:active {
   background: var(--ink);
@@ -242,13 +248,15 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   letter-spacing: var(--type-track-button-tertiary);
 }
 .pk-btn.tertiary::before { display: none; }
-.pk-btn.tertiary:hover {
-  background: transparent;
-  color: var(--ink);
-  transform: translateY(-1px);
-  box-shadow: none;
+@media (hover: hover) {
+  .pk-btn.tertiary:hover {
+    background: transparent;
+    color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: none;
+  }
+  .pk-btn.tertiary:hover .arrow path { stroke: var(--orange-warm); }
 }
-.pk-btn.tertiary:hover .arrow path { stroke: var(--orange-warm); }
 .pk-btn.tertiary:active {
   background: transparent;
   color: var(--ink);
@@ -270,9 +278,11 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   min-width: 173px;
   justify-content: center;
 }
-.pk-btn.tertiary.on-dark:hover {
-  color: var(--cream);
-  border-color: var(--cream);
+@media (hover: hover) {
+  .pk-btn.tertiary.on-dark:hover {
+    color: var(--cream);
+    border-color: var(--cream);
+  }
 }
 .pk-btn.tertiary.on-dark:active {
   color: var(--cream);
@@ -314,7 +324,9 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   transform-origin: left center;
   transition: transform 280ms var(--ease-out);
 }
-.pk-link:hover::after,
+@media (hover: hover) {
+  .pk-link:hover::after { transform: scaleX(1); }
+}
 .pk-link:focus-visible::after { transform: scaleX(1); }
 .pk-link:active { color: var(--ink-soft); }
 .pk-link:focus-visible {

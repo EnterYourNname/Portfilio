@@ -39,4 +39,17 @@ Object.assign(window, { FadeCascade });
     clearTimeout(resetTimer);
     btn.classList.remove('pk-btn--touching', 'pk-btn--tapped');
   }, { passive: true });
+
+  function clearAllBtnStates() {
+    clearTimeout(resetTimer);
+    document.querySelectorAll('.pk-btn--touching, .pk-btn--tapped').forEach(function (btn) {
+      btn.classList.remove('pk-btn--touching', 'pk-btn--tapped');
+    });
+  }
+
+  // Clear stale touch classes when page hides (navigation) and when restored from bfcache
+  window.addEventListener('pagehide', clearAllBtnStates);
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) clearAllBtnStates();
+  });
 })();

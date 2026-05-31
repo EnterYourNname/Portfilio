@@ -555,7 +555,9 @@ html, body {
   cursor: pointer;
   transition: transform 200ms var(--ease-out);
 }
-.pk-social-link:hover { transform: scale(1.08); }
+@media (hover: hover) {
+  .pk-social-link:hover { transform: scale(1.08); }
+}
 .pk-social-link img { width: 32px; height: 32px; display: block; }
 
 @media (min-width: 640px) and (max-width: 899px) {
