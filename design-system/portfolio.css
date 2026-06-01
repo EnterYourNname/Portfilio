@@ -654,6 +654,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .ck-banner--expanded { border-top: 1px solid var(--tint-cream-12); }
 .ck-inner--settings {
   flex-direction: column;
+  align-items: stretch;
   gap: 0;
   max-height: 80vh;
   overflow-y: auto;
