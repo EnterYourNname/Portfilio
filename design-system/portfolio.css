@@ -1093,7 +1093,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   --ghost-border-hover: var(--ink);
   --ghost-color:        var(--ink);
   --ghost-fill:         var(--ink);
-  --ghost-fill-hover:   var(--ink-soft);
+  --ghost-fill-hover:   rgb(61, 58, 54);
   --ghost-fill-color:   var(--cream);
   --ghost-focus-ring:   var(--orange);
 }
