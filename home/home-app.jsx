@@ -107,7 +107,7 @@ function HmHero() {
           <p className="hm-lead">
             Designer with <strong>7 years</strong> across UI/UX, 3D &amp; brand. Stuttgart, DE. 🚀
           </p>
-          <a className="pk-btn hm-hero-cta" href="contact.html">
+          <a className="pk-btn hm-hero-cta" href="/contact">
             Contact me
             <PkArrowRight />
           </a>

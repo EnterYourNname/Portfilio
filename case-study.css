@@ -450,3 +450,13 @@ html, body { background: var(--page-shell-bg); }
     width: calc(100% - 48px) !important;
   }
 }
+
+@media (min-width: 900px) {
+  .phone {
+    max-width: 1248px;
+  }
+  .cs-toolbar, .cs-hero, .cs-meta, .cs-section, .cs-next {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
