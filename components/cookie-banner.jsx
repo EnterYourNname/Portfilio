@@ -56,8 +56,8 @@ function CookieBanner() {
           </div>
 
           <div className="ck-settings-actions">
-            <button className="ck-btn-decline" onClick={() => handleConsent('declined')}>Decline all</button>
-            <button className="ck-btn-accept" onClick={() => handleConsent(videoEnabled ? 'accepted' : 'declined')}>Save selection</button>
+            <button className="pk-btn on-dark" onClick={() => handleConsent('declined')}>Decline all</button>
+            <button className="pk-btn on-dark filled" onClick={() => handleConsent(videoEnabled ? 'accepted' : 'declined')}>Save selection</button>
           </div>
         </div>
       </div>
@@ -72,9 +72,9 @@ function CookieBanner() {
           <a href="privacy.html" className="ck-policy-link">Privacy policy</a>
         </p>
         <div className="ck-actions">
-          <button className="ck-btn-decline" onClick={() => handleConsent('declined')}>Decline all</button>
-          <button className="ck-btn-settings" onClick={() => setShowSettings(true)}>Cookie settings</button>
-          <button className="ck-btn-accept" onClick={() => handleConsent('accepted')}>Accept all</button>
+          <button className="pk-btn on-dark" onClick={() => handleConsent('declined')}>Decline all</button>
+          <button className="pk-btn on-dark" onClick={() => setShowSettings(true)}>Cookie settings</button>
+          <button className="pk-btn on-dark filled" onClick={() => handleConsent('accepted')}>Accept all</button>
         </div>
       </div>
     </div>

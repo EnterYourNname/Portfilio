@@ -289,6 +289,70 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   border-color: var(--cream);
 }
 
+/* ── Secondary / ghost — on dark surface ──────────────────────────
+   Ghost outline pill for dark backgrounds (banners, ink sections).
+   Two variants: default ghost + .filled for highest-emphasis action. */
+.pk-btn.on-dark {
+  height: 40px;
+  width: auto;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(255, 245, 232, 0.35);
+  font-weight: var(--type-weight-button-secondary);
+  font-size: var(--type-size-button-secondary);
+  line-height: var(--type-line-button-secondary);
+  letter-spacing: var(--type-track-button-secondary);
+  transition:
+    background 200ms var(--ease-out),
+    border-color 200ms var(--ease-out),
+    color 200ms var(--ease-out),
+    transform 160ms var(--ease-out);
+}
+.pk-btn.on-dark::before { display: none; }
+@media (hover: hover) {
+  .pk-btn.on-dark:hover {
+    background: transparent;
+    color: var(--cream);
+    border-color: var(--cream);
+    transform: none;
+    box-shadow: none;
+  }
+}
+.pk-btn.on-dark:active {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+  transform: scale(0.98);
+  box-shadow: none;
+}
+.pk-btn.on-dark:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+/* Filled — solid cream, highest-emphasis action on dark surface */
+.pk-btn.on-dark.filled {
+  background: var(--cream);
+  color: var(--ink);
+  border: none;
+}
+@media (hover: hover) {
+  .pk-btn.on-dark.filled:hover {
+    background: var(--color-cream-200);
+    color: var(--ink);
+    border-color: transparent;
+    transform: none;
+    box-shadow: none;
+  }
+}
+.pk-btn.on-dark.filled:active {
+  background: var(--color-cream-200);
+  color: var(--ink);
+  border: none;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
 /* Text/Link button — bare text (optionally + arrow) at rest, animated
    bottom underline on hover. Use for inline navigation links such as
    "View all projects" or "More about me".
@@ -540,42 +604,8 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   gap: 8px;
   flex-shrink: 0;
 }
-.ck-btn-decline {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 245, 232, 0.35);
-  background: transparent;
-  color: var(--cream);
-  font-family: var(--font-sans);
-  font-weight: var(--fw-demi);
-  font-size: var(--type-size-button-secondary);
-  letter-spacing: var(--type-track-button-secondary);
-  cursor: pointer;
-  transition: border-color 200ms var(--ease-out);
-}
-@media (hover: hover) {
-  .ck-btn-decline:hover { border-color: var(--cream); }
-}
-.ck-btn-decline:active { opacity: 0.7; }
-.ck-btn-accept {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 99px;
-  border: none;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  font-weight: var(--fw-demi);
-  font-size: var(--type-size-button-secondary);
-  letter-spacing: var(--type-track-button-secondary);
-  cursor: pointer;
-  transition: background 200ms var(--ease-out);
-}
-@media (hover: hover) {
-  .ck-btn-accept:hover { background: var(--color-cream-200); }
-}
-.ck-btn-accept:active { opacity: 0.8; }
+/* Cookie banner action buttons now use .pk-btn.on-dark (ghost) and
+   .pk-btn.on-dark.filled (cream) — see the on-dark block above. */
 .ck-lang-toggle {
   height: 32px;
   padding: 0 10px;
@@ -595,26 +625,6 @@ html, body { margin: 0; padding: 0; background: #efece5; }
     border-color: rgba(255, 245, 232, 0.4);
   }
 }
-
-/* Cookie settings button (3rd action in collapsed banner) */
-.ck-btn-settings {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 245, 232, 0.35);
-  background: transparent;
-  color: var(--cream);
-  font-family: var(--font-sans);
-  font-weight: var(--fw-demi);
-  font-size: var(--type-size-button-secondary);
-  letter-spacing: var(--type-track-button-secondary);
-  cursor: pointer;
-  transition: border-color 200ms var(--ease-out);
-}
-@media (hover: hover) {
-  .ck-btn-settings:hover { border-color: var(--cream); }
-}
-.ck-btn-settings:active { opacity: 0.7; }
 
 /* Expanded settings panel */
 .ck-banner--expanded { border-top: 1px solid rgba(255, 245, 232, 0.12); }
