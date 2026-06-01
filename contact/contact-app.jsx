@@ -264,7 +264,7 @@ function ContactForm({ onSent }) {
       {submitError && <p className="ct-submit-error" role="alert" aria-live="polite">{submitError}</p>}
 
       <button type="submit" className="pk-btn ct-submit" disabled={isSubmitting}>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+        <span>
           {isSubmitting ? "Sending" : "Send"}
           <PkArrowRight />
         </span>

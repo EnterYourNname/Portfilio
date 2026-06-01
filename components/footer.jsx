@@ -35,7 +35,7 @@ function SharedFooter({ onScrollTop }) {
         </div>
       </div>
       <div className="pk-footer-black">
-        <button className="pk-link" style={{ color: "var(--cream)" }} onClick={onScrollTop}>
+        <button className="pk-link" onClick={onScrollTop}>
           Back to top <FooterArrowUp />
         </button>
         <div className="pk-contact-row">
@@ -48,14 +48,14 @@ function SharedFooter({ onScrollTop }) {
           </a>
         </div>
         <nav className="pk-footer-nav">
-          <a href="index.html"       style={{ color:"inherit", textDecoration:"none" }}>Home</a>
-          <a href="index.html#work"  style={{ color:"inherit", textDecoration:"none" }}>Work</a>
-          <a href="about.html"       style={{ color:"inherit", textDecoration:"none" }}>About</a>
-          <a href="contact.html"     style={{ color:"inherit", textDecoration:"none" }}>Contact</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#work">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </nav>
         <nav className="pk-footer-legal">
-          <a href="impressum.html"   style={{ color:"inherit", textDecoration:"none" }}>Impressum</a>
-          <a href="privacy.html"     style={{ color:"inherit", textDecoration:"none" }}>Privacy policy</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="privacy.html">Privacy policy</a>
           <button
             className="pk-footer-cookie-btn"
             onClick={() => {

@@ -84,7 +84,7 @@ const PlayIcon = () => (
 function HmHero() {
   return (
     <section className="hm-hero" aria-label="Intro">
-      <svg style={{ width: 0, height: 0, position: 'absolute' }} aria-hidden="true" focusable="false">
+      <svg className="hm-svg-filter" aria-hidden="true" focusable="false">
         <filter id="motion-blur">
           <feGaussianBlur in="SourceGraphic" stdDeviation="16 0" />
         </filter>
@@ -178,10 +178,9 @@ function HmReel() {
 
   if (isPlaying) {
     return (
-      <div className="hm-reel" style={{ padding: 0, backgroundColor: "#000", border: "none" }}>
+      <div className="hm-reel hm-reel--playing">
         <iframe
           src="https://player.vimeo.com/video/1082557519?title=0&byline=0&portrait=0&autoplay=1"
-          style={{ width: "100%", height: "100%", border: "none" }}
           allow="fullscreen; picture-in-picture"
           allowFullScreen
           title="Work Reel"
@@ -343,10 +342,10 @@ function HmExperience() {
   return (
     <section className="hm-xp-section">
       <div className="hm-section-head">
-        <span className="pk-mono" style={{ color: "rgba(255,245,232,0.55)" }}>Experience</span>
+        <span className="pk-mono">Experience</span>
         <span className="hm-section-count">7 years</span>
       </div>
-      <h2 className="hm-section-title" style={{ color: "var(--cream)" }}>Work history.</h2>
+      <h2 className="hm-section-title">Work history.</h2>
       <div className="hm-xp-list">
         {EXPERIENCE.map((x, i) => (
           <div className="hm-xp-row" key={i}>

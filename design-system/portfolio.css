@@ -820,7 +820,8 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   padding: 48px 24px 32px;
   display: flex; flex-direction: column; gap: 48px; align-items: center;
 }
-.pk-footer-black .pk-link { align-self: center; }
+.pk-footer-black .pk-link { align-self: center; color: var(--cream); }
+.pk-footer-nav a, .pk-footer-legal a { color: inherit; text-decoration: none; }
 
 .pk-contact-row {
   display: flex; align-items: center; gap: 16px;
