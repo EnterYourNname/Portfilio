@@ -742,6 +742,11 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   gap: 8px;
   padding-top: 14px;
 }
+.ck-settings-actions .pk-btn {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 140px;
+}
 
 /* Reel — blocked (cookies declined) */
 .hm-reel--blocked {
