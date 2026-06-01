@@ -97,6 +97,15 @@
   --tint-white-80: rgba(255, 255, 255, 0.80);
   --tint-orange-20: rgba(255, 138, 54, 0.20);
   --tint-orange-50: rgba(255, 138, 54, 0.50);
+  --tint-ink-06:    rgba(27, 24, 20, 0.06);
+  --tint-cream-06:  rgba(255, 245, 232, 0.06);
+  --tint-cream-08:  rgba(255, 245, 232, 0.08);
+  --tint-cream-12:  rgba(255, 245, 232, 0.12);
+  --tint-cream-25:  rgba(255, 245, 232, 0.25);
+  --tint-cream-35:  rgba(255, 245, 232, 0.35);
+  --tint-cream-50:  rgba(255, 245, 232, 0.50);
+  --tint-cream-55:  rgba(255, 245, 232, 0.55);
+  --page-shell-bg:  rgb(239, 236, 229);
 
   /* Semantic */
   --fg:            var(--ink);

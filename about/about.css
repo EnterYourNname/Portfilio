@@ -3,7 +3,7 @@
    .am-* (about me) is the prefix for new classes on this page. */
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font-sans); color: var(--ink); }
+html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-family: var(--font-sans); color: var(--ink); }
 
 /* ─── Standalone shell — centers the 393px phone on the page ──── */
 .am-shell {
@@ -39,14 +39,14 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   padding: 12px 16px; height: 64px;
 }
 .am-avatar { width: 40px; height: 40px; border-radius: 50%;
-  background: url('../design-system/assets/avatar.jpg') center/cover, #1B1814; }
+  background: url('../design-system/assets/avatar.jpg') center/cover, var(--ink); }
 .am-menu-btn {
   width: 72px; height: 40px; border-radius: 80px;
-  background: rgba(38,37,36,0.9); color: #FFF5E8;
+  background: rgba(38,37,36,0.9); color: var(--cream);
   display: flex; align-items: center; justify-content: center;
   border: none;
 }
-.am-menu-btn svg { width: 18px; height: 18px; stroke: #FFF5E8; }
+.am-menu-btn svg { width: 18px; height: 18px; stroke: var(--cream); }
 
 /* ─── Hero / intro ─────────────────────────────────────────────── */
 .am-intro {
@@ -84,11 +84,11 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .am-strip {
   display: flex; align-items: center; gap: 16px;
   padding: 14px 16px;
-  background: #fff;
+  background: var(--white);
   white-space: nowrap; overflow-x: auto;
   scrollbar-width: none;
-  border-top: 1px solid rgba(27,24,20,0.06);
-  border-bottom: 1px solid rgba(27,24,20,0.06);
+  border-top: 1px solid var(--tint-ink-06);
+  border-bottom: 1px solid var(--tint-ink-06);
 }
 .am-strip::-webkit-scrollbar { display: none; }
 .am-strip > * { flex: 0 0 auto; }
@@ -128,7 +128,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .am-meta-row {
   display: flex; justify-content: space-between; align-items: baseline;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(27,24,20,0.10);
+  border-bottom: 1px solid var(--color-gray-400);
   gap: 16px;
 }
 .am-meta-row:last-child { border-bottom: none; }
@@ -163,8 +163,8 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   border-radius: 4px;
   color: var(--cream);
 }
-.am-now.dark .role { color: #fff; }
-.am-now.dark .place { color: rgba(255,255,255,0.7); }
+.am-now.dark .role { color: var(--white); }
+.am-now.dark .place { color: var(--tint-white-70); }
 
 /* ─── Beyond design: icons + chips ────────────────────────────── */
 .am-beyond-icons {
@@ -238,17 +238,17 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   display: flex; flex-direction: column; gap: 24px;
 }
 .am-experience .pk-mono { color: var(--orange); }
-.am-experience h2 { color: #fff; }
+.am-experience h2 { color: var(--white); }
 .am-xp-list { display: flex; flex-direction: column; gap: 16px; }
 .am-xp {
   display: flex; flex-direction: column; gap: 8px;
   padding: 8px 0;
   border-bottom: 1px solid var(--orange);
 }
-.am-xp-role { font-size: 18px; font-weight: 700; line-height: 1.4; color: #fff; }
+.am-xp-role { font-size: 18px; font-weight: 700; line-height: 1.4; color: var(--white); }
 .am-xp-meta {
   display: flex; justify-content: space-between;
-  font-size: 14px; color: rgba(255,255,255,0.8); letter-spacing: 0.023em;
+  font-size: 14px; color: var(--tint-white-80); letter-spacing: 0.023em;
 }
 
 /* Variation C: experience on paper, numbered, no dark band */

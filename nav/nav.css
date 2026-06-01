@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 245, 232, 0.08);
+  border-bottom: 1px solid var(--tint-cream-08);
   flex: 0 0 auto;
 }
 
@@ -58,7 +58,7 @@
 
 .nav-close {
   width: 40px; height: 40px;
-  background: rgba(255, 245, 232, 0.08);
+  background: var(--tint-cream-08);
   border: none; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; color: var(--cream);
@@ -85,10 +85,10 @@
   font-size: 44px;
   line-height: 1.1;
   letter-spacing: -0.015em;
-  color: rgba(255, 245, 232, 0.35);
+  color: var(--tint-cream-35);
   text-decoration: none;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 245, 232, 0.06);
+  border-bottom: 1px solid var(--tint-cream-06);
   transition: color 160ms var(--ease-out);
 }
 .nav-link:last-child { border-bottom: none; }
@@ -97,8 +97,8 @@
 
 .nav-tagline {
   padding: 24px;
-  color: rgba(255, 245, 232, 0.50);
-  border-top: 1px solid rgba(255, 245, 232, 0.08);
+  color: var(--tint-cream-50);
+  border-top: 1px solid var(--tint-cream-08);
   flex: 0 0 auto;
   display: block;
   font-size: 11px;
