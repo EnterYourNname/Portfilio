@@ -337,9 +337,9 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 }
 @media (hover: hover) {
   .pk-btn.ghost.active:hover {
-    background: var(--ghost-fill);
+    background: var(--ghost-fill-hover);
     color: var(--ghost-fill-color);
-    border-color: var(--ghost-fill);
+    border-color: var(--ghost-fill-hover);
     transform: translateY(-1px);
   }
 }
@@ -1093,6 +1093,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   --ghost-border-hover: var(--ink);
   --ghost-color:        var(--ink);
   --ghost-fill:         var(--ink);
+  --ghost-fill-hover:   var(--ink-soft);
   --ghost-fill-color:   var(--cream);
   --ghost-focus-ring:   var(--orange);
 }
@@ -1109,6 +1110,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   --ghost-border-hover: var(--cream);
   --ghost-color:        var(--cream);
   --ghost-fill:         var(--cream);
+  --ghost-fill-hover:   var(--cream-deep);
   --ghost-fill-color:   var(--ink);
   --ghost-focus-ring:   var(--cream);
 }
