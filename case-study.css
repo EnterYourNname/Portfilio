@@ -459,6 +459,11 @@ html, body { background: var(--page-shell-bg); }
     padding-left: 48px;
     padding-right: 48px;
   }
+  /* Fixed header is top:16px + height:48px = 64px bottom edge.
+     Toolbar top padding must clear it. */
+  .cs-toolbar {
+    padding-top: 80px;
+  }
   /* Hero image and video: mobile uses 16px side margin for phone-frame inset;
      on desktop the section padding already provides the grid gutter. */
   .cs-hero-img,
