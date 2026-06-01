@@ -50,14 +50,14 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 
 /* ─── Hero / intro ─────────────────────────────────────────────── */
 .am-intro {
-  padding: 80px 16px 24px;
+  padding: 80px 16px 16px;
   display: flex; flex-direction: column; gap: 24px;
 }
 .am-intro .pk-mono { color: var(--ink); }
 .am-display {
   margin: 0;
   font-weight: 700;
-  font-size: 56px; line-height: 1.02;
+  font-size: var(--type-size-statement); line-height: 1.02;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
@@ -96,6 +96,9 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .am-strip .item {
   font-size: 14px; letter-spacing: 0.023em; color: var(--ink);
 }
+
+/* ─── Lead section spacing override ────────────────────────────── */
+.am-lead-section { padding-top: 32px; padding-bottom: 8px; }
 
 /* ─── Generic content section ─────────────────────────────────── */
 .am-section {
@@ -208,13 +211,13 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .am-skill .name { font-size: 28px; line-height: 1.2; letter-spacing: 0.01em; }
 .am-skill .num { font-size: 12px; letter-spacing: 0.033em; color: var(--orange-text); padding-top: 6px; }
 
-/* Variation B compact skills: tertiary buttons (per design-system spec) */
+/* Variation B compact skills: filled dark chips */
 .am-skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .am-skill-chip {
-  height: 48px; padding: 0 20px;
+  height: 40px; padding: 0 20px;
   border-radius: 99px;
-  background: transparent;
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
   border: 1px solid var(--ink);
   display: inline-flex; align-items: center;
   font-family: var(--font-sans);

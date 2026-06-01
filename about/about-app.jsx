@@ -72,7 +72,7 @@ stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="ro
 function AmSkillChips() {
   return (
     <div className="am-skill-chips">
-      {ABOUT.skills.map((s) => <span key={s} className="am-skill-chip" style={{ backgroundColor: "rgb(0, 0, 0)", color: "rgb(255, 255, 255)", height: "40px" }}>{s}</span>)}
+      {ABOUT.skills.map((s) => <span key={s} className="am-skill-chip">{s}</span>)}
     </div>);
 
 }
@@ -114,16 +114,16 @@ function AboutPage() {
 
         <div className="am-fade-grid">
           <FadeCascade>
-            <section className="am-intro" style={{ paddingBottom: 16 }} data-screen-label="01 Intro">
+            <section className="am-intro" data-screen-label="01 Intro">
               <span className="pk-mono">About me</span>
-              <h1 className="am-display" style={{ fontSize: 42 }}>Hi, I&rsquo;m Andrii</h1>
+              <h1 className="am-display">Hi, I&rsquo;m Andrii</h1>
             </section>
 
             <div className="am-portrait square inset"
             style={{ backgroundImage: `url('${PORTRAIT}')` }}
             aria-label="Portrait of Andrii" />
 
-            <section className="am-section am-lead-section" style={{ paddingTop: 32, paddingBottom: 8 }} data-screen-label="02 Lead">
+            <section className="am-section am-lead-section" data-screen-label="02 Lead">
               <p className="am-lead">Visual storyteller from Stuttgart. Seven years across UI/UX, 3D, and interior design - with one eye on what AI does to craft.
               </p>
             </section>

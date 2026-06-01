@@ -342,6 +342,9 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
   }
 }
 
+/* Button inner flex wrapper */
+.ct-submit span { display: inline-flex; align-items: center; gap: 10px; }
+
 .ct-phone .pk-contact-cta-shell {
   display: none;
 }

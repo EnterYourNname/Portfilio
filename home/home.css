@@ -452,6 +452,13 @@ html, body {
   aspect-ratio: 1 / 1;
 }
 
+/* ─── Hidden SVG filter container ──────────────────────────────── */
+.hm-svg-filter { width: 0; height: 0; position: absolute; }
+
+/* ─── Work reel — playing state ─────────────────────────────────── */
+.hm-reel--playing { padding: 0; background: var(--ink); border: none; cursor: default; }
+.hm-reel--playing iframe { width: 100%; height: 100%; border: none; display: block; }
+
 /* ─── Experience ───────────────────────────────────────────────── */
 .hm-xp-section {
   background: var(--ink);
@@ -462,6 +469,7 @@ html, body {
   gap: 24px;
 }
 .hm-xp-section .hm-section-title { color: var(--cream); }
+.hm-xp-section .hm-section-head .pk-mono { color: rgba(255, 245, 232, 0.55); }
 .hm-xp-section .hm-section-count { color: var(--orange); }
 .hm-xp-list { display: flex; flex-direction: column; }
 .hm-xp-row {
