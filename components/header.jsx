@@ -44,19 +44,20 @@ function SharedHeader({ onMenuClick, menuOpen }) {
   // Determine which nav link should be active based on current URL
   const path = window.location.pathname;
   const hash = window.location.hash;
-  const isHome = path.endsWith("/") || path.endsWith("index.html");
-  const isAbout = path.endsWith("about.html");
-  const isContact = path.endsWith("contact.html");
+  const normPath = path.replace(/\/$/, "") || "/";
+  const isHome = normPath === "/" || normPath.endsWith("/index");
+  const isAbout = normPath.endsWith("/about");
+  const isContact = normPath.endsWith("/contact");
 
   return (
     <React.Fragment>
       <div className="pk-avatar pk-site-avatar" aria-label="Andrii B." />
       <header className={`pk-header${compact ? " is-compact" : ""}`}>
         <nav className="pk-desktop-nav" aria-label="Primary navigation">
-          <a href="index.html" aria-current={isHome && hash !== "#work" ? "page" : undefined}>Home</a>
-          <a href="index.html#work" aria-current={isHome && hash === "#work" ? "page" : undefined}>Work</a>
-          <a href="about.html" aria-current={isAbout ? "page" : undefined}>About</a>
-          <a href="contact.html" aria-current={isContact ? "page" : undefined}>Contact</a>
+          <a href="/" aria-current={isHome && hash !== "#work" ? "page" : undefined}>Home</a>
+          <a href="/#work" aria-current={isHome && hash === "#work" ? "page" : undefined}>Work</a>
+          <a href="/about" aria-current={isAbout ? "page" : undefined}>About</a>
+          <a href="/contact" aria-current={isContact ? "page" : undefined}>Contact</a>
         </nav>
         <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
           <PkMenuIcon />

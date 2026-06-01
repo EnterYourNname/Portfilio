@@ -24,7 +24,7 @@ function SharedFooter({ onScrollTop }) {
       </div>
       <div className="pk-contact">
         <div className="pk-contact-cta-shell">
-          <a className="pk-btn" href="contact.html">
+          <a className="pk-btn" href="/contact">
             Contact me
             <FooterArrowRight />
           </a>
@@ -48,14 +48,14 @@ function SharedFooter({ onScrollTop }) {
           </a>
         </div>
         <nav className="pk-footer-nav">
-          <a href="index.html">Home</a>
-          <a href="index.html#work">Work</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="/">Home</a>
+          <a href="/#work">Work</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
         <nav className="pk-footer-legal">
-          <a href="impressum.html">Impressum</a>
-          <a href="privacy.html">Privacy policy</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/privacy">Privacy policy</a>
           <button
             className="pk-footer-cookie-btn"
             onClick={() => {

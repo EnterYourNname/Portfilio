@@ -276,7 +276,7 @@ I worked closely with the architect and another interior designer to shape the v
 ];
 
 PORTFOLIO_PROJECTS.forEach((project) => {
-  project.href = `case-study.html?project=${project.id}`;
+  project.href = `/case-study?project=${project.id}`;
 });
 
 Object.assign(window, { PORTFOLIO_PROJECTS });

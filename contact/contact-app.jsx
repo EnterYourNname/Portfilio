@@ -55,7 +55,7 @@ function CtToolbar() {
       history.back();
       return;
     }
-    location.href = "index.html";
+    location.href = "/";
   };
 
   return (

@@ -114,7 +114,7 @@ function Toolbar({ project }) {
   const total = PROJECTS.length;
   return (
     <div className="cs-toolbar">
-      <button className="cs-back" type="button" onClick={() => location.href = "index.html#work"}>
+      <button className="cs-back" type="button" onClick={() => location.href = "/#work"}>
         <ArrowLeft />
         <span className="cs-back-label">Projects</span>
       </button>
@@ -370,7 +370,7 @@ function CaseStudyApp() {
         <div className="phone">
           <section className="cs-section">
             <h1 className="cs-title">Project not found</h1>
-            <a className="pk-btn" href="index.html#work">Back to projects</a>
+            <a className="pk-btn" href="/#work">Back to projects</a>
           </section>
         </div>
       </div>

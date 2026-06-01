@@ -4,10 +4,10 @@
   // "Work" anchors to the projects section on the home page; project
   // detail pages are opened by clicking project cards, not from nav.
   const PAGES = [
-    { label: "Home",    href: "index.html" },
-    { label: "Work",    href: "index.html#work" },
-    { label: "About",   href: "about.html" },
-    { label: "Contact", href: "contact.html" },
+    { label: "Home",    href: "/" },
+    { label: "Work",    href: "/#work" },
+    { label: "About",   href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const NAV_ID = "site-navigation";
@@ -46,20 +46,21 @@
 
     if (!open) return null;
 
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
     const currentHash = window.location.hash;
     const isCurrentPage = (page) => {
       const [pagePath, pageHash = ""] = page.href.split("#");
       const hash = pageHash ? `#${pageHash}` : "";
-      const isProjectDetail = currentPath === "case-study.html" && page.href === "index.html#work";
+      const normPath = pagePath.replace(/\/$/, "") || "/";
+      const isProjectDetail = currentPath.endsWith("/case-study") && page.href === "/#work";
 
       if (isProjectDetail) return true;
 
       if (hash) {
-        return currentPath === pagePath && currentHash === hash;
+        return currentPath === normPath && currentHash === hash;
       }
 
-      return currentPath === pagePath && !currentHash;
+      return currentPath === normPath && !currentHash;
     };
 
     return (
