@@ -2,7 +2,7 @@
    Reuses design-system tokens; adds .ct-* classes for contact-specific UI. */
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font-sans); color: var(--ink); }
+html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-family: var(--font-sans); color: var(--ink); }
 
 .ct-shell {
   width: 100%;
@@ -77,9 +77,9 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-status {
   display: flex; align-items: center; gap: 12px;
   padding: 12px 16px;
-  background: #fff;
-  border-top: 1px solid rgba(27,24,20,0.06);
-  border-bottom: 1px solid rgba(27,24,20,0.06);
+  background: var(--white);
+  border-top: 1px solid var(--tint-ink-06);
+  border-bottom: 1px solid var(--tint-ink-06);
 }
 .ct-status .pulse {
   width: 8px; height: 8px; border-radius: 50%;
@@ -126,7 +126,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-input {
   height: 56px;
   width: 100%;
-  background: #fff;
+  background: var(--white);
   border: 1px solid transparent;
   border-radius: 99px;
   padding: 0 24px;
@@ -160,7 +160,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-prefix {
   flex: 0 0 auto;
   height: 56px; padding: 0 16px;
-  background: #fff;
+  background: var(--white);
   border-radius: 99px;
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 16px; color: var(--ink);
@@ -181,7 +181,7 @@ html, body { margin: 0; padding: 0; background: #efece5; font-family: var(--font
 .ct-textarea {
   width: 100%;
   min-height: 140px;
-  background: #fff;
+  background: var(--white);
   border: 1px solid transparent;
   border-radius: 16px;
   padding: 16px 20px;

@@ -57,7 +57,7 @@ function CookieBanner() {
 
           <div className="ck-settings-actions">
             <button className="pk-btn ghost" onClick={() => handleConsent('declined')}>Decline all</button>
-            <button className="pk-btn on-dark filled" onClick={() => handleConsent(videoEnabled ? 'accepted' : 'declined')}>Save selection</button>
+            <button className="pk-btn ghost active" onClick={() => handleConsent(videoEnabled ? 'accepted' : 'declined')}>Save selection</button>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ function CookieBanner() {
         <div className="ck-actions">
           <button className="pk-btn ghost" onClick={() => handleConsent('declined')}>Decline all</button>
           <button className="pk-btn ghost" onClick={() => setShowSettings(true)}>Cookie settings</button>
-          <button className="pk-btn on-dark filled" onClick={() => handleConsent('accepted')}>Accept all</button>
+          <button className="pk-btn ghost active" onClick={() => handleConsent('accepted')}>Accept all</button>
         </div>
       </div>
     </div>

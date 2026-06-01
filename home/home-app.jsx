@@ -142,22 +142,39 @@ function HmTicker() {
 
 function HmReel() {
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [pendingPlay, setPendingPlay] = React.useState(false);
   const [consent, setConsent] = React.useState(() => localStorage.getItem('cookie-consent'));
 
   React.useEffect(() => {
     const handler = () => {
       const val = localStorage.getItem('cookie-consent');
       setConsent(val);
-      if (val === null) setIsPlaying(false);
+      if (val === null) { setIsPlaying(false); setPendingPlay(false); }
     };
     window.addEventListener('cookie-consent-change', handler);
     return () => window.removeEventListener('cookie-consent-change', handler);
   }, []);
 
+  // Auto-play once consent is given after user tried to play
+  React.useEffect(() => {
+    if (pendingPlay && consent === 'accepted') {
+      setIsPlaying(true);
+      setPendingPlay(false);
+    }
+  }, [pendingPlay, consent]);
+
+  const handlePlay = () => {
+    if (consent === 'accepted') {
+      setIsPlaying(true);
+    } else if (consent === null) {
+      setPendingPlay(true);
+    }
+  };
+
   const openFromKeyboard = (e) => {
     if (e.key !== "Enter" && e.key !== " ") return;
     e.preventDefault();
-    setIsPlaying(true);
+    handlePlay();
   };
 
   const resetConsent = () => {
@@ -176,7 +193,7 @@ function HmReel() {
     );
   }
 
-  if (isPlaying) {
+  if (isPlaying && consent === 'accepted') {
     return (
       <div className="hm-reel hm-reel--playing">
         <iframe
@@ -189,9 +206,17 @@ function HmReel() {
     );
   }
 
+  if (pendingPlay) {
+    return (
+      <div className="hm-reel hm-reel--blocked">
+        <p>Respond to the cookie banner to play the video.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="hm-reel" role="button" tabIndex={0}
-      aria-label="Play work reel" onClick={() => setIsPlaying(true)}
+      aria-label="Play work reel" onClick={handlePlay}
       onKeyDown={openFromKeyboard}>
       <div className="hm-reel-img" />
       <div className="hm-reel-overlay">
