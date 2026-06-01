@@ -289,15 +289,17 @@ html, body { margin: 0; padding: 0; background: #efece5; }
   border-color: var(--cream);
 }
 
-/* ── Secondary / ghost — on dark surface ──────────────────────────
-   Ghost outline pill for dark backgrounds (banners, ink sections).
-   Two variants: default ghost + .filled for highest-emphasis action. */
-.pk-btn.on-dark {
+/* ── Ghost button — context-aware outline pill ──────────────────────
+   Reads surface tokens set on the container. Works on both light and
+   dark backgrounds without needing an extra modifier on the button.
+   Add .active for a persistent selected/toggled state (filter chips). */
+
+.pk-btn.ghost {
   height: 40px;
   width: auto;
-  background: transparent;
-  color: var(--cream);
-  border: 1px solid rgba(255, 245, 232, 0.35);
+  background: var(--ghost-bg);
+  color: var(--ghost-color);
+  border: 1px solid var(--ghost-border);
   font-weight: var(--type-weight-button-secondary);
   font-size: var(--type-size-button-secondary);
   line-height: var(--type-line-button-secondary);
@@ -306,31 +308,53 @@ html, body { margin: 0; padding: 0; background: #efece5; }
     background 200ms var(--ease-out),
     border-color 200ms var(--ease-out),
     color 200ms var(--ease-out),
-    transform 160ms var(--ease-out);
+    transform 160ms var(--ease-out),
+    box-shadow 200ms var(--ease-out);
 }
-.pk-btn.on-dark::before { display: none; }
+.pk-btn.ghost::before { display: none; }
 @media (hover: hover) {
-  .pk-btn.on-dark:hover {
-    background: transparent;
-    color: var(--cream);
-    border-color: var(--cream);
-    transform: none;
+  .pk-btn.ghost:hover {
+    background: var(--ghost-bg-hover);
+    color: var(--ghost-color);
+    border-color: var(--ghost-border-hover);
+    transform: translateY(-1px);
     box-shadow: none;
   }
 }
-.pk-btn.on-dark:active {
-  background: var(--cream);
-  color: var(--ink);
-  border-color: var(--cream);
+.pk-btn.ghost:active {
+  background: var(--ghost-fill);
+  color: var(--ghost-fill-color);
+  border-color: var(--ghost-fill);
   transform: scale(0.98);
   box-shadow: none;
 }
-.pk-btn.on-dark:focus-visible {
-  outline: 2px solid var(--cream);
+/* Selected / toggled state — persistent fill */
+.pk-btn.ghost.active {
+  background: var(--ghost-fill);
+  color: var(--ghost-fill-color);
+  border-color: var(--ghost-fill);
+  transform: none;
+}
+@media (hover: hover) {
+  .pk-btn.ghost.active:hover {
+    background: var(--ghost-fill);
+    color: var(--ghost-fill-color);
+    border-color: var(--ghost-fill);
+    transform: translateY(-1px);
+  }
+}
+.pk-btn.ghost:focus-visible {
+  outline: 2px solid var(--ghost-focus-ring);
   outline-offset: 3px;
 }
+.pk-btn.ghost:disabled,
+.pk-btn.ghost[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
 
-/* Filled — solid cream, highest-emphasis action on dark surface */
+/* Filled — solid emphasis on dark surface (Accept all, Save selection) */
 .pk-btn.on-dark.filled {
   background: var(--cream);
   color: var(--ink);
@@ -1059,13 +1083,34 @@ html, body { margin: 0; padding: 0; background: #efece5; }
 
 /* --- Auto Theme Colors --- */
 :root {
-  --theme-btn-bg: var(--ink);
-  --theme-btn-text: var(--cream);
+  --theme-btn-bg:       var(--ink);
+  --theme-btn-text:     var(--cream);
+
+  /* Ghost button surface tokens — light surface defaults */
+  --ghost-bg:           var(--color-cream-50);
+  --ghost-bg-hover:     var(--color-cream-200);
+  --ghost-border:       var(--ink);
+  --ghost-border-hover: var(--ink);
+  --ghost-color:        var(--ink);
+  --ghost-fill:         var(--ink);
+  --ghost-fill-color:   var(--cream);
+  --ghost-focus-ring:   var(--orange);
 }
 
-.pk-footer-bg, .pk-footer-black, .hm-hero, .surface-dark, .am-experience.paper {
-  --theme-btn-bg: var(--cream);
-  --theme-btn-text: var(--ink);
+.pk-footer-bg, .pk-footer-black, .hm-hero, .hm-xp-section,
+.ck-banner, .surface-dark, .am-experience.paper {
+  --theme-btn-bg:       var(--cream);
+  --theme-btn-text:     var(--ink);
+
+  /* Ghost button surface tokens — dark surface overrides */
+  --ghost-bg:           transparent;
+  --ghost-bg-hover:     rgba(255, 245, 232, 0.06);
+  --ghost-border:       rgba(255, 245, 232, 0.35);
+  --ghost-border-hover: var(--cream);
+  --ghost-color:        var(--cream);
+  --ghost-fill:         var(--cream);
+  --ghost-fill-color:   var(--ink);
+  --ghost-focus-ring:   var(--cream);
 }
 
 @media (min-width: 640px) and (max-width: 899px) {

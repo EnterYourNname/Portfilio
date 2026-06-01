@@ -239,7 +239,7 @@ function HmProjects() {
         {PROJECT_FILTERS.map(filter => (
           <button
             key={filter}
-            className={`hm-chip${activeFilter === filter ? " active" : ""}`}
+            className={`pk-btn ghost${activeFilter === filter ? " active" : ""}`}
             type="button"
             aria-pressed={activeFilter === filter}
             onClick={() => {

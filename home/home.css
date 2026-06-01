@@ -294,59 +294,8 @@ html, body {
   gap: 8px;
   flex-wrap: wrap;
 }
-/* Filter chips — follow the Secondary button spec (toggle/Selected pattern).
-   Spec: design-system/README.md → Secondary Button. Kept as page-specific
-   class because Secondary is not yet promoted into shared CSS. */
-.hm-chip {
-  height: 40px;
-  padding: 0 24px;
-  border-radius: 99px;
-  border: 1px solid var(--ink);
-  background: var(--color-cream-50);
-  font-family: inherit;
-  font-weight: var(--type-weight-button-secondary);
-  font-size: var(--type-size-button-secondary);
-  line-height: var(--type-line-button-secondary);
-  letter-spacing: var(--type-track-button-secondary);
-  color: var(--ink);
-  cursor: pointer;
-  transition:
-    background 200ms var(--ease-out),
-    color 200ms var(--ease-out),
-    transform 160ms var(--ease-out),
-    box-shadow 200ms var(--ease-out);
-}
-.hm-chip:hover {
-  background: var(--color-cream-200);
-  transform: translateY(-1px);
-}
-.hm-chip:active {
-  background: var(--ink);
-  color: var(--cream);
-  transform: scale(0.95);
-  box-shadow: none;
-}
-/* Selected — persistent toggle state */
-.hm-chip.active {
-  background: var(--ink);
-  color: var(--cream);
-  transform: none;
-  box-shadow: none;
-}
-.hm-chip.active:hover {
-  background: var(--ink);
-  color: var(--cream);
-  transform: translateY(-1px);
-}
-.hm-chip:disabled,
-.hm-chip[disabled] {
-  background: var(--color-gray-500);
-  border-color: transparent;
-  color: var(--color-cream-700);
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
+/* Filter chips now use .pk-btn.ghost from portfolio.css.
+   Only the desktop min-width override lives here. */
 
 .hm-projects {
   display: flex;
@@ -707,7 +656,7 @@ html, body {
     flex-wrap: nowrap;
   }
 
-  .hm-work-section .hm-chip {
+  .hm-work-section .pk-btn.ghost {
     min-width: 96px;
   }
 
