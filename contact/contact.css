@@ -106,7 +106,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
   padding: 32px 16px 24px;
   display: flex; flex-direction: column; gap: 16px;
 }
-.ct-field { display: flex; flex-direction: column; gap: 6px; }
+.ct-field { display: flex; flex-direction: column; gap: 8px; }
 .ct-label {
   font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
   color: var(--ink); padding-left: 4px;
@@ -343,7 +343,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 
 /* Button inner flex wrapper */
-.ct-submit span { display: inline-flex; align-items: center; gap: 10px; }
+.ct-submit span { display: inline-flex; align-items: center; gap: 8px; }
 
 .ct-phone .pk-contact-cta-shell {
   display: none;

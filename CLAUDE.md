@@ -11,6 +11,30 @@ Use this file as the working contract for building and editing the website in th
 
 If Figma and code differ, keep the code usable first, then align the visual details back toward Figma.
 
+## Changing A Design Rule
+
+A rule lives in up to four places that must stay in sync, or it drifts: **this file
+(`CLAUDE.md`, the contract), `design-system/README.md` (the spec), the CSS code, and
+`tools/check-spacing.py` (enforcement).** Whenever you add or change a rule, follow this
+protocol in order — do not stop after editing only the code or only one doc:
+
+1. **State the rule in one sentence** (its canonical wording).
+2. **Change the CSS** to match.
+3. **Update this file (`CLAUDE.md`)** — the section that states the rule.
+4. **Update `design-system/README.md`** — the matching table/section.
+5. **Update enforcement** if the rule is mechanically checkable — a constant, the
+   `ALLOW_VALUES` list, or a new check in `tools/check-spacing.py`. If it is not
+   checkable, leave it as a written rule.
+6. **Record + verify:**
+   - Append a dated entry to README → **"Recent System Updates"** (the change ledger).
+   - Bump the `?v=` cache query on every changed CSS file in the HTML that loads it.
+   - **Grep for the OLD value/wording** across the repo — it must return zero stray hits.
+   - Run `/design-check` (or `python tools/check-spacing.py --all`) — must exit clean.
+   - Verify in the preview server (`contact`, port 5173) at 360 / 393 px.
+
+The full step-by-step with commands lives in the `/rule-change` skill. A change is only
+"documented" when the grep is clean, the audit passes, and the changelog line exists.
+
 ## Required Imports
 
 Every page must load the design system before page-specific styles:
@@ -109,9 +133,13 @@ Use this mobile-first hierarchy consistently across pages:
 Reuse these existing classes where possible:
 
 - Header: `.pk-header`, `.pk-avatar`, `.pk-menu-btn`
-- Primary CTA: `.pk-btn`
-- Tertiary CTA: `.pk-btn.tertiary`
+- Conversion CTA (animated): `.pk-btn` — reserved for hero, footer, and contact submit only
+- Primary action (filled, no animation): `.pk-btn.on-dark.filled`
+- Secondary action (outline): `.pk-btn.ghost`
 - Text/Link: `.pk-link`
+- Toggle / selectable chip (selection control): `.pk-toggle` in a `role="radiogroup"`
+- Decorative tag (non-interactive label): `.pk-tag` (bordered chip) or `.pk-tag-meta` (uppercase tracked inline-meta text, no pill)
+- Tag-meta text: `.pk-tag-meta` — shared role for project-card tag meta and About-page skills (pipe-separated). About skills use this inline text, not `.pk-tag` pills.
 - Segmented control: `.pk-seg`
 - Project cards: `.pk-card`, `.pk-tags`, `.pk-tag`
 - Experience section: `.pk-experience`, `.pk-xp`
@@ -129,7 +157,7 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - Generate project cards from `projects-data.js` and render them with the shared `ProjectCard` component in `components/project-card.jsx`; do not hard-code a second project list or recreate card markup in page components.
 - Project card links use `case-study.html?project={project-id}` so one master project page can render multiple projects.
 - Project filters read the project `tags` array. Home filters are only `All`, `UI/UX`, and `3D`.
-- Show only the first three matching home project cards by default. The `All projects` text button expands the rest and can collapse back to `Show less`.
+- Show only the first three matching home project cards by default — except in the `900–1179.98px` (2-column) range, where **four** show so the grid fills two even rows (2 + 2) instead of an uneven 2 + 1. Mobile and `≥1180px` keep 3. The default count is driven by a `matchMedia` query in `HmProjects`; the `All projects` text button expands the rest and can collapse back to `Show less`.
 - Do not show project year on project cards or in the project page meta block.
 
 ## Project Media Rules
@@ -149,10 +177,29 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 
 ## Buttons And Interaction
 
+### Button taxonomy (two axes)
+
+There are two independent axes — do not mix them:
+
+1. **Action buttons** (do something), ranked by emphasis:
+   - **Conversion CTA** `.pk-btn` — the animated orange-lozenge button. **Reserved** for the single conversion action: home hero, footer, and the contact-form submit. Do not use it on dialogs, banners, or anywhere else (it dilutes the signature animation).
+   - **Primary action** `.pk-btn.on-dark.filled` — solid filled, no animation. The "main action here" inside a dialog/form when it is not the conversion CTA.
+   - **Secondary action** `.pk-btn.ghost` — outline pill.
+   - **Text** `.pk-link` — low-emphasis, text-only.
+   - (A Tertiary pill is spec'd in the design-system README but not currently implemented in CSS — add it back from git history if a use appears.)
+2. **Selection controls** (pick from a set) — a separate axis, NOT an emphasis level:
+   - **Toggle / chip** `.pk-toggle` inside a `role="radiogroup"` (single-select). The chosen option carries `aria-checked="true"`; selected styling keys off `[aria-checked="true"]`, never a manual `.active` class. Use roving `tabindex` + arrow-key navigation. "Selected" is a state, not "secondary."
+
+**Decorative tags** (`.pk-tag`) are labels, not controls: no `cursor: pointer`, no hover/press, no button role. Never give a non-interactive label a clickable affordance.
+
+**Cookie/consent banners:** Accept and Reject must be equal visual weight (anti-dark-pattern); the lowest-priority option (e.g. Cookie settings) is the Text/Link tier.
+
 - Primary buttons must use `.pk-btn`; do not make another primary CTA style.
-- Default primary state: full-width or container-width `48px` high pill, `--ink` background, cream label, orange arrow.
-- Hover state: keep the dark pill, expand a centered `--orange` lozenge to 60% button width, switch label and arrow to ink, and add a small pop with `translateY(-2px) scale(1.012)` plus a soft shadow.
-- Active state: full `--orange` pill, ink label and arrow, `scale(0.985)`, warm shadow.
+- CTA width is canonical and content-driven: `.pk-btn` (not `.ghost`) is full-width on mobile and `fit-content` (min `280px`, max `352px`) from `640px` up. This lives once in `portfolio.css` so every CTA — hero, footer, contact submit — renders the same width regardless of its container. Do not override `.pk-btn` width per page or per container; that reintroduces drift and makes CTAs diverge.
+- Default primary state: `48px` high pill, `--ink` background, cream label, orange arrow. Horizontal padding is `48px`.
+- Hover state: keep the dark pill, expand the `--orange` lozenge (inset `24px` from each pill end), switch label and arrow to ink, and add a small pop with `translateY(-2px) scale(1.012)` plus a soft shadow.
+- Active state: same `24px`-inset `--orange` lozenge as hover (not a full-bleed orange pill), ink label and arrow, `scale(0.985)`, warm shadow.
+- Orange-margin rule: whenever the orange background shows, keep a min `24px` gap from the label/icon to the orange AND a min `24px` gap from the orange to the pill edge (hence `48px` padding + `24px`-inset lozenge).
 - Disabled state: `--hair` background, cream label at 60% opacity, hidden hover lozenge, no pop.
 - Only Primary may use the centered orange expansion/lozenge animation. Secondary and Tertiary buttons must not use an orange pseudo-element expanding from the center.
 - Focus must be visible with orange.

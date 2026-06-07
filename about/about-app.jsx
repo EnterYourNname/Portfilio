@@ -69,11 +69,11 @@ stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="ro
 
 
 
-function AmSkillChips() {
+function AmSkills() {
+  // Skills render as inline tag-meta text (uppercase, tracked, pipe-separated),
+  // matching the project-card tag style — not .pk-tag pills.
   return (
-    <div className="am-skill-chips">
-      {ABOUT.skills.map((s) => <span key={s} className="am-skill-chip">{s}</span>)}
-    </div>);
+    <span className="pk-tag-meta am-skills-meta">{ABOUT.skills.join("  |  ")}</span>);
 
 }
 
@@ -94,7 +94,7 @@ function AmBeyondChips() {
   return (
     <div className="am-beyond-chips">
       {ABOUT.interestChips.map((c) =>
-      <span key={c} className="am-chip">{c}</span>
+      <span key={c} className="pk-tag">{c}</span>
       )}
     </div>);
 
@@ -140,7 +140,7 @@ function AboutPage() {
 
         <section className="am-section" data-screen-label="04 Skills">
           <span className="pk-mono">Skills</span>
-          <AmSkillChips />
+          <AmSkills />
         </section>
 
         <SharedFooter onScrollTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />

@@ -1,0 +1,1547 @@
+ INFO  Accepting connections at http://localhost:3000
+ HTTP  6/2/2026 6:36:38 PM ::1 GET /
+ HTTP  6/2/2026 6:36:38 PM ::1 Returned 200 in 15 ms
+ HTTP  6/2/2026 6:36:38 PM ::1 GET /about
+ HTTP  6/2/2026 6:36:38 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:36:38 PM ::1 GET /contact
+ HTTP  6/2/2026 6:36:38 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:36:38 PM ::1 GET /privacy
+ HTTP  6/2/2026 6:36:38 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /design-system/portfolio.css?v=24
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /home/home.css?v=43
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 11 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 12 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 12 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 11 ms
+ HTTP  6/2/2026 6:37:25 PM ::1 Returned 200 in 4 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 13 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 4 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:26 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 6:37:26 PM ::1 Returned 206 in 5 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /case-study.css?v=18
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /design-system/portfolio.css?v=24
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:28 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:37:29 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 6:37:29 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:38:14 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:38:14 PM ::1 GET /design-system/portfolio.css?v=24
+ HTTP  6/2/2026 6:38:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:38:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:38:14 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:38:14 PM ::1 GET /home/home.css?v=43
+ HTTP  6/2/2026 6:38:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:38:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:38:14 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 6:38:14 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /home/home.css?v=43
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 6:48:30 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 6:48:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /case-study.css?v=18
+ HTTP  6/2/2026 6:48:35 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:35 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:36 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 6:48:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:40 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:48:40 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 6:48:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:40 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:48:40 PM ::1 GET /case-study.css?v=18
+ HTTP  6/2/2026 6:48:40 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:48:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:48:40 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 6:48:40 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /case-study?project=caccaro-design-concept
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 200 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /case-study.css?v=18
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/caccaro-design-concept/g-01.jpg
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 6:50:45 PM ::1 GET /design-system/assets/caccaro-design-concept/g-02.jpg
+ HTTP  6/2/2026 6:50:45 PM ::1 Returned 200 in 9 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /case-study?project=caccaro-design-concept
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:21 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/caccaro-design-concept/g-01.jpg
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/caccaro-design-concept/g-02.jpg
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:00:50 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:00:50 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 200 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:01:06 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:36 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:01:37 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:01:37 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:11:43 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:11:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:11:44 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:11:44 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:11:50 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:11:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:11:50 PM ::1 GET /design-system/portfolio.css?v=25
+ HTTP  6/2/2026 7:11:50 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:11:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:11:50 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:11:50 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:11:50 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:11:50 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:11:50 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:15:46 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:15:46 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:17:23 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:17:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:10 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 7:18:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:11 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:18:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /case-study?project=beer-box
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /case-study.css?v=19
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/beer-box/g-04.webp
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:18:15 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:18:15 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /about
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /about/about.css?v=5
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /about/about-app.jsx?v=8
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/assets/portrait-andrew.jpg
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:30 PM ::1 Returned 200 in 5 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 206 in 0 ms
+ HTTP  6/2/2026 7:19:43 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:19:43 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:19:52 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:19:52 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:19:52 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:19:52 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:52 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:52 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:52 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:19:52 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:19:52 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:19:52 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /about
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /design-system/portfolio.css?v=26
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /about/about.css?v=5
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /about/about-app.jsx?v=8
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:02 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:20:02 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/assets/portrait-andrew.jpg
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:20:03 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:20:03 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:27:06 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:06 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:07 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:27:07 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /case-study?project=mealmate
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /case-study.css?v=20
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:27:10 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:10 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/mealmate/g-01.webp
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/mealmate/g-02.webp
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/mealmate/g-03.webp
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/mealmate/g-04.webp
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/kuckoo-configurator/cr.jpg
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 7:27:11 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:27:11 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:27 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:27:27 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:27:27 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:27:27 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:27 PM ::1 GET /case-study.css?v=20
+ HTTP  6/2/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:27:27 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:27:27 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 7:38:46 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:38:46 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 404 in 2 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:39:14 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:39:14 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /case-study?project=caccaro-design-concept
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /case-study.css?v=20
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:41 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/caccaro-design-concept/g-01.jpg
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/caccaro-design-concept/g-02.jpg
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 8 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 9 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:42 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:40:42 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /contact
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /contact/contact.css?v=9
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /contact/contact-app.jsx?v=10
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:46 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:40:46 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:56 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:40:56 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:40:56 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:56 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:40:56 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:56 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:40:56 PM ::1 GET /contact/contact.css?v=9
+ HTTP  6/2/2026 7:40:56 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:40:56 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:40:56 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /home/home.css?v=44
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /home/home-app.jsx?v=23
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:42:09 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:44:23 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:44:23 PM ::1 Returned 206 in 2 ms
+ HTTP  6/2/2026 7:44:23 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:44:23 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:44:27 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:44:27 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:47:36 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:47:36 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:47:39 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:47:39 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 7:47:39 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 7:47:39 PM ::1 Returned 206 in 0 ms
+ HTTP  6/2/2026 7:47:39 PM ::1 GET /about
+ HTTP  6/2/2026 7:47:39 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/portfolio.css?v=27
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /about/about.css?v=5
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /about/about-app.jsx?v=8
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /components/cookie-banner.jsx?v=7
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/assets/portrait-andrew.jpg
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 3 ms
+ HTTP  6/2/2026 7:47:40 PM ::1 Returned 304 in 3 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /about
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/portfolio.css?v=28
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /about/about.css?v=5
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 404 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /about/about-app.jsx?v=8
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/site-icon.png
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/portrait-andrew.jpg
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 2 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:19 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /home/home.css?v=45
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/portfolio.css?v=28
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 200 in 2 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /home/home-app.jsx?v=24
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 200 in 3 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:38 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 8:24:38 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /about
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/portfolio.css?v=28
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /about/about.css?v=5
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /about/about-app.jsx?v=8
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/assets/portrait-andrew.jpg
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:24:55 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 8:24:55 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /contact
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/portfolio.css?v=28
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /contact/contact.css?v=9
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /contact/contact-app.jsx?v=10
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:25:25 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:25:25 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 200 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/portfolio.css?v=29
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /home/home.css?v=45
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /components/project-card.jsx
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /home/home-app.jsx?v=24
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/work-reel.png
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/beer-box/cr.webp
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/beer-box/hr.avif?v=2
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/beer-box/g-01.avif
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/beer-box/g-02.avif
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/beer-box/g-03.webp
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/hero-bg-motion-blur-Image.jpg
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 206 in 0 ms
+ HTTP  6/2/2026 8:34:20 PM ::1 GET /design-system/assets/hero-bg-motion-blur.mp4?v=4
+ HTTP  6/2/2026 8:34:20 PM ::1 Returned 206 in 1 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /case-study?project=caccaro-design-concept
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 200 in 1 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /design-system/colors_and_type.css?v=4
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /design-system/portfolio.css?v=29
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /nav/nav.css?v=6
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /case-study.css?v=20
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 GET /projects-data.js?v=5
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:22 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /components/animations.jsx?v=2
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /nav/nav.jsx?v=4
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /components/header.jsx?v=2
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /components/footer.jsx?v=6
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /case-study.jsx?v=11
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /components/cookie-banner.jsx?v=8
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/icons/behance.svg
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/icons/linkedin.svg
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/avatar.jpg
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/caccaro-design-concept/cr.jpg
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Regular.woff2
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/caccaro-design-concept/g-01.jpg
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/fonts/BDOGrotesk-DemiBold.woff2
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Bold.woff2
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 1 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/mealmate/cr.webp
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/caccaro-design-concept/g-02.jpg
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/assets/footer-bg.jpg
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms
+ HTTP  6/2/2026 8:34:23 PM ::1 GET /design-system/fonts/BDOGrotesk-Medium.woff2
+ HTTP  6/2/2026 8:34:23 PM ::1 Returned 304 in 0 ms

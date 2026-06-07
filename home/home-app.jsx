@@ -234,6 +234,10 @@ function HmReel() {
 function HmProjects() {
   const [activeFilter, setActiveFilter] = React.useState("All");
   const [showAllProjects, setShowAllProjects] = React.useState(false);
+  // Default visible count is 3, EXCEPT in the 2-column range (900–1179.98px)
+  // where 4 fills two even rows (2 + 2) instead of an uneven 2 + 1. The upper
+  // bound matches the 3-column breakpoint (≥1180px) so there's no awkward gap.
+  const [defaultCount, setDefaultCount] = React.useState(3);
   const toggleBtnRef = React.useRef(null);
   const isCollapsing = React.useRef(false);
   const projects = window.PORTFOLIO_PROJECTS || [];
@@ -244,12 +248,21 @@ function HmProjects() {
       toggleBtnRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [showAllProjects]);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(min-width: 900px) and (max-width: 1179.98px)");
+    const update = () => setDefaultCount(mq.matches ? 4 : 3);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   const matchingProjects = activeFilter === "All"
     ? projects
     : projects.filter(project => project.tags.includes(activeFilter));
   const visibleProjects = showAllProjects
     ? matchingProjects
-    : matchingProjects.slice(0, 3);
+    : matchingProjects.slice(0, defaultCount);
   const count = String(visibleProjects.length).padStart(2, "0");
   const total = String(matchingProjects.length).padStart(2, "0");
 
@@ -260,13 +273,29 @@ function HmProjects() {
         <span className="hm-section-count">{count} / {total}</span>
       </div>
       <h2 id="work-title" className="hm-section-title">Work.</h2>
-      <div className="hm-chips" role="group" aria-label="Project filters">
+      <div
+        className="hm-chips pk-toggle-group"
+        role="radiogroup"
+        aria-label="Project filters"
+        onKeyDown={(e) => {
+          const next = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+          if (!next) return;
+          e.preventDefault();
+          const i = PROJECT_FILTERS.indexOf(activeFilter);
+          const ni = (i + next + PROJECT_FILTERS.length) % PROJECT_FILTERS.length;
+          setActiveFilter(PROJECT_FILTERS[ni]);
+          setShowAllProjects(false);
+          e.currentTarget.querySelectorAll('[role="radio"]')[ni]?.focus();
+        }}
+      >
         {PROJECT_FILTERS.map(filter => (
           <button
             key={filter}
-            className={`pk-btn ghost${activeFilter === filter ? " active" : ""}`}
+            className="pk-toggle"
             type="button"
-            aria-pressed={activeFilter === filter}
+            role="radio"
+            aria-checked={activeFilter === filter}
+            tabIndex={activeFilter === filter ? 0 : -1}
             onClick={() => {
               setActiveFilter(filter);
               setShowAllProjects(false);
@@ -279,7 +308,7 @@ function HmProjects() {
       <div className="hm-projects" aria-live="polite">
         {visibleProjects.map(p => <ProjectCard key={p.id} project={p} />)}
       </div>
-      {matchingProjects.length > 3 && (
+      {matchingProjects.length > defaultCount && (
         <button
           ref={toggleBtnRef}
           className="pk-link"
@@ -350,11 +379,11 @@ function HmFeaturedProject() {
 
       <div className="hm-featured-gallery" aria-label={`${project.title} preview images`}>
         {featuredImages.map((src, index) => (
-          <div
+          <a
             key={`${src}-${index}`}
             className={`hm-featured-img hm-featured-img-${index + 1}`}
-            role="img"
-            aria-label={`${project.title} preview image ${index + 1}`}
+            href={project.href}
+            aria-label={`${project.title} — open project (preview ${index + 1})`}
             style={{ backgroundImage: `url('${src}')` }}
           />
         ))}
@@ -434,6 +463,31 @@ function HomeApp() {
     updateNavMode();
     window.addEventListener("scroll", updateNavMode, { passive: true });
     return () => window.removeEventListener("scroll", updateNavMode);
+  }, []);
+
+  // Hash scroll: sections like #work are rendered by React, so the browser's
+  // native scroll-to-hash fires before the target exists (the "Work" nav link
+  // didn't scroll on first click). This effect runs after the tree is mounted
+  // and on every hashchange, so the first click scrolls reliably.
+  React.useEffect(() => {
+    const scrollToHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      let tries = 0;
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (tries++ < 30) {
+          requestAnimationFrame(tryScroll);
+        }
+      };
+      tryScroll();
+    };
+
+    scrollToHash(); // initial mount (e.g. landing on /#work or after a reload)
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
   }, []);
 
   return (

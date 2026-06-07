@@ -8,12 +8,23 @@ This folder contains the portfolio website and its local design system. The desi
 
 ## Website Files
 
-- `index.html` + `home/` - home portfolio page
-- `about.html` + `about/` - about page
-- `contact.html` + `contact/` - contact page
-- `case-study.html` + `case-study.*` - project case study
+- `index.html` + `home/` - home portfolio page (served as `/`)
+- `about.html` + `about/` - about page (served as `/about`)
+- `contact.html` + `contact/` - contact page (served as `/contact`)
+- `case-study.html` + `case-study.*` - project case study (served as `/case-study?project={id}`)
+- `impressum.html`, `privacy.html` - legal pages (served as `/impressum`, `/privacy`)
 - `nav/` - shared navigation overlay
 - `design-system/` - tokens, shared component styles, fonts, icons, and image assets
+
+## Clean URLs
+
+The site uses extensionless URLs everywhere — users never see `.html` in the address bar. GitHub Pages automatically serves `/about` from `about.html`, `/contact` from `contact.html`, and so on. Always write internal links as `/about`, `/contact`, `/privacy`, `/impressum`, `/case-study?project={id}` — never with the `.html` suffix.
+
+The actual files on disk keep their `.html` extension so the project stays a flat static site; only the URLs are clean.
+
+**Local preview:** the `contact` dev server (`.claude/launch.json`, port 5173) runs `npx serve`, which reads `serve.json` (`"cleanUrls": true` + a `/case-study` rewrite). So clean URLs work locally exactly like production — `http://localhost:5173/case-study?project=beer-box`, `/about`, `/contact` all resolve. (First start takes ~10s while `npx` resolves `serve`.)
+
+Production (GitHub Pages) handles clean URLs automatically.
 
 ## Spacing Rule
 

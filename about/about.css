@@ -83,7 +83,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 /* ─── Highlight strip (mono row, scrollable on mobile) ───────── */
 .am-strip {
   display: flex; align-items: center; gap: 16px;
-  padding: 14px 16px;
+  padding: 16px 16px;
   background: var(--white);
   white-space: nowrap; overflow-x: auto;
   scrollbar-width: none;
@@ -127,7 +127,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 .am-meta-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--color-gray-400);
   gap: 16px;
 }
@@ -168,7 +168,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 
 /* ─── Beyond design: icons + chips ────────────────────────────── */
 .am-beyond-icons {
-  display: flex; gap: 18px; align-items: center;
+  display: flex; gap: 16px; align-items: center;
   padding: 8px 0;
 }
 .am-beyond-icons img { width: 28px; height: 28px; opacity: 0.95; }
@@ -176,20 +176,15 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
   display: flex; flex-wrap: wrap; gap: 8px;
   margin-top: 4px;
 }
-.am-chip {
-  height: 32px; padding: 0 14px;
-  border: 1px solid var(--ink); border-radius: 99px;
-  background: transparent; color: var(--ink);
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 14px; letter-spacing: 0.023em;
-}
+/* Skill and interest tags use the shared decorative .pk-tag role
+   (non-interactive label) — see portfolio.css. */
 
 /* Variation C: stacked rows like the skills list */
 .am-beyond-list { display: flex; flex-direction: column; gap: 0; }
 .am-beyond-row {
   display: grid; grid-template-columns: 36px 1fr auto;
   align-items: center; gap: 12px;
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--ink);
 }
 .am-beyond-row:first-child { border-top: 1px solid var(--ink); }
@@ -209,27 +204,12 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
   border-bottom: 1px solid var(--ink);
 }
 .am-skill .name { font-size: 28px; line-height: 1.2; letter-spacing: 0.01em; }
-.am-skill .num { font-size: 12px; letter-spacing: 0.033em; color: var(--orange-text); padding-top: 6px; }
+.am-skill .num { font-size: 12px; letter-spacing: 0.033em; color: var(--orange-text); padding-top: 8px; }
 
-/* Variation B compact skills: filled dark chips */
-.am-skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.am-skill-chip {
-  height: 40px; padding: 0 20px;
-  border-radius: 99px;
-  background: var(--ink);
-  color: var(--white);
-  border: 1px solid var(--ink);
-  display: inline-flex; align-items: center;
-  font-family: var(--font-sans);
-  font-weight: 600; font-size: 14px;
-  line-height: 1.4; letter-spacing: 0.16px;
-  cursor: pointer;
-  transition: background 220ms var(--ease-out),
-              color 220ms var(--ease-out),
-              border-color 220ms var(--ease-out);
-}
-.am-skill-chip:hover  { background: var(--cream-deep); }
-.am-skill-chip:active { background: var(--gray-300); }
+/* Skills as inline tag-meta text (.pk-tag-meta), pipe-separated, wrapping.
+   display:block so the single <span> flows on its own line(s); a <p> here would
+   inherit .am-section p type and override the .pk-tag-meta 11px style. */
+.am-skills-meta { display: block; margin: 0; line-height: 1.8; max-width: 56ch; }
 
 /* ─── Experience dark band ───────────────────────────────────── */
 .am-experience {

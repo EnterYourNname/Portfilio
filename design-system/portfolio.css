@@ -67,6 +67,10 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   .pk-menu-btn:hover { background: rgba(38,37,36,0.88); }
 }
 .pk-menu-btn:active { transform: scale(0.985); }
+.pk-menu-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
 .pk-menu-btn svg { width: 18px; height: 18px; stroke: var(--cream); }
 
 /* Hero (intro) */
@@ -97,8 +101,8 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .pk-btn {
   position: relative;
   isolation: isolate;
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  height: 48px; padding: 0 24px; border-radius: 99px; border: none; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 48px; padding: 0 48px; border-radius: 99px; border: none; cursor: pointer;
   background: var(--theme-btn-bg, var(--ink));
   color: var(--theme-btn-text, var(--cream));
   width: 100%;
@@ -113,15 +117,19 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
     transform 160ms var(--ease-out);
 }
 .pk-btn::before {
-  content: ""; position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scaleX(0); transform-origin: center;
-  width: 60%; height: 100%; border-radius: 99px;
+  content: ""; position: absolute;
+  /* Orange stays inset 24px from each pill end so it never touches the edge.
+     With the 48px horizontal text padding, the label keeps a 24px minimum
+     gap to the orange on both sides (24px text→orange + 24px orange→edge). */
+  top: 0; bottom: 0; left: 24px; right: 24px;
+  transform: scaleX(0); transform-origin: center;
+  border-radius: 99px;
   background: var(--orange);
   transition: transform 320ms var(--ease-out);
   z-index: -1;
 }
 @media (hover: hover) {
-  .pk-btn:hover::before { transform: translate(-50%, -50%) scaleX(1); }
+  .pk-btn:hover::before { transform: scaleX(1); }
   .pk-btn:hover {
     background: var(--theme-btn-bg, var(--ink));
     color: var(--ink);
@@ -131,11 +139,13 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   .pk-btn:hover .arrow path { stroke: var(--ink); }
 }
 .pk-btn:active {
-  background: var(--orange); color: var(--ink);
+  color: var(--ink);
   transform: translateY(0) scale(0.985);
   box-shadow: var(--shadow-warm);
 }
-.pk-btn:active::before { transform: translate(-50%, -50%) scaleX(0); }
+/* Active keeps the inset orange lozenge (not a full-bleed fill) so the 24px
+   text→orange and 24px orange→edge margins hold in the pressed state too. */
+.pk-btn:active::before { transform: scaleX(1); }
 .pk-btn:active .arrow path { stroke: var(--ink); }
 .pk-btn:focus-visible {
   outline: 2px solid var(--orange);
@@ -157,24 +167,24 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
       color 100ms var(--ease-out) !important;
   }
   .pk-btn--touching::before {
-    transform: translate(-50%, -50%) scaleX(1) !important;
+    transform: scaleX(1) !important;
     transition: transform 100ms var(--ease-out) !important;
   }
   .pk-btn--touching .arrow path { stroke: var(--ink) !important; }
 
   .pk-btn--tapped {
-    background: var(--orange) !important;
     color: var(--ink) !important;
     transform: scale(0.985) !important;
     box-shadow: var(--shadow-warm) !important;
     transition:
-      background 80ms var(--ease-out),
       transform 80ms var(--ease-out),
       box-shadow 80ms var(--ease-out),
       color 80ms var(--ease-out) !important;
   }
+  /* Keep the inset orange lozenge on tap (no full-bleed fill) to preserve the
+     24px text→orange / 24px orange→edge margins. */
   .pk-btn--tapped::before {
-    transform: translate(-50%, -50%) scaleX(0) !important;
+    transform: scaleX(1) !important;
     transition: none !important;
   }
   .pk-btn--tapped .arrow path { stroke: var(--ink) !important; }
@@ -190,109 +200,30 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .pk-btn .arrow { width: 18px; height: 18px; }
 .pk-btn .arrow path { stroke: var(--orange-warm); transition: stroke 240ms var(--ease-out); }
 
-@media (min-width: 640px) and (max-width: 899px) {
-  .pk-btn {
-    width: 50%;
-    min-width: min(30vw, 100%);
-    max-width: 50vw;
-  }
-}
-
-@media (min-width: 900px) {
-  .pk-btn {
+/* Canonical CTA width — SINGLE SOURCE OF TRUTH. The conversion CTA (.pk-btn,
+   excluding ghost) is full-width on mobile (from the base .pk-btn rule) and
+   content-sized from 640px up. Because fit-content depends only on the label,
+   the CTA renders the SAME width in every context (hero, footer, contact
+   submit) regardless of its container width — that is what keeps hero and
+   footer identical across screen sizes. Do NOT override .pk-btn width per page
+   or per container; that reintroduces the drift this rule exists to prevent. */
+@media (min-width: 640px) {
+  .pk-btn:not(.ghost) {
     width: fit-content;
-    min-width: 160px;
+    min-width: 280px;
     max-width: 352px;
   }
 }
 
-.pk-btn.dark-on-light {
-  background: var(--color-cream-50);
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  font-weight: var(--type-weight-button-secondary);
-  font-size: var(--type-size-button-secondary);
-  line-height: var(--type-line-button-secondary);
-  letter-spacing: var(--type-track-button-secondary);
-}
-.pk-btn.dark-on-light::before { display: none; }
-@media (hover: hover) {
-  .pk-btn.dark-on-light:hover {
-    background: var(--cream-soft);
-    color: var(--ink);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(27, 24, 20, 0.10);
-  }
-}
-.pk-btn.dark-on-light:active {
-  background: var(--ink);
-  color: var(--cream);
-  transform: scale(0.95);
-  box-shadow: 0 2px 8px rgba(142,142,142,0.20),
-              0 12px 24px rgba(167,167,167,0.20);
-}
+/* Removed unused roles .pk-btn.dark-on-light and .pk-btn.tertiary (0 usages).
+   Restore from git history if a Secondary-alt or Tertiary action is ever
+   needed. The tertiary *type tokens* (--type-*-button-tertiary) remain in
+   use by .pk-tag, so they stay. */
 
-/* Tertiary — 32px hairline pill, transparent bg, ink border.
-   Spec: design-system/README.md → Tertiary Button. */
-.pk-btn.tertiary {
-  height: 32px;
-  padding: 0 16px;
-  width: auto;
-  align-self: flex-start;
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  font-weight: var(--type-weight-button-tertiary);
-  font-size: var(--type-size-button-tertiary);
-  line-height: var(--type-line-button-tertiary);
-  letter-spacing: var(--type-track-button-tertiary);
-}
-.pk-btn.tertiary::before { display: none; }
-@media (hover: hover) {
-  .pk-btn.tertiary:hover {
-    background: transparent;
-    color: var(--ink);
-    transform: translateY(-1px);
-    box-shadow: none;
-  }
-  .pk-btn.tertiary:hover .arrow path { stroke: var(--orange-warm); }
-}
-.pk-btn.tertiary:active {
-  background: transparent;
-  color: var(--ink);
-  transform: scale(0.98);
-  box-shadow: none;
-}
-.pk-btn.tertiary:disabled,
-.pk-btn.tertiary[disabled] {
-  border-color: var(--color-gray-500);
-  color: var(--color-cream-700);
-  background: transparent;
-}
-/* on-dark modifier — use inside .pk-footer-black or any ink-surface section */
-.pk-btn.tertiary.on-dark {
-  border-color: var(--cream);
-  color: var(--cream);
-  align-self: center;
-  /* Snap to 2-col span on 393px 4-col grid (16px margins, 16px gutters) */
-  min-width: 173px;
-  justify-content: center;
-}
-@media (hover: hover) {
-  .pk-btn.tertiary.on-dark:hover {
-    color: var(--cream);
-    border-color: var(--cream);
-  }
-}
-.pk-btn.tertiary.on-dark:active {
-  color: var(--cream);
-  border-color: var(--cream);
-}
-
-/* ── Ghost button — context-aware outline pill ──────────────────────
-   Reads surface tokens set on the container. Works on both light and
-   dark backgrounds without needing an extra modifier on the button.
-   Add .active for a persistent selected/toggled state (filter chips). */
+/* ── Ghost button — context-aware outline (Secondary action) ─────────
+   Reads surface tokens set on the container; works on light and dark
+   without a modifier. The selection/toggle state lives on .pk-toggle —
+   .pk-btn.ghost has no .active state. */
 
 .pk-btn.ghost {
   height: 40px;
@@ -328,21 +259,9 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   transform: scale(0.98);
   box-shadow: none;
 }
-/* Selected / toggled state — persistent fill */
-.pk-btn.ghost.active {
-  background: var(--ghost-fill);
-  color: var(--ghost-fill-color);
-  border-color: var(--ghost-fill);
-  transform: none;
-}
-@media (hover: hover) {
-  .pk-btn.ghost.active:hover {
-    background: var(--ghost-fill-hover);
-    color: var(--ghost-fill-color);
-    border-color: var(--ghost-fill-hover);
-    transform: translateY(-1px);
-  }
-}
+/* The selected/toggled "fill" state moved to the .pk-toggle role (a
+   selection control). .pk-btn.ghost is now a Secondary outline ACTION
+   button only — it has no persistent selected state. */
 .pk-btn.ghost:focus-visible {
   outline: 2px solid var(--ghost-focus-ring);
   outline-offset: 3px;
@@ -354,7 +273,74 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   transform: none;
 }
 
-/* Filled — solid emphasis on dark surface (Accept all, Save selection) */
+/* ── Toggle / selectable chip ───────────────────────────────────────
+   Single-select chip used in segmented filter groups (role="radio"
+   inside a role="radiogroup"). This is a SELECTION control, NOT part of
+   the primary/secondary/tertiary action hierarchy. The chosen option
+   carries [aria-checked="true"], and the selected styling keys off that
+   attribute so the visual and the a11y state share one source of truth.
+   Context-aware (light/dark) via the container's --ghost-* tokens. */
+.pk-toggle-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pk-toggle {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px; padding: 0 20px; border-radius: var(--r-pill);
+  cursor: pointer;
+  background: var(--ghost-bg);
+  color: var(--ghost-color);
+  border: 1px solid var(--ghost-border);
+  font-family: inherit;
+  font-weight: var(--type-weight-button-secondary);
+  font-size: var(--type-size-button-secondary);
+  line-height: var(--type-line-button-secondary);
+  letter-spacing: var(--type-track-button-secondary);
+  transition:
+    background 200ms var(--ease-out),
+    border-color 200ms var(--ease-out),
+    color 200ms var(--ease-out),
+    transform 160ms var(--ease-out);
+}
+@media (hover: hover) {
+  .pk-toggle:hover {
+    background: var(--ghost-bg-hover);
+    border-color: var(--ghost-border-hover);
+    transform: translateY(-1px);
+  }
+}
+.pk-toggle:active {
+  transform: scale(0.98);
+}
+/* Selected (chosen) option — persistent fill */
+.pk-toggle[aria-checked="true"] {
+  background: var(--ghost-fill);
+  color: var(--ghost-fill-color);
+  border-color: var(--ghost-fill);
+}
+@media (hover: hover) {
+  .pk-toggle[aria-checked="true"]:hover {
+    background: var(--ghost-fill-hover);
+    border-color: var(--ghost-fill-hover);
+    transform: translateY(-1px);
+  }
+}
+.pk-toggle:focus-visible {
+  outline: 2px solid var(--ghost-focus-ring);
+  outline-offset: 3px;
+}
+.pk-toggle:disabled,
+.pk-toggle[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Primary action — solid filled, no animation. The non-CTA "main action"
+   tier (reserved CTA = .pk-btn lozenge, used only for hero/footer/contact
+   submit). Apply where a single main action needs emphasis without the
+   animated CTA. */
 .pk-btn.on-dark.filled {
   background: var(--cream);
   color: var(--ink);
@@ -439,7 +425,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 }
 .pk-highlight-strip {
   display: flex; align-items: center; gap: 16px;
-  padding: 14px 16px; background: var(--white);
+  padding: 16px 16px; background: var(--white);
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -475,27 +461,10 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   margin: 0; font-size: var(--type-size-section-title); font-weight: var(--fw-demi); line-height: var(--type-line-section-title);
   letter-spacing: var(--type-track-section-title);
 }
-.pk-section-head .pk-mono { padding-bottom: 6px; }
+.pk-section-head .pk-mono { padding-bottom: 8px; }
 
-/* Segmented filter — track is cream-deep, each option is its own pill */
-.pk-seg {
-  background: var(--cream-deep); border-radius: 99px; padding: 4px;
-  display: flex; gap: 4px;
-}
-.pk-seg button {
-  flex: 1; height: 40px; border-radius: 99px; border: none;
-  background: var(--white); color: var(--ink); cursor: pointer;
-  font-family: inherit;
-  font-weight: var(--type-weight-button-secondary); font-size: var(--type-size-button-secondary);
-  line-height: var(--type-line-button-secondary); letter-spacing: var(--type-track-button-secondary);
-  transition: background 200ms var(--ease-out), color 200ms var(--ease-out);
-}
-.pk-seg button:hover { background: var(--cream); }
-.pk-seg button.active,
-.pk-seg button.active:hover { background: var(--ink); color: var(--cream); }
-
-/* Project tags get the same secondary states */
-.pk-tag:hover { background: var(--cream-deep); }
+/* Removed unused .pk-seg segmented control (0 usages) — superseded by the
+   .pk-toggle radio-group chip. Restore from git history if needed. */
 
 /* Project card */
 .pk-projects { display: flex; flex-direction: column; gap: 32px; }
@@ -509,6 +478,9 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .pk-card .meta { display: flex; flex-direction: column; gap: 8px; }
 .pk-card .title { font-size: var(--type-size-card-title); font-weight: var(--fw-demi); line-height: var(--type-line-card-title); letter-spacing: var(--type-track-card-title); }
 .pk-tags { display: flex; gap: 12px; flex-wrap: wrap; }
+/* Decorative tag — a non-interactive label (skills, project meta, interests).
+   NOT a button: no cursor/hover/press affordance. Cursor inherits, so tags
+   inside a clickable card still show the card's pointer. */
 .pk-tag {
   height: 32px; padding: 0 16px;
   background: transparent; color: var(--ink);
@@ -516,11 +488,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   display: inline-flex; align-items: center;
   font-weight: var(--type-weight-button-tertiary); font-size: var(--type-size-button-tertiary);
   line-height: var(--type-line-button-tertiary); letter-spacing: var(--type-track-button-tertiary);
-  cursor: pointer;
-  transition: background 200ms var(--ease-out), color 200ms var(--ease-out);
 }
-.pk-tag:hover  { background: var(--cream-deep); }
-.pk-tag:active { background: var(--gray-300); }
 
 .pk-project-card {
   display: block;
@@ -567,6 +535,11 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   transform: translateY(-4px);
   background: rgba(255, 252, 244, 0.85);
 }
+/* Inline tag-meta text — uppercase, tracked, muted, no pill. Shared role used
+   for project-card tag meta AND About-page skills (pipe-separated). This is the
+   text counterpart to the .pk-tag chip; use .pk-tag-meta when tags should read
+   as quiet inline meta, .pk-tag when they need a bordered chip. */
+.pk-tag-meta,
 .pk-project-card-tags {
   font-size: 11px;
   letter-spacing: 0.05em;
@@ -602,13 +575,25 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 16px;
+  padding: 16px 16px;
   flex-wrap: wrap;
 }
-.ck-text {
+.ck-copy {
   flex: 1;
-  margin: 0;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ck-title {
+  margin: 0;
+  font-weight: var(--fw-demi);
+  font-size: var(--type-size-row-title);
+  line-height: var(--type-line-row-title);
+  color: var(--cream);
+}
+.ck-text {
+  margin: 0;
   font-family: var(--font-sans);
   font-size: var(--type-size-body-small);
   line-height: var(--type-line-body-small);
@@ -625,30 +610,38 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .ck-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
-/* Cookie banner action buttons now use .pk-btn.on-dark (ghost) and
-   .pk-btn.on-dark.filled (cream) — see the on-dark block above. */
-.ck-lang-toggle {
-  height: 32px;
-  padding: 0 10px;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 245, 232, 0.18);
-  background: transparent;
-  color: rgba(255, 245, 232, 0.4);
-  font-family: var(--font-sans);
-  font-size: var(--type-size-meta);
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: color 200ms var(--ease-out), border-color 200ms var(--ease-out);
+/* Accept all and Decline all are equal-weight Secondary actions
+   (.pk-btn.ghost); Cookie settings is the quiet Text/Link tier. */
+.ck-actions .ck-settings-link { align-self: center; }
+/* Keep the text link visible on the dark banner when focused
+   (.pk-link:focus-visible otherwise forces --ink). */
+.ck-banner .pk-link:focus-visible { color: var(--cream); }
+
+/* Phones: stack the actions vertically — full-width, equal-weight Decline
+   and Accept pills with the quiet Cookie settings link centered below.
+   Avoids cramped side-by-side pills and keeps the two actions equal. */
+@media (max-width: 639px) {
+  .ck-actions {
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ck-actions .pk-btn { width: 100%; }
 }
-@media (hover: hover) {
-  .ck-lang-toggle:hover {
-    color: var(--cream);
-    border-color: rgba(255, 245, 232, 0.4);
+
+/* Tablet: actions drop to their own full-width row (ck-inner wraps) and
+   right-align at natural button width — no stretching. Desktop (>=900px)
+   keeps the single-line nowrap layout from the base rule. */
+@media (min-width: 640px) and (max-width: 899px) {
+  .ck-actions {
+    flex-basis: 100%;
+    justify-content: flex-end;
   }
 }
+/* Removed unused .ck-lang-toggle (0 usages). */
 
 /* Expanded settings panel */
 .ck-banner--expanded { border-top: 1px solid var(--tint-cream-12); }
@@ -663,7 +656,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 245, 232, 0.10);
   margin-bottom: 4px;
 }
@@ -681,7 +674,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   .ck-back-btn:hover { color: var(--cream); }
 }
 .ck-category {
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--tint-cream-08);
 }
 .ck-category-row {
@@ -740,7 +733,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .ck-settings-actions {
   display: flex;
   gap: 8px;
-  padding-top: 14px;
+  padding-top: 16px;
 }
 .ck-settings-actions .pk-btn {
   flex: 0 1 auto;
@@ -779,7 +772,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   .ck-inner {
     max-width: 1248px;
     margin: 0 auto;
-    padding: 14px 48px;
+    padding: 16px 48px;
     flex-wrap: nowrap;
   }
 }
@@ -818,7 +811,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   cursor: pointer;
   transition: padding 250ms var(--ease-out);
 }
-.pk-skill:hover { padding-left: 6px; }
+.pk-skill:hover { padding-left: 8px; }
 .pk-skill-name { font-size: var(--type-size-feature-title); line-height: var(--type-line-feature-title); letter-spacing: var(--type-track-feature-title); color: var(--ink); }
 .pk-skill-num { font-size: var(--type-size-meta); line-height: var(--type-line-meta); letter-spacing: var(--type-track-meta); color: var(--orange); padding-top: 8px; }
 
@@ -847,7 +840,8 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   border-radius: 99px;
   padding: 0;
 }
-.pk-contact-cta-shell .pk-btn { width: 100%; }
+/* No .pk-btn width override here — the CTA follows the canonical width rule
+   (full-width on mobile, content-sized from 640px) so it matches the hero. */
 
 .pk-email { width: 100%; display: flex; flex-direction: column; gap: 4px; color: var(--white); }
 .pk-email .lbl { font-size: var(--type-size-meta); line-height: var(--type-line-meta); letter-spacing: var(--type-track-meta); text-transform: uppercase; color: var(--tint-white-70); }
@@ -878,7 +872,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 
 .pk-more { display: flex; flex-direction: column; gap: 16px; align-items: center; color: var(--cream); }
 .pk-more .lbl { font-size: var(--type-size-body-small); line-height: var(--type-line-body-small); letter-spacing: var(--type-track-body-small); }
-.pk-more .icons { display: flex; gap: 14px; }
+.pk-more .icons { display: flex; gap: 16px; }
 .pk-more .icons img { width: 32px; height: 32px; opacity: 0.95; }
 
 /* ── Cascade Animation ── */
@@ -898,7 +892,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 .cascade-5 { animation-delay: 400ms; }
 
 .pk-footer-nav {
-  display: flex; gap: 33px; align-items: center; color: var(--cream);
+  display: flex; gap: 32px; align-items: center; color: var(--cream);
   font-family: 'Inter', var(--font-sans); font-size: 14px;
 }
 .pk-footer-legal {
@@ -918,6 +912,17 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
 }
 @media (hover: hover) {
   .pk-footer-cookie-btn:hover { color: rgba(255, 245, 232, 0.65); }
+}
+
+/* Branded orange focus ring for utility controls that otherwise fall back
+   to the browser default outline (WCAG 2.4.7 — keeps focus visible and
+   consistent with .pk-btn / .pk-toggle / .pk-menu-btn). */
+.pk-social-link:focus-visible,
+.pk-footer-cookie-btn:focus-visible,
+.ck-back-btn:focus-visible,
+.hm-reel--blocked-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
 }
 
 /* ─── Desktop overrides for shared footer ─────────────────────── */
@@ -1023,6 +1028,11 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 24px;
     row-gap: 48px;
+    /* The full-bleed ink band (.pk-footer-black::before) intentionally
+       overshoots the viewport edges; clip the overshoot here so it never
+       produces horizontal page scroll. .pk-footer-bg is full-width and
+       scrollbar-excluded, so the band still reaches both edges exactly. */
+    overflow-x: clip;
   }
   .pk-manifesto {
     grid-column: 1 / span 5;
@@ -1044,11 +1054,8 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
     max-width: 612px;
     justify-self: start;
   }
-  .pk-contact-cta-shell .pk-btn {
-    width: 100%;
-    min-width: 160px;
-    max-width: 612px;
-  }
+  /* CTA width is governed by the canonical .pk-btn rule (content-sized); the
+     shell only defines placement, so the button hugs its label like the hero. */
   .pk-email {
     grid-column: 1 / -1;
   }
@@ -1116,7 +1123,10 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   --ghost-border-hover: var(--cream);
   --ghost-color:        var(--cream);
   --ghost-fill:         var(--cream);
-  --ghost-fill-hover:   var(--cream-deep);
+  /* Warm, light hover for active ghost buttons on dark surfaces (e.g. the
+     cookie banner "Accept all"): a peachy cream instead of the previous
+     cool gray-beige (--cream-deep), so hover reads warmer, not colder. */
+  --ghost-fill-hover:   rgb(255, 240, 221);
   --ghost-fill-color:   var(--ink);
   --ghost-focus-ring:   var(--cream);
 }

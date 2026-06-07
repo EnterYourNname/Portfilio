@@ -99,7 +99,9 @@ Typography scales up significantly on larger screens to fill the expanded canvas
 
 ### Spacing
 
-Use the 4 px grid. Common values are 4, 8, 12, 16, 24, 32, 40, 48, and 64 px.
+**The 4 px step is mandatory.** Every spacing value in the system — padding, margin, `gap`, and offsets — must be a multiple of 4 px. No off-grid values (no `10px`, `14px`, `33px`, etc.); round to the nearest step instead. This applies to component internals too: a button's label-to-icon gap is `8px`, not `10px`.
+
+Approved steps: `4, 8, 12, 16, 24, 32, 40, 48, 64 px`. Prefer the 8 px rhythm (`8, 16, 24, 32, 40, 48`) for most visible spacing; use `4px` and `12px` only for tight internal rhythm. Use the `--space-1`…`--space-11` tokens rather than hard-coding pixels wherever a token exists.
 
 Mobile pages use 16 px side gutters. Spacing between neighboring sections must be no more than 48 px from each section side, so the combined gap between two sections must never exceed 96 px.
 
@@ -177,9 +179,40 @@ Use `.pk-header`, `.pk-avatar`, and `.pk-menu-btn`. The avatar is circular, the 
 
 Website navigation contains only Home, Work, About, and Contact. Do not place individual projects in the main navigation or footer navigation; project detail pages are opened by clicking project cards.
 
-### Primary Button
+### Button taxonomy (start here)
 
-Use `.pk-btn` for the main CTA. Label copy can be dynamic (e.g. `Let's create` or `Contact me`). The arrow should use a local Lucide-style arrow icon or the existing inline arrow pattern.
+Buttons live on **two independent axes** — never collapse one into the other:
+
+**1. Action buttons** — they *do* something. Ranked by emphasis:
+
+| Role | Class | Animated | Use |
+|---|---|---|---|
+| **Conversion CTA** | `.pk-btn` | ✅ orange lozenge | The single conversion action. **Reserved** for home hero, footer, and contact submit — nowhere else. |
+| **Primary action** | `.pk-btn.on-dark.filled` | ❌ | The main action inside a local context (dialog/form) when it is *not* the conversion CTA. |
+| **Secondary action** | `.pk-btn.ghost` | ❌ | Supporting / alternative actions. Context-aware outline pill. |
+| **Text / Link** | `.pk-link` | ❌ | Inline links and text-only buttons; lowest emphasis. |
+
+**2. Selection controls** — they let you *pick* from a set. "Selected" is a state, NOT an emphasis level:
+
+| Role | Class | Use |
+|---|---|---|
+| **Toggle / chip** | `.pk-toggle` in `role="radiogroup"` | Single-select option groups (e.g. project filters). The chosen option carries `aria-checked="true"`. |
+
+**Decorative tags** (`.pk-tag`) are a third thing entirely: non-interactive labels (skills, meta). They are not controls — see *Decorative Tag* below.
+
+Core rules:
+
+- **The animated CTA is reserved.** Only `.pk-btn` uses the centered orange lozenge expansion, and only in its three reserved spots. Every other "main action" uses the non-animated **Primary action** tier.
+- **Emphasis ≠ selection.** A "selected" look belongs to `.pk-toggle` via `[aria-checked="true"]`, never a `.active` class on an action button.
+- **Don't fake affordances.** A non-interactive label must not carry `cursor: pointer`, a hover/press state, or a button role.
+- **One main action per context.** Each screen or dialog gets a single highest-emphasis action; everything else steps down a tier.
+- **Consent banners are the exception:** Accept and Reject must be *equal* weight (anti-dark-pattern); the lowest-priority option (e.g. Cookie settings) drops to the Text/Link tier.
+
+The sub-sections below are the detailed spec for each role.
+
+### Conversion CTA (`.pk-btn`)
+
+Use `.pk-btn` for the **conversion CTA** — the single most important action. It is **reserved** for the home hero, the footer, and the contact-form submit; do not use it on dialogs, banners, or supporting actions. The signature lozenge animation only stays meaningful if it is rare. Label copy can be dynamic (`Let's create`, `Contact me`, `Send`). The arrow should use a local Lucide-style arrow icon or the existing inline arrow pattern.
 
 Figma source: `Button` component set, node `169:2128`, `Property 1=Primary`.
 
@@ -189,8 +222,10 @@ Base settings:
 |---|---|
 | Default component size | `361px x 48px` |
 | Height | `48px` |
+| Width | Canonical & content-driven: full-width on mobile, `fit-content` (min `280px`, max `352px`) from `640px` up. Defined once on `.pk-btn:not(.ghost)`; never overridden per page — so hero, footer, and contact submit all render the same width regardless of container. |
 | Radius | `99px` |
-| Padding | `12px 24px` |
+| Padding | `0 48px` (height-locked to `48px`; horizontal `48px` reserves room for the orange-margin rule below) |
+| Orange fill inset | `24px` from each pill end (the animated orange `::before` lozenge never reaches the edge) |
 | Gap | `8px` between label and icon |
 | Font | `BDO Grotesk DemiBold` |
 | Font size | `16px` |
@@ -204,25 +239,40 @@ Primary button states:
 | State | Background / fill | Text/icon | Motion |
 |---|---|---|---|
 | Default | Adapts to container: `--ink` on light backgrounds, `--cream` on dark backgrounds. No borders. | Adapts to container: `--cream` on light backgrounds, `--ink` on dark backgrounds. Orange arrow. | Flat pill |
-| Hover | Stays the same as default background, with centered orange lozenge expansion. | Ink label and arrow | Center expansion from the button middle; may add `translateY(-2px) scale(1.012)` plus soft pop shadow |
-| Active | Full orange `#FF8A36` | Ink label and arrow | Pressed scale around `0.985` |
+| Hover | Default pill background with the orange lozenge expanded. The lozenge is **inset 24px** from each end, so it never touches the pill edge. | Ink label and arrow | `scaleX(0 → 1)` lozenge expansion from center; may add `translateY(-2px) scale(1.012)` plus soft pop shadow |
+| Active | Same inset orange lozenge as hover (**not** a full-bleed orange pill) — keeps the 24px edge margins. | Ink label and arrow | Pressed scale around `0.985` |
 | Focus | Same as current state | Same as current state | 2 px orange outline, 3 px offset |
 | Disabled | `#BCBCBC` / `--color-gray-500` | Disabled cream label `#E3DFDA`, arrow muted or hidden | No motion or shadow |
+
+**Orange-margin rule (CTA only):** when the animated orange background appears (hover, active, and the touch `--touching`/`--tapped` states), it must keep a **minimum 24px gap to the label/icon** and a **minimum 24px gap to the pill edge**. This is why the CTA uses `48px` horizontal padding and a `24px`-inset `::before` lozenge instead of a full-bleed fill. Both values are on the 4px grid.
 
 **Dark vs. Light Containers:**
 - **Light Contexts (e.g., Paper background):** Primary buttons use an `--ink` fill with a `--cream` label.
 - **Dark Contexts (e.g., Experience section, Footer):** Primary buttons adapt by flipping to a `--cream` fill with an `--ink` label to maintain contrast.
-- The orange hover expansion effect and the active state (`#FF8A36` background) remain identical across both contexts.
+- The orange lozenge (hover and active) and its 24px margins remain identical across both contexts.
 
-Do not create a second primary style. If a page needs the main CTA, use `.pk-btn` and inherit this state model.
+Do not create a second CTA style. If a context needs the conversion CTA, use `.pk-btn` and inherit this state model. If it needs a *main action that is not the conversion CTA*, use the Primary action tier below.
 
-Button animation rule: only the Primary button may use the centered orange expansion animation. Secondary and Tertiary buttons may change fill, border, shadow, or scale, but they must not use an orange pseudo-element expanding from the center.
+Button animation rule: only `.pk-btn` may use the centered orange lozenge expansion. No other role — Primary action, Secondary, Toggle — may use an orange pseudo-element expanding from the center.
 
-### Secondary Button
+### Primary action (`.pk-btn.on-dark.filled`)
 
-Use the secondary button for supporting actions such as `View all projects`, `More about me`, or a non-primary navigation choice. It should remain quieter than the primary CTA while still separating clearly from the paper background.
+The non-CTA "main action" tier: a **solid filled pill, no animation**. Use it for the single most important action inside a local context (a dialog, a form step, a modal) when that action is not the reserved conversion CTA — filled for emphasis, but without the lozenge so it never competes with the CTA.
 
-Figma source: `Button` component set, `Property 1=Secondary`.
+| Property | Value |
+|---|---|
+| Fill | `--cream` on dark surfaces (flips with context) |
+| Label | `--ink` |
+| Height / radius | `48px` / `99px` pill |
+| Motion | none (no lozenge); subtle fill shift on hover/active only |
+
+Currently defined and **reserved** — wire it up the first time a non-CTA main action appears. Do not reach for `.pk-btn` (animated) in those cases.
+
+### Secondary action (`.pk-btn.ghost`)
+
+Use the secondary action for supporting / alternative actions (Decline / accept pairs, non-primary choices). It stays quieter than the conversion CTA but reads clearly as a button. Class: `.pk-btn.ghost` (shared, in `portfolio.css`).
+
+It is **context-aware**: it reads `--ghost-*` surface tokens set on the container, so the *same* class works on light and dark backgrounds with no modifier. There is no persistent "selected" state on this role — selection lives on `.pk-toggle` (see below).
 
 Base settings:
 
@@ -231,29 +281,24 @@ Base settings:
 | Height | `40px` |
 | Radius | `99px` |
 | Padding | `12px 24px` |
-| Gap | `8px` between label and icon |
-| Font | `BDO Grotesk DemiBold` |
-| Font size | `14px` |
-| Font weight | `600` |
-| Line height | `140%` |
+| Font | `BDO Grotesk DemiBold`, `14px` / `600` |
 | Letter spacing | `0.16px` |
-| Icon | Lucide arrow-right, `16px`, orange stroke |
 
-Secondary button states:
+Secondary (ghost) states — colours resolve from the container's `--ghost-*` tokens (light surface shown):
 
-| State | Background | Border | Text/icon | Motion |
+| State | Background | Border | Label | Motion |
 |---|---|---|---|---|
-| Default | `--color-cream-50` | `1px solid --ink` | Ink label, orange arrow | Flat pill |
-| Hover | `--color-cream-200` | `1px solid --ink` | Ink label, orange arrow | `translateY(-1px)` with a soft ink shadow |
-| Active | `--ink` | `1px solid --ink` | Cream label, orange arrow | `scale(0.95)` |
-| Selected | `--ink` | `1px solid --ink` | Cream label, orange arrow | `scale(1.0)`; stays selected until clicked again |
-| Disabled | `--color-gray-500` | None | `--color-cream-700` label, orange arrow muted or hidden | No motion |
+| Default | `--ghost-bg` (`--color-cream-50` light / transparent dark) | `1px solid --ghost-border` | `--ghost-color` (ink / cream) | Flat pill |
+| Hover | `--ghost-bg-hover` | `--ghost-border-hover` | same | `translateY(-1px)` |
+| Active | `--ghost-fill` | `--ghost-fill` | `--ghost-fill-color` | `scale(0.98)` |
+| Focus | unchanged | unchanged | unchanged | 2 px orange `:focus-visible` outline, 3 px offset |
+| Disabled | unchanged | unchanged | dimmed (35% opacity) | none |
 
-Selected is a persistent toggle state: clicking a secondary button selects it, and clicking the same selected button again returns it to default. Do not use active press scaling for the selected resting state.
+Do not add a persistent toggled fill to `.pk-btn.ghost`; if you need a chosen/selected state, you want `.pk-toggle`.
 
-The secondary style is available in shared CSS (`portfolio.css`) as `.pk-btn.dark-on-light`.
+### Tertiary Button (spec only — not currently implemented)
 
-### Tertiary Button
+> The Tertiary pill below is a Figma-spec'd role kept for reference, but its CSS was removed because nothing used it. Re-add `.pk-btn.tertiary` from git history if a real use appears; until then, use Secondary (`.pk-btn.ghost`) or Text/Link (`.pk-link`).
 
 Use the tertiary button for compact, low-emphasis actions where the user already understands the context: small navigation actions, quiet inline CTAs, back/top controls, and supporting links that still need a pill shape.
 
@@ -323,24 +368,48 @@ Text/Link states:
 
 Rules:
 
-- Use this role **only** for hyperlinks and text-only buttons. If the action needs more visual weight, use Primary, Secondary, or Tertiary instead.
+- Use this role **only** for hyperlinks and text-only buttons. If the action needs more visual weight, step up to the Conversion CTA, Primary action, or Secondary instead.
 - Never reach for `text-decoration: underline` on a hyperlink — let `.pk-link` carry the animated underline.
 - Never give text links a permanent solid border-bottom; the animated reveal is the role.
 - The role borrows the Button-M typography tokens (`--type-size-button-secondary`, `--type-weight-button-secondary`). This is the single typography style used for hyperlinks across the site.
 
-### Segmented Control / Filters
+### Toggle / Selectable Chip (selection control)
 
-Use `.hm-chips` with `.hm-chip` buttons for project filters. Inactive options are transparent with hover states, and the active option is ink with cream text.
+Use `.pk-toggle` for single-select option groups such as the home project filters. This is a **selection control**, not an action button — keep it off the primary/secondary/tertiary emphasis ladder.
+
+- Wrap the options in a container with `role="radiogroup"` and an `aria-label`; each option is a `<button class="pk-toggle" role="radio">`.
+- The chosen option carries `aria-checked="true"`; the filled "selected" styling keys off `[aria-checked="true"]` (never a manual `.active` class), so the visual and the accessible state share one source of truth.
+- Use roving `tabindex` (selected = `0`, others = `-1`) and arrow-key navigation (←/→/↑/↓ move selection and focus, wrapping at the ends).
+- The chip is context-aware (light/dark) via the container's `--ghost-*` tokens; the selected hover is the warm cream `#FFF0DD`.
+
+### Decorative Tag (non-interactive label)
+
+Tags come in two non-interactive forms — pick by how much visual weight the label needs:
+
+- **`.pk-tag` (chip):** bordered pill for labels that should stand apart — interests, case-study hero tags. Must **not** look or behave like a button: no `cursor: pointer`, no hover/press, no button role. `cursor` is left to inherit, so a tag inside a clickable card shows the card's pointer while a standalone tag shows the default cursor. Do not create per-page chip styles (`.am-skill-chip`, `.am-chip` were retired into `.pk-tag`).
+- **`.pk-tag-meta` (inline text):** uppercase, tracked, muted text — no pill. The quiet inline-meta counterpart, used for **project-card tag meta** and **About-page skills** (pipe-separated, e.g. `UI/UX DESIGN | 3D DESIGN | …`). Use this when tags should read as quiet metadata rather than discrete chips. `.pk-project-card-tags` is an instance of this shared role.
+
+### Accessibility & focus (applies to every control)
+
+Every interactive control must meet this baseline; decorative elements must avoid faking it.
+
+- **Visible focus on everything interactive.** All buttons, links, toggles, and icon controls show a `:focus-visible` ring: `outline: 2px solid var(--orange); outline-offset: 3px`. The only exception is `.pk-link`, whose animated underline carries focus instead. Never globally remove outlines (`*:focus { outline: none }` is banned); form fields that drop the native outline must replace it with their own focus border.
+- **Use the right element.** Actions are `<button>`; navigation is `<a>`. Do not put `onClick` on a `<div>`/`<span>` and bolt on `role`/`tabindex` unless unavoidable. A non-interactive label stays a plain `<span>` with no role.
+- **Toggle groups use the radiogroup pattern.** Container `role="radiogroup"`; options `role="radio"` + `aria-checked`; roving `tabindex` (selected `0`, rest `-1`); arrow keys move selection and focus. Style the selected option from `[aria-checked="true"]`, never a manual class — one source of truth for state and visuals.
+- **State, not duplicate classes.** Drive selected/pressed/expanded styling off the ARIA attribute (`[aria-checked]`, `[aria-pressed]`, `[aria-expanded]`) so assistive tech and the visual never drift apart.
+- **Decorative ≠ interactive.** If it does nothing, it must not look clickable: no pointer cursor, no hover, no focusability.
+- **Contrast & hit area.** Keep label/background contrast ≥ 4.5:1, and the tap target ≥ 44 px even when the pill is visually shorter (use padding or a pseudo-element to expand the hit area).
+- **Consent banners:** Accept and Reject are equal-weight peers; the quiet option is Text/Link. Do not visually privilege Accept (dark-pattern / non-compliant).
 
 ### Project Card
 
-Use `.pk-project-card` for the main card link container. The image container uses `.pk-project-card-img` with a 4 px radius. The transparent rectangle overlay with blur (where the title and tags sit over the image) is called `.pk-project-card-body`. Inside the body, use `.pk-project-card-tags` for the small uppercase meta labels and `.pk-project-card-title` for the sentence-case title.
+Use `.pk-project-card` for the main card link container. The image container uses `.pk-project-card-img` with a 4 px radius. The transparent rectangle overlay with blur (where the title and tags sit over the image) is called `.pk-project-card-body`. Inside the body, use `.pk-project-card-tags` for the small uppercase meta labels (an instance of the shared `.pk-tag-meta` role) and `.pk-project-card-title` for the sentence-case title.
 
 Each project card must behave as a link to its project detail or case-study page. Project navigation belongs on the cards, not in the main website navigation.
 
 Project cards should be generated from `projects-data.js` and rendered with the shared `ProjectCard` component in `components/project-card.jsx`. Do not hard-code a separate card list or recreate the card markup in page components. Each project needs an `id`, `title`, `tags`, `meta`, `cover`, `hero`, `gallery`, and `body`. Card links use `case-study.html?project={project-id}` so the same project page template can load different projects. Do not show the project year on cards or in the project page meta block.
 
-Project filters use the project `tags` array. Use only `All`, `UI/UX`, and `3D` on the home page. Selecting a filter shows matching cards and keeps the selected state until another filter is clicked. The home page shows only the first three matching projects by default; the `All projects` text button expands the rest and can collapse back to `Show less`.
+Project filters use the project `tags` array. Use only `All`, `UI/UX`, and `3D` on the home page. Selecting a filter shows matching cards and keeps the selected state until another filter is clicked. The home page shows the first three matching projects by default — except in the `900–1179.98px` (2-column) range, where four show so the grid fills two even rows (2 + 2) rather than an uneven 2 + 1 (mobile and `≥1180px` keep 3, driven by a `matchMedia` query in `HmProjects`). The `All projects` text button expands the rest and can collapse back to `Show less`.
 
 Project media should live in `design-system/assets/{project-id}` so GitHub Pages can serve it with the site. Use repo-relative paths such as `design-system/assets/beer-box/cr.webp`. Use `cr.*` as the project card cover, `hr.*` as the project page hero, and `g-01.*`, `g-02.*`, etc. as gallery images. If a folder has no `hr.*`, use `cr.*` as both cover and hero.
 
@@ -430,3 +499,25 @@ To ensure all future generations remain consistent, please note the following re
 5. **Navigation & Interactivity:** 
     - Home page filters are restricted to `All`, `UI/UX`, and `3D`. Display is limited to 3 cards by default with an "All projects / Show less" toggle.
     - Formalized the `.pk-link` (Text/Link) button role with its animated underline reveal, explicitly banning permanent solid bottom borders.
+6. **Spacing grid enforcement (2026-06-07):**
+    - Made the 4px step **mandatory** for `padding`/`margin`/`gap`; documented in the Spacing section.
+    - Added `tools/check-spacing.py` (lint + `--fix`), a `PostToolUse` hook in `.claude/settings.json` that runs it on every CSS edit, and the `/design-check` skill for on-demand audits.
+    - Cleaned 25 pre-existing off-grid values across all page CSS (`14→16`, `6→8`, `10→8`, `18→16`).
+7. **CTA orange-margin rule (2026-06-07):**
+    - The CTA (`.pk-btn`) orange background now keeps a min `24px` gap to the label and a min `24px` gap to the pill edge — `48px` horizontal padding + a `24px`-inset orange `::before` lozenge (hover, active, and touch states). Replaced the old `60%`-width / full-bleed-active model.
+    - Button label-to-icon gap corrected `10px → 8px` (on-grid).
+8. **Rule-change protocol (2026-06-07):**
+    - Added a "Changing A Design Rule" section to `CLAUDE.md` and a `/rule-change` skill so rule edits propagate across CLAUDE.md + this README + CSS + linter, and are verified via grep + audit + this changelog.
+9. **Canonical CTA width (2026-06-07):**
+    - Made CTA width content-driven and defined once on `.pk-btn:not(.ghost)`: full-width on mobile, `fit-content` (min `280` / max `352px`) from `640px` up. Hero and footer CTAs now render the same width on every screen.
+    - Removed competing per-page width overrides (`.hm-hero-cta`, `.pk-contact-cta-shell .pk-btn`) and the now-dead `--hm-button-max-desktop` / `--hm-cta-desktop-max` tokens. Previously the footer's selector out-specified the hero's, so the two diverged on desktop.
+10. **Tag-meta text role + About skills (2026-06-07):**
+    - Promoted the project-card tag style to a shared `.pk-tag-meta` role (uppercase, tracked, muted inline text; `.pk-project-card-tags` is now an instance).
+    - About-page **skills** switched from `.pk-tag` chips to `.pk-tag-meta` inline text, pipe-separated, matching the project-card tag look (`AmSkillChips` → `AmSkills`).
+11. **Responsive default project count (2026-06-07):**
+    - Home shows 3 project cards by default, but **4 in the `900–1179.98px` 2-column range** so the grid fills two even rows instead of an uneven 2 + 1. Driven by a `matchMedia` query in `HmProjects`; columns and the `All projects` toggle behaviour are unchanged.
+12. **Featured-project gallery images are links (2026-06-07):**
+    - The four preview images in `HmFeaturedProject` are now `<a>` links to the project page (`project.href`) instead of non-interactive `role="img"` divs, with a `:focus-visible` ring. Consistent with "open a project by clicking its media."
+13. **Local clean URLs + case-study top clearance (2026-06-07):**
+    - Dev preview (`.claude/launch.json`) switched from `python -m http.server` to `npx serve` so clean URLs (e.g. `/case-study?project=beer-box`) resolve locally like production (via `serve.json`).
+    - Case-study `.cs-toolbar` top padding raised so the "Projects" toolbar clears the floating header instead of overlapping it: `48px → 72px` below 900px (was a −2px overlap) and `80px → 96px` on desktop.

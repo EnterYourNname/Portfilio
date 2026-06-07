@@ -129,7 +129,7 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 - Generate project cards from `projects-data.js` and render them with the shared `ProjectCard` component in `components/project-card.jsx`; do not hard-code a second project list or recreate card markup in page components.
 - Project card links use `case-study.html?project={project-id}` so one master project page can render multiple projects.
 - Project filters read the project `tags` array. Home filters are only `All`, `UI/UX`, and `3D`.
-- Show only the first three matching home project cards by default. The `All projects` text button expands the rest and can collapse back to `Show less`.
+- Show only the first three matching home project cards by default — except in the `900–1179.98px` (2-column) range, where **four** show so the grid fills two even rows (2 + 2) instead of an uneven 2 + 1. Mobile and `≥1180px` keep 3. The default count is driven by a `matchMedia` query in `HmProjects`; the `All projects` text button expands the rest and can collapse back to `Show less`.
 - Do not show project year on project cards or in the project page meta block.
 
 ## Project Media Rules

@@ -87,7 +87,7 @@
   letter-spacing: -0.015em;
   color: var(--tint-cream-35);
   text-decoration: none;
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--tint-cream-06);
   transition: color 160ms var(--ease-out);
 }

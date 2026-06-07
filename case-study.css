@@ -7,10 +7,12 @@ html, body { background: var(--page-shell-bg); }
 /* Case-study phone is shorter than the home phone (4702px) */
 .phone { min-height: 0; }
 
-/* Top toolbar with back-link */
+/* Top toolbar with back-link.
+   padding-top clears the floating header (avatar/menu reach ~52px below 900px)
+   with a comfortable gap so "Projects" doesn't sit level with the avatar. */
 .cs-toolbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 48px 16px 24px 16px;
+  padding: 72px 16px 24px 16px;
 }
 .cs-back {
   display: inline-flex; align-items: center; gap: 8px;
@@ -50,7 +52,9 @@ html, body { background: var(--page-shell-bg); }
 /* Hero image — matches gallery grid */
 .cs-hero-img {
   width: calc(100% - 32px);
-  margin: 0 16px;
+  /* 32px trailing space separates the hero image from the meta divider
+     below (design-system image-row spacing). */
+  margin: 0 16px 32px;
   border-radius: 4px;
   aspect-ratio: 393/440;
   background-size: cover; background-position: center;
@@ -77,6 +81,8 @@ html, body { background: var(--page-shell-bg); }
   aspect-ratio: 393/440;
   overflow: hidden;
   background: var(--cream);
+  /* Match the hero image: 32px trailing space before the meta divider. */
+  margin-bottom: 32px;
 }
 .cs-hero-video iframe {
   position: absolute;
@@ -101,7 +107,7 @@ html, body { background: var(--page-shell-bg); }
 }
 .cs-meta-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--color-gray-400);
   gap: 16px;
 }
@@ -147,7 +153,7 @@ html, body { background: var(--page-shell-bg); }
 .cs-copy { display: flex; flex-direction: column; gap: 12px; }
 .cs-list {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -185,7 +191,7 @@ html, body { background: var(--page-shell-bg); }
 .cs-del-num {
   font-size: 12px; letter-spacing: 0.033em;
   color: var(--orange-text);
-  padding-top: 6px;
+  padding-top: 8px;
 }
 .cs-del-text {
   font-size: 20px; line-height: 1.3;
@@ -283,7 +289,7 @@ html, body { background: var(--page-shell-bg); }
 }
 .cs-tool {
   display: inline-flex; align-items: center; gap: 8px;
-  height: 36px; padding: 0 14px;
+  height: 36px; padding: 0 16px;
   border: 1px solid var(--ink); border-radius: 99px;
   background: transparent;
   font-size: 14px; letter-spacing: 0.01em;
@@ -329,7 +335,7 @@ html, body { background: var(--page-shell-bg); }
   max-width: 18ch;
 }
 .cs-outro .pk-mono { color: var(--ink-muted); }
-.cs-outro .pk-btn:not(.tertiary) { align-self: stretch; }
+.cs-outro .pk-btn { align-self: stretch; }
 
 /* Next project peek — sits on the paper above the manifesto */
 .cs-next {
@@ -355,7 +361,7 @@ html, body { background: var(--page-shell-bg); }
   transition: transform 360ms var(--ease-out);
 }
 .cs-next-card:hover .img { transform: scale(1.04); }
-.cs-next-card .meta { display: flex; flex-direction: column; gap: 6px; }
+.cs-next-card .meta { display: flex; flex-direction: column; gap: 8px; }
 .cs-next-card .title { font-size: 20px; font-weight: 700; letter-spacing: -0.005em; line-height: 1.2; }
 .cs-next-card .sub {
   font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
@@ -420,6 +426,14 @@ html, body { background: var(--page-shell-bg); }
   transform: scale(1.08);
 }
 
+/* Branded focus rings (WCAG 2.4.7) — consistent with .pk-btn/.pk-toggle. */
+.cs-back:focus-visible,
+.cs-zoomable:focus-visible,
+.cs-lightbox-close:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
 /* Reading-progress hairline at very top, scrolls with body */
 .cs-progress {
   position: sticky; top: 0; z-index: 30;
@@ -459,17 +473,20 @@ html, body { background: var(--page-shell-bg); }
     padding-left: 48px;
     padding-right: 48px;
   }
-  /* Fixed header is top:16px + height:48px = 64px bottom edge.
-     Toolbar top padding must clear it. */
+  /* Fixed header reaches ~72px bottom edge on desktop; clear it with a
+     comfortable ~24px gap. */
   .cs-toolbar {
-    padding-top: 80px;
+    padding-top: 96px;
   }
-  /* Hero image and video: mobile uses 16px side margin for phone-frame inset;
-     on desktop the section padding already provides the grid gutter. */
+  /* Hero image and video: align to the same content column as the title,
+     meta, and toolbar (1248px max-width minus the 48px gutters = 1152px),
+     centered in the full-width shell. Prevents the hero from breaking
+     full-bleed past the content column and overflowing the page. */
   .cs-hero-img,
   .cs-hero-video {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    max-width: calc(1248px - 96px);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
