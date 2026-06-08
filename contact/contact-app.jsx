@@ -16,13 +16,6 @@ stroke="#FFF5E8" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
     <line x1="4" y1="17" x2="20" y2="17" />
   </svg>;
 
-const CtArrowLeft = ({ size = 16 }) =>
-<svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 12H5" />
-    <path d="m12 19-7-7 7-7" />
-  </svg>;
-
 
 const CtArrowUp = ({ size = 14 }) =>
 <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -48,26 +41,9 @@ const StarIcon = ({ size = 56 }) =>
 
 
 
-function CtToolbar() {
-  const goBack = () => {
-    const currentDir = window.location.href.split("/").slice(0, -1).join("/");
-    if (document.referrer && document.referrer.startsWith(currentDir)) {
-      history.back();
-      return;
-    }
-    location.href = "/";
-  };
-
-  return (
-    <div className="ct-toolbar">
-      <button className="ct-back" type="button" onClick={goBack}>
-        <CtArrowLeft />
-        <span className="lbl">Back</span>
-      </button>
-      <span className="ct-counter">Contact</span>
-    </div>);
-
-}
+// Top-level nav pages (About, Contact) lead straight with eyebrow + title —
+// no back/counter toolbar. That chrome is reserved for case-study detail pages
+// reached by clicking a project card. (Removed CtToolbar + its arrow icon.)
 
 // ────────────────────────────────────────────────────────────────
 // Form
@@ -352,7 +328,6 @@ function ContactApp() {
       <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
       <div className="ct-phone" data-screen-label="Contact">
         <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
-        <CtToolbar />
 
         {!sent && (
           <section className="ct-hero" data-screen-label="01 Hero">

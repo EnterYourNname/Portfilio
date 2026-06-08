@@ -521,3 +521,5 @@ To ensure all future generations remain consistent, please note the following re
 13. **Local clean URLs + case-study top clearance (2026-06-07):**
     - Dev preview (`.claude/launch.json`) switched from `python -m http.server` to `npx serve` so clean URLs (e.g. `/case-study?project=beer-box`) resolve locally like production (via `serve.json`).
     - Case-study `.cs-toolbar` top padding raised so the "Projects" toolbar clears the floating header instead of overlapping it: `48px → 72px` below 900px (was a −2px overlap) and `80px → 96px` on desktop.
+14. **Unified top toolbar (2026-06-07):**
+    - The back/counter toolbar is now reserved for **case-study detail pages** (`← Projects` + `NN / 08`). Removed the redundant `← Back` + duplicate "Contact" toolbar (`CtToolbar`) from the Contact page; it now leads with eyebrow + title like About, clearing the header with `80px` top padding. Top-level nav pages no longer carry a back button.

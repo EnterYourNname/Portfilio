@@ -95,6 +95,7 @@ Only create a new token when it will be reused across multiple components.
 - Keep project media nearly square or portrait, with `4px` radius.
 - Use pill radius only for buttons, chips, and tags.
 - Header and footer patterns should remain consistent across pages.
+- Back/counter toolbar belongs to **detail pages only**: case-study pages get a `← Projects` back link (to `/#work`) plus an `NN / 08` counter. Top-level nav pages (Home, About, Contact) have **no back/counter toolbar** — they lead with eyebrow + title and clear the floating header with `80px` top padding on the first section. Do not add a back button to a top-level nav page (the persistent nav already covers it).
 
 ## Type Rules
 

@@ -24,26 +24,13 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 
 /* ─── Top toolbar (matches case-study + about) ────────────────── */
-.ct-toolbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 80px 16px 16px;
-}
-.ct-back {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: none; border: none; padding: 8px 0;
-  font: inherit; cursor: pointer; color: var(--ink);
-  font-size: 14px; letter-spacing: 0.023em;
-}
-.ct-back:hover .lbl { text-decoration: underline; text-underline-offset: 3px; }
-.ct-back svg { width: 16px; height: 16px; }
-.ct-counter {
-  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
-  color: var(--ink-muted);
-}
+/* No back/counter toolbar on Contact — it's a top-level nav page, so the hero
+   leads directly and clears the floating header like About's .am-intro (80px).
+   The back+counter toolbar is reserved for case-study detail pages. */
 
 /* ─── Hero block ──────────────────────────────────────────────── */
 .ct-hero {
-  padding: 24px 16px 16px;
+  padding: 80px 16px 16px;
   display: flex; flex-direction: column; gap: 20px;
 }
 .ct-hero .pk-mono { color: var(--ink); }
@@ -299,7 +286,6 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
   margin-top: 8px;
 }
 .ct-again:focus-visible,
-.ct-back:focus-visible,
 .ct-submit:focus-visible,
 .ct-email-link:focus-visible,
 .ct-social:focus-visible {
@@ -317,7 +303,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
     --ct-grid-max: 640px;
     --ct-grid-gutter: 48px;
   }
-  .ct-toolbar, .ct-hero, .ct-form, .ct-direct, .ct-success {
+  .ct-hero, .ct-form, .ct-direct, .ct-success {
     max-width: var(--ct-grid-max);
     margin: 0 auto;
     padding-left: var(--ct-grid-gutter);
@@ -336,7 +322,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 
 @media (min-width: 640px) and (max-width: 899px) {
-  .ct-toolbar, .ct-hero, .ct-form, .ct-success {
+  .ct-hero, .ct-form, .ct-success {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
