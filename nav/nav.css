@@ -94,6 +94,9 @@
 .nav-link:last-child { border-bottom: none; }
 .nav-link:hover     { color: var(--cream); }
 .nav-link.is-current { color: var(--orange); }
+/* CV link — opens the PDF in a new tab; icon signals it's a file, not a page */
+.nav-link--cv { display: flex; align-items: center; gap: 12px; }
+.nav-link--cv svg { width: 28px; height: 28px; flex: 0 0 auto; }
 
 .nav-tagline {
   padding: 24px;

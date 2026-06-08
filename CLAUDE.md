@@ -95,6 +95,7 @@ Only create a new token when it will be reused across multiple components.
 - Keep project media nearly square or portrait, with `4px` radius.
 - Use pill radius only for buttons, chips, and tags.
 - Header and footer patterns should remain consistent across pages.
+- Every page **except Home** uses the shared back toolbar (`window.BackToolbar` + `.pk-toolbar`/`.pk-back`/`.pk-counter` in `portfolio.css`) — same structure, style, and top clearance (`72px` mobile, `96px` ≥900px). The back link reads `Back` and returns to Home on About/Contact, and `Projects` (to `/#work`) on case-study. The optional `NN / 08` counter (right) shows **only on case-study** (it marks position in the 8 projects). Home has no back toolbar. Each page adds `.pk-toolbar` to its own responsive grid group so the toolbar aligns with that page's content column; do not re-style the toolbar per page.
 
 ## Type Rules
 
@@ -133,6 +134,7 @@ Use this mobile-first hierarchy consistently across pages:
 Reuse these existing classes where possible:
 
 - Header: `.pk-header`, `.pk-avatar`, `.pk-menu-btn`
+- Back toolbar (all pages except Home): `window.BackToolbar` → `.pk-toolbar`, `.pk-back`, `.pk-counter`
 - Conversion CTA (animated): `.pk-btn` — reserved for hero, footer, and contact submit only
 - Primary action (filled, no animation): `.pk-btn.on-dark.filled`
 - Secondary action (outline): `.pk-btn.ghost`
@@ -150,7 +152,7 @@ When a page needs a variant, extend it with a page prefix such as `.hm-`, `.abou
 
 ## Website Navigation
 
-- Main website navigation contains only: Home, Work, About, Contact.
+- Main website navigation shows the four page links — Home, Work, About, Contact. A **CV** download action is fully built (`.pk-nav-cv` desktop, `.nav-link--cv` overlay) but **currently hidden behind the `window.CV_ENABLED` flag (set `false` in `nav/nav.jsx`)** because the PDF isn't in the repo yet. When enabled it appears as the 5th nav item, opening `design-system/assets/andrii-borysov-cv.pdf` in a new tab with an external-link icon. To enable: add that PDF, set `window.CV_ENABLED = true`, and bump the `nav.jsx` + `header.jsx` cache versions. No other items belong in the nav.
 - Do not add individual project links to the main navigation or footer navigation.
 - Users open a project by clicking its project card.
 - Project cards must behave as links to the project detail or case-study page.

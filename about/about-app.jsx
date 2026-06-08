@@ -111,6 +111,7 @@ function AboutPage() {
       <div className="am-phone" data-screen-label="About me">
         <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
         <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
+        <BackToolbar label="Back" href="/" />
 
         <div className="am-fade-grid">
           <FadeCascade>

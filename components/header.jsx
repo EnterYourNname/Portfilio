@@ -58,6 +58,19 @@ function SharedHeader({ onMenuClick, menuOpen }) {
           <a href="/#work" aria-current={isHome && hash === "#work" ? "page" : undefined}>Work</a>
           <a href="/about" aria-current={isAbout ? "page" : undefined}>About</a>
           <a href="/contact" aria-current={isContact ? "page" : undefined}>Contact</a>
+          {/* CV button — hidden behind window.CV_ENABLED (set in nav.jsx) until
+              the CV PDF is added. Flip that flag to true to show it. */}
+          {window.CV_ENABLED && (
+          <a className="pk-nav-cv" href="design-system/assets/andrii-borysov-cv.pdf"
+             target="_blank" rel="noopener" aria-label="Open CV (PDF, opens in a new tab)">
+            CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M15 3h6v6" /><path d="M10 14 21 3" />
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+            </svg>
+          </a>
+          )}
         </nav>
         <button className="pk-menu-btn" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded={menuOpen} onClick={onMenuClick}>
           <PkMenuIcon />

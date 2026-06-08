@@ -1,3 +1,12 @@
+// ─────────────────────────────────────────────────────────────────────────
+// CV nav button — feature flag. The CV link is fully built (desktop nav in
+// header.jsx, mobile overlay below, styles in portfolio.css/nav.css) but kept
+// HIDDEN until the CV PDF exists. TO ENABLE: (1) add the PDF at
+// design-system/assets/andrii-borysov-cv.pdf, (2) set this to true, (3) bump
+// the nav.jsx + header.jsx cache versions. Read at render time by both navs.
+// ─────────────────────────────────────────────────────────────────────────
+window.CV_ENABLED = false;
+
 // Shared navigation overlay — exposes window.NavOverlay
 (function () {
   // Main website nav per CLAUDE.md: only Home, Work, About, Contact.
@@ -95,6 +104,24 @@
               </a>
               );
             })}
+            {window.CV_ENABLED && (
+            <a
+              key="cv"
+              href="design-system/assets/andrii-borysov-cv.pdf"
+              className="nav-link nav-link--cv"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open CV (PDF, opens in a new tab)"
+              onClick={onClose}
+            >
+              CV
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M15 3h6v6"/><path d="M10 14 21 3"/>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/>
+              </svg>
+            </a>
+            )}
           </nav>
           <span className="nav-tagline">Designing with purpose, always.</span>
         </div>

@@ -50,7 +50,9 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 
 /* ─── Hero / intro ─────────────────────────────────────────────── */
 .am-intro {
-  padding: 80px 16px 16px;
+  /* Header clearance is now handled by the shared .pk-toolbar above; the intro
+     just needs a small gap below the toolbar. */
+  padding: 0 16px 16px;
   display: flex; flex-direction: column; gap: 24px;
 }
 .am-intro .pk-mono { color: var(--ink); }
@@ -283,7 +285,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
     --am-grid-max: 1248px;
     --am-grid-gutter: 48px;
   }
-  .am-header, .am-intro, .am-section, .am-meta, .am-now, .am-beyond-list, .am-skills {
+  .pk-toolbar, .am-header, .am-intro, .am-section, .am-meta, .am-now, .am-beyond-list, .am-skills {
     max-width: var(--am-grid-max);
     margin: 0 auto;
     padding-left: var(--am-grid-gutter);
@@ -329,7 +331,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 
 @media (min-width: 640px) and (max-width: 899px) {
-  .am-intro, .am-section, .am-meta, .am-skills, .am-experience.paper {
+  .pk-toolbar, .am-intro, .am-section, .am-meta, .am-skills, .am-experience.paper {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }

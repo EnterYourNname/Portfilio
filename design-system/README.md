@@ -177,7 +177,26 @@ Use quiet transitions:
 
 Use `.pk-header`, `.pk-avatar`, and `.pk-menu-btn`. The avatar is circular, the menu button is an ink pill, and both sit on the mobile 64 px header rhythm.
 
-Website navigation contains only Home, Work, About, and Contact. Do not place individual projects in the main navigation or footer navigation; project detail pages are opened by clicking project cards.
+Website navigation shows the four page links — Home, Work, About, and Contact. A **CV** download action is fully built (`.pk-nav-cv` desktop, `.nav-link--cv` overlay) but **currently hidden behind the `window.CV_ENABLED` flag** (set `false` in `nav/nav.jsx`) because the PDF isn't in the repo yet. When enabled it appears as the 5th nav item, opening `design-system/assets/andrii-borysov-cv.pdf` in a new tab (`target="_blank" rel="noopener"`) with an external-link icon — view inline + download from the browser's PDF viewer. **To re-enable:** add the PDF, set `window.CV_ENABLED = true`, and bump the `nav.jsx` + `header.jsx` cache versions. Do not place individual projects in the main navigation or footer navigation; project detail pages are opened by clicking project cards.
+
+### Back Toolbar
+
+A single shared toolbar sits below the header on **every page except Home** (case-study, About, Contact). Use the `window.BackToolbar` component (`components/back-toolbar.jsx`); its styling lives in `portfolio.css` as `.pk-toolbar` (layout + top clearance), `.pk-back` (the back link), and `.pk-counter` (optional right-side label). Do not restyle it per page.
+
+| Property | Value |
+|---|---|
+| Structure | Back link (left) + optional counter (right), `space-between` |
+| Top clearance | `72px` mobile, `96px` from `900px` up (clears the floating header) |
+| Back link | Lucide arrow-left + label, `14px` / `0.023em`, ink, animated underline on hover, orange `:focus-visible` ring |
+| Counter | `12px` uppercase tracked `--ink-muted` |
+
+Rules:
+
+- **Label + destination:** `Back` → Home (`/`) on About and Contact; `Projects` → `/#work` on case-study.
+- **Counter** (`NN / 08`) renders **only on case-study** (it marks position in the 8 projects); About/Contact omit it.
+- **Home has no back toolbar** — the persistent nav covers it; Home leads with its hero.
+- **Gutter alignment:** each page adds `.pk-toolbar` to its own responsive grid group (`--am-*`, `--ct-*`, or the case-study `1248px` column) so the toolbar lines up with that page's content; the toolbar itself never hard-codes desktop gutters.
+- Because the toolbar provides header clearance, the first content section on those pages (`.am-intro`, `.ct-hero`, `.cs-hero`) uses `0` top padding.
 
 ### Button taxonomy (start here)
 
@@ -521,3 +540,12 @@ To ensure all future generations remain consistent, please note the following re
 13. **Local clean URLs + case-study top clearance (2026-06-07):**
     - Dev preview (`.claude/launch.json`) switched from `python -m http.server` to `npx serve` so clean URLs (e.g. `/case-study?project=beer-box`) resolve locally like production (via `serve.json`).
     - Case-study `.cs-toolbar` top padding raised so the "Projects" toolbar clears the floating header instead of overlapping it: `48px → 72px` below 900px (was a −2px overlap) and `80px → 96px` on desktop.
+14. **Unified top toolbar — first pass (2026-06-07):** *(superseded by #15)*
+    - Briefly reserved the back/counter toolbar for case-study only and removed Contact's toolbar.
+16. **CV download in main nav (2026-06-07):**
+    - Added a **CV** action to the main navigation (desktop `.pk-nav-cv` + mobile overlay `.nav-link--cv`) that opens `design-system/assets/andrii-borysov-cv.pdf` in a new tab with an external-link icon — view inline + download from the browser viewer. Self-hosted (not Google Drive) to match the asset convention and avoid interstitials/tracking.
+    - **Currently hidden behind `window.CV_ENABLED` (`false`, in `nav/nav.jsx`)** until the PDF is added — all code/styles kept intact. Re-enable: add the PDF, flip the flag to `true`, bump `nav.jsx`/`header.jsx` caches.
+15. **Shared back toolbar on all pages except Home (2026-06-07):**
+    - Introduced a single shared toolbar — `window.BackToolbar` (`components/back-toolbar.jsx`) + `.pk-toolbar`/`.pk-back`/`.pk-counter` in `portfolio.css` — used by **case-study, About, and Contact** (Home excluded). Same structure, style, and top clearance (`72px` mobile / `96px` desktop); each page adds `.pk-toolbar` to its responsive grid group for gutter/max-width alignment.
+    - Back label: `Back` → Home on About/Contact; `Projects` → `/#work` on case-study. The `NN / 08` counter renders only on case-study.
+    - Replaced the per-page `.cs-toolbar`/`.cs-back`/`.cs-counter` and the removed `.ct-*` toolbar; About/Contact `.am-intro`/`.ct-hero` top padding dropped to `0` since the toolbar now provides header clearance.
