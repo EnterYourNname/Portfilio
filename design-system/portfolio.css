@@ -553,6 +553,38 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
   letter-spacing: var(--type-track-card-title);
 }
 
+/* ── Shared back toolbar ─────────────────────────────────────────────
+   One toolbar used on every page EXCEPT Home (case-study, About, Contact).
+   This block owns the layout + control styling + top clearance; each page
+   adds .pk-toolbar to its own responsive grid group for gutters/max-width so
+   the toolbar aligns with that page's content column. The optional .pk-counter
+   (right) is used only where a sequence exists (case-study NN / 08). */
+.pk-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 72px 16px 24px; /* top clears the floating header below 900px */
+}
+.pk-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: none; padding: 8px 0;
+  font: inherit; cursor: pointer; color: var(--ink); text-decoration: none;
+  font-size: 14px; letter-spacing: 0.023em;
+}
+@media (hover: hover) {
+  .pk-back:hover .pk-back-label { text-decoration: underline; text-underline-offset: 3px; }
+}
+.pk-back svg { width: 16px; height: 16px; }
+.pk-back:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+.pk-counter {
+  font-size: 12px; letter-spacing: 0.033em; text-transform: uppercase;
+  color: var(--ink-muted);
+}
+@media (min-width: 900px) {
+  .pk-toolbar { padding-top: 96px; } /* clears the desktop header consistently */
+}
+
 .pk-link-underline {
   display: inline-flex; align-self: flex-start;
   font-size: var(--type-size-body); color: var(--ink);
@@ -1011,6 +1043,10 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); }
     outline: 2px solid var(--orange);
     outline-offset: 8px;
   }
+  /* CV link: page links are plain text; CV gets an external-link icon to show
+     it opens a file in a new tab. Inherits the nav's animated underline. */
+  .pk-nav-cv { display: inline-flex; align-items: center; gap: 8px; }
+  .pk-nav-cv svg { width: 16px; height: 16px; }
   .pk-header.is-compact .pk-desktop-nav {
     opacity: 0 !important;
     pointer-events: none !important;

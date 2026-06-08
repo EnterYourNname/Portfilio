@@ -1,15 +1,6 @@
 const PROJECTS = window.PORTFOLIO_PROJECTS || [];
 
-const ArrowLeft = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 12H5" />
-    <path d="m12 19-7-7 7-7" />
-  </svg>
-);
-
-
-
+// (Back arrow now lives in the shared BackToolbar component.)
 
 const ArrowUp = ({ size = 14 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -112,15 +103,10 @@ function MarkdownSection({ section }) {
 function Toolbar({ project }) {
   const index = projectIndex(project) + 1;
   const total = PROJECTS.length;
-  return (
-    <div className="cs-toolbar">
-      <button className="cs-back" type="button" onClick={() => location.href = "/#work"}>
-        <ArrowLeft />
-        <span className="cs-back-label">Projects</span>
-      </button>
-      <span className="cs-counter">{String(index).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
-    </div>
-  );
+  const counter = `${String(index).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
+  // Shared toolbar (window.BackToolbar). Case-study keeps the "Projects" label
+  // (back to the work list) and the NN / 08 counter.
+  return <BackToolbar label="Projects" href="/#work" counter={counter} />;
 }
 
 function HeroBlock({ project, onOpen }) {

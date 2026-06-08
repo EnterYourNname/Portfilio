@@ -41,9 +41,9 @@ const StarIcon = ({ size = 56 }) =>
 
 
 
-// Top-level nav pages (About, Contact) lead straight with eyebrow + title —
-// no back/counter toolbar. That chrome is reserved for case-study detail pages
-// reached by clicking a project card. (Removed CtToolbar + its arrow icon.)
+// Contact uses the shared back toolbar (window.BackToolbar, styles in
+// portfolio.css) — same as About and case-study. "Back" returns to Home; no
+// counter (that's case-study only). Only the Home page has no back toolbar.
 
 // ────────────────────────────────────────────────────────────────
 // Form
@@ -328,6 +328,7 @@ function ContactApp() {
       <NavOverlay open={navOpen} onClose={() => setNavOpen(false)} />
       <div className="ct-phone" data-screen-label="Contact">
         <SharedHeader menuOpen={navOpen} onMenuClick={() => setNavOpen(true)} />
+        <BackToolbar label="Back" href="/" />
 
         {!sent && (
           <section className="ct-hero" data-screen-label="01 Hero">

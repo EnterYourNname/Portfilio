@@ -24,13 +24,11 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
 }
 
 /* ─── Top toolbar (matches case-study + about) ────────────────── */
-/* No back/counter toolbar on Contact — it's a top-level nav page, so the hero
-   leads directly and clears the floating header like About's .am-intro (80px).
-   The back+counter toolbar is reserved for case-study detail pages. */
-
 /* ─── Hero block ──────────────────────────────────────────────── */
+/* Header clearance is handled by the shared .pk-toolbar above (same as About);
+   the hero just needs a small gap below the toolbar. */
 .ct-hero {
-  padding: 80px 16px 16px;
+  padding: 0 16px 16px;
   display: flex; flex-direction: column; gap: 20px;
 }
 .ct-hero .pk-mono { color: var(--ink); }
@@ -303,7 +301,7 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
     --ct-grid-max: 640px;
     --ct-grid-gutter: 48px;
   }
-  .ct-hero, .ct-form, .ct-direct, .ct-success {
+  .pk-toolbar, .ct-hero, .ct-form, .ct-direct, .ct-success {
     max-width: var(--ct-grid-max);
     margin: 0 auto;
     padding-left: var(--ct-grid-gutter);
@@ -316,13 +314,13 @@ html, body { margin: 0; padding: 0; background: var(--page-shell-bg); font-famil
     padding-right: calc((100% - min(100%, var(--ct-grid-max))) / 2 + var(--ct-grid-gutter));
   }
   .ct-hello { font-size: 80px; }
-  .ct-hero { padding-top: 80px; }
+  /* .ct-hero top clearance now comes from the shared .pk-toolbar above. */
   .ct-form { padding-top: 48px; padding-bottom: 48px; }
   .ct-success { min-height: 540px; justify-content: center; }
 }
 
 @media (min-width: 640px) and (max-width: 899px) {
-  .ct-hero, .ct-form, .ct-success {
+  .pk-toolbar, .ct-hero, .ct-form, .ct-success {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
